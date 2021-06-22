@@ -15,8 +15,6 @@ public class HelloWorld : MonoBehaviour {
   [Header("Sample Values")]
   public string partition = "partitioninTable";
   public string row = "rowinTable";
-  private readonly string key = "";
-  private readonly string 
 
   [Header("Unity objects")]
   public TextMesh DisplayName;
