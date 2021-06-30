@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: b8f321ec17b0896449aace899a56e155
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Muli
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 28541b59b443270428fee976bdef2a38, type: 3}
+  - {fileID: 12800000, guid: 54b4567c91ff70044b135213316d0486, type: 3}
+  - {fileID: 12800000, guid: a3bd2e9d4202cbc419a4939ba301c02e, type: 3}
+  - {fileID: 12800000, guid: c13519b53eca05345b06cb83e8767264, type: 3}
+  - {fileID: 12800000, guid: d78e73edd5fb6f54da5142ea46047718, type: 3}
+  - {fileID: 12800000, guid: 90d727c456c3e3346bbb2f3f9ccb9a54, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
