@@ -3,25 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using Facebook.Unity;
 
-
 public class MainManager : MonoBehaviour
 {
     
 
     // Awake function from Unity's MonoBehavior
+    string FBCallback = "https://telemetryfunctions.azurewebsites.net/.auth/login/facebook/callback";
+    string TestFBToken = "GGQVlZASXk5T052a3gxYzZAfTWpmTm82XzdHVi1LZAmJkTDZAxZAXFXWHk1OWdyX1ZAWd2lfbG1uQUhDTk1xdEExZAUVrUF9vU0JyeVc3dVc3dDcyZAVpYUnhSX0xHck9rUEFCMnJ4clJBcEZAxaktxdUtJZA3pXSEQ0MXlxLXhfQk9hcG5jR0dDUQZDZD";
+
+    Authoo FunctionAuthorizer;
     void Awake ()
     {
         DontDestroyOnLoad(this.gameObject); //peserve acrossscenes
-        if (!FB.IsInitialized) {
-            // Initialize the Facebook SDK
-            FB.Init(InitCallback, OnHideUnity);
-        } else {
-            // Already initialized, signal an app activation App Event
-            FB.ActivateApp();
-        }
+        // if (!FB.IsInitialized) {
+        //     // Initialize the Facebook SDK
+        //     FB.Init(InitCallback, OnHideUnity);
+        // } else {
+        //     // Already initialized, signal an app activation App Event
+        //     FB.ActivateApp();
+        // }
     }
 
-    public void FBlogin()   //called from inspector
+    //called from inspector button
+    public void FBlogin()   //called from inspector button
     {
         FB.Android.RetrieveLoginStatus(LoginStatusCallback);
         
@@ -36,12 +40,20 @@ public class MainManager : MonoBehaviour
         if (FB.IsLoggedIn) {
             // AccessToken class will have session details
             var aToken = Facebook.Unity.AccessToken.CurrentAccessToken;
+
+            //azure function side login
+            FunctionAuthorizer.Initialize(aToken.TokenString);
+
             // Print current access token's User ID
             Debug.Log("FB id is " + aToken.UserId);
             // Print current access token's granted permissions
             foreach (string perm in aToken.Permissions) {
                 Debug.Log(perm);
             }
+            string logMessage = string.Format(
+                "OnInitCompleteCalled IsLoggedIn='{0}' IsInitialized='{1}' with AccessToken '{2}'",
+                FB.IsLoggedIn,
+                FB.IsInitialized, aToken.TokenString);
         } else {
             //bring up login failed window
             Debug.Log("User cancelled login");
