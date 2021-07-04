@@ -16,11 +16,10 @@ public class App2Device : MonoBehaviour {
   public string MethodName = "ControlDevice";
   public string payload = "5";
 
-  [Header("Unity objects")]
-  public TextMesh DisplayName;
 
-  private AzureFunctionClient client;
-  private AzureFunction service;
+  // private AzureFunctionClient client;
+  private AzureFunction azureFunction;
+  Authoo Authorizer;
 
   // Use this for initialization
   void Start() {
@@ -28,14 +27,13 @@ public class App2Device : MonoBehaviour {
       Debug.LogError("Azure Functions Account name required.");
       return;
     }
-
-    if (DisplayName == null) {
-      Debug.LogError("Expected TextMesh game object to be set.");
-      return;
+    if (Authorizer == null){
+      GameObject.FindObjectOfType<Authoo>();  //get reference
     }
 
-    client = AzureFunctionClient.Create(Account);
-    service = new AzureFunction(FunctionName, client, FunctionCode);
+
+    // client = AzureFunctionClient.Create(Account);
+    azureFunction = new AzureFunction(FunctionName, Authorizer.functionClient, FunctionCode);
   }
 
   public void TappedGet() {
@@ -43,54 +41,29 @@ public class App2Device : MonoBehaviour {
     queryParams.AddParam("MethodName", MethodName);
     queryParams.AddParam("Payload", payload);
 
-    Debug.Log("GET: " + MethodName + " url:" + service.ApiUrl());
-    DisplayName.text = "GET";
-    StartCoroutine(service.Get<string>(SayHelloCompleted, route, queryParams));
+    Debug.Log("GET: " + MethodName + " url:" + azureFunction.ApiUrl());
+    StartCoroutine(azureFunction.Get<string>(CommandCompleted, route, queryParams));
   }
 
-  public void TappedPost() {
+  public void InvokeCommandToCloud(string _methodName) {  //tapped post method
     QueryParams queryParams = new QueryParams();
-    queryParams.AddParam("name", MethodName);
+    queryParams.AddParam("name", MethodName); //add arguement
 
-    Debug.Log("POST: " + MethodName + " url:" + service.ApiUrl());
-    DisplayName.text = "POST";
-    StartCoroutine(service.Post<string>(SayHelloCompleted, route, queryParams));
+    Debug.Log("POST: " + MethodName + " url:" + azureFunction.ApiUrl());
+    StartCoroutine(azureFunction.Post<string>(CommandCompleted, route, queryParams));
   }
 
-  public void TappedPut() {
-    QueryParams queryParams = new QueryParams();
-    queryParams.AddParam("name", MethodName);
 
-    Debug.Log("PUT: " + MethodName + " url:" + service.ApiUrl());
-    DisplayName.text = "PUT";
-    StartCoroutine(service.Put<string>(SayHelloCompleted, route, queryParams));
-  }
 
-  public void TappedDelete() {
-    QueryParams queryParams = new QueryParams();
-    queryParams.AddParam("name", MethodName);
 
-    Debug.Log("DELETE: " + MethodName + " url:" + service.ApiUrl());
-    DisplayName.text = "DELETE";
-    StartCoroutine(service.Delete<string>(SayHelloCompleted, route, queryParams));
-  }
-
-  public void TappedPatch() {
-    QueryParams queryParams = new QueryParams();
-    queryParams.AddParam("name", MethodName);
-
-    Debug.Log("PATCH: " + MethodName + " url:" + service.ApiUrl());
-    DisplayName.text = "PATCH";
-    StartCoroutine(service.Patch<string>(SayHelloCompleted, route, queryParams));
-  }
-
-  private void SayHelloCompleted(IRestResponse<string> response) {
+  private void CommandCompleted(IRestResponse<string> response) {
     if (response.IsError) {
       Debug.LogError("Request error: " + response.StatusCode);
+      //simple put iconsback to original mode, dont show error
       return;
     }
     Debug.Log("Completed: " + response.Content);
-    DisplayName.text = TrimQuotes(response.Content);
+    //change ui behaviour to indicate success here
   }
 
   private string TrimQuotes(string message) {
@@ -98,7 +71,4 @@ public class App2Device : MonoBehaviour {
   }
 
   // Update is called once per frame
-  void Update() {
-
-  }
 }
