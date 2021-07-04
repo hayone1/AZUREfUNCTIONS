@@ -11,7 +11,8 @@ public class MainManager : MonoBehaviour
     string FBCallback = "https://telemetryfunctions.azurewebsites.net/.auth/login/facebook/callback";
     string TestFBToken = "GGQVlZASXk5T052a3gxYzZAfTWpmTm82XzdHVi1LZAmJkTDZAxZAXFXWHk1OWdyX1ZAWd2lfbG1uQUhDTk1xdEExZAUVrUF9vU0JyeVc3dVc3dDcyZAVpYUnhSX0xHck9rUEFCMnJ4clJBcEZAxaktxdUtJZA3pXSEQ0MXlxLXhfQk9hcG5jR0dDUQZDZD";
 
-    Authoo FunctionAuthorizer;
+    [SerializeField] private Authoo FunctionAuthorizer;
+    internal AccessToken aToken = null; //to cache the access tokens
     void Awake ()
     {
         DontDestroyOnLoad(this.gameObject); //peserve acrossscenes
@@ -39,7 +40,7 @@ public class MainManager : MonoBehaviour
     private void AuthCallback (ILoginResult result) {
         if (FB.IsLoggedIn) {
             // AccessToken class will have session details
-            var aToken = Facebook.Unity.AccessToken.CurrentAccessToken;
+            aToken = Facebook.Unity.AccessToken.CurrentAccessToken;
 
             //azure function side login
             FunctionAuthorizer.Initialize(aToken.TokenString);
@@ -54,6 +55,7 @@ public class MainManager : MonoBehaviour
                 "OnInitCompleteCalled IsLoggedIn='{0}' IsInitialized='{1}' with AccessToken '{2}'",
                 FB.IsLoggedIn,
                 FB.IsInitialized, aToken.TokenString);
+                Debug.Log(logMessage);
         } else {
             //bring up login failed window
             Debug.Log("User cancelled login");
@@ -71,31 +73,14 @@ public class MainManager : MonoBehaviour
         } else {
             // Successfully logged user in
             // A popup notification will appear that says "Logged in as <User Name>"
+            aToken = result.AccessToken;
+            Debug.Log(string.Format("check if same: from FB:{0} and /n result:{1} ", Facebook.Unity.AccessToken.CurrentAccessToken.TokenString, result.AccessToken.TokenString));
+
+            //azure function side login
+            FunctionAuthorizer.Initialize(aToken.TokenString);
             Debug.Log("Success: " + result.AccessToken.UserId);
         }
     }
 
-    private void InitCallback ()
-    {
-        if (FB.IsInitialized) {
-            // Signal an app activation App Event
-            FB.ActivateApp();
-            // Continue with Facebook SDK
-            // ...
-        } else {
-            Debug.LogError("Failed to Initialize the Facebook SDK");
-            //singnal for user to check connection then close the app if user exits
-        }
-    }
 
-    private void OnHideUnity (bool isGameShown)
-    {
-        if (!isGameShown) {
-            // Pause the game - we will need to hide
-            Time.timeScale = 0;
-        } else {
-            // Resume the game - we're getting focus again
-            Time.timeScale = 1;
-        }
-    }
 }

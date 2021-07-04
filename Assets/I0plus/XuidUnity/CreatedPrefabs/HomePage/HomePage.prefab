@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 282672253144326324}
   - component: {fileID: 604117185341159625}
   m_Layer: 5
-  m_Name: Group 9235
+  m_Name: MusicInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,12 +357,12 @@ RectTransform:
   - {fileID: 8223275859634188009}
   - {fileID: 6766025259156277520}
   - {fileID: 6826306200575979158}
-  m_Father: {fileID: 1423438504804862127}
-  m_RootOrder: 15
+  m_Father: {fileID: 5224672083402634064}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5146667, y: 0.16625616}
   m_AnchorMax: {x: 0.5146667, y: 0.16625616}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 296.30908}
   m_SizeDelta: {x: 870, y: 162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604117185341159625
@@ -504,7 +504,7 @@ RectTransform:
   m_Children:
   - {fileID: 2453224211978411290}
   m_Father: {fileID: 1423438504804862127}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.6656404}
   m_AnchorMax: {x: 0.5, y: 0.6656404}
@@ -605,7 +605,7 @@ RectTransform:
   m_Children:
   - {fileID: 6768158235946144819}
   m_Father: {fileID: 1423438504804862127}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.30933332, y: 0.6538166}
   m_AnchorMax: {x: 0.30933332, y: 0.6538166}
@@ -1084,7 +1084,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1423438504804862127}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.22933333, y: 0.6169951}
   m_AnchorMax: {x: 0.22933333, y: 0.6169951}
@@ -1482,7 +1482,7 @@ GameObject:
   - component: {fileID: 1517703047244120159}
   - component: {fileID: 6588640320117334638}
   m_Layer: 5
-  m_Name: iPhone X_XS_11 Pro _ 5
+  m_Name: HomePage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1514,7 +1514,6 @@ RectTransform:
   - {fileID: 7498597540407579314}
   - {fileID: 6787418669676386599}
   - {fileID: 2692092946971145039}
-  - {fileID: 282672253144326324}
   - {fileID: 8151830295560215945}
   - {fileID: 1091767802559270097}
   - {fileID: 6049591870348446834}
@@ -2221,7 +2220,7 @@ RectTransform:
   m_Children:
   - {fileID: 2489075170695848830}
   m_Father: {fileID: 1423438504804862127}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.288, y: 0.42721558}
   m_AnchorMax: {x: 0.288, y: 0.42721558}
@@ -2272,7 +2271,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1423438504804862127}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.44027093}
   m_AnchorMax: {x: 0.5, y: 0.44027093}
@@ -2712,7 +2711,7 @@ GameObject:
   - component: {fileID: 5224672083402634064}
   - component: {fileID: 796247417168537691}
   m_Layer: 5
-  m_Name: Group 2
+  m_Name: MusicBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2731,6 +2730,7 @@ RectTransform:
   m_Children:
   - {fileID: 7515089818052984573}
   - {fileID: 770060422405315420}
+  - {fileID: 282672253144326324}
   m_Father: {fileID: 1423438504804862127}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3291,8 +3291,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c116dcf615733d440a77b5c928bf2655, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a93a23118ac71c342ad154794ea02033, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4082,7 +4082,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1423438504804862127}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.6656404}
   m_AnchorMax: {x: 0.5, y: 0.6656404}
@@ -4173,7 +4173,7 @@ RectTransform:
   m_Children:
   - {fileID: 6858644540998808269}
   m_Father: {fileID: 1423438504804862127}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.44027093}
   m_AnchorMax: {x: 0.5, y: 0.44027093}
@@ -4711,7 +4711,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1423438504804862127}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.23733333, y: 0.3903941}
   m_AnchorMax: {x: 0.23733333, y: 0.3903941}

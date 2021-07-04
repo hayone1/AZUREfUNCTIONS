@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using RaspberryDevices;
 public class Authoo : MonoBehaviour
 {
       public string id_token = "482385619494176";
@@ -18,15 +19,24 @@ public class Authoo : MonoBehaviour
         //  private AzureFunctionClient client;
         private AzureFunction azureFunction;
         private AppServiceClient serviceClient;
-        private AzureFunctionClient functionClient;
+        internal AzureFunctionClient functionClient;
 
         [Header("Query Parameters")]
         //these 2 properties partition and row identify each device uniquely to get its data
         public string deviceType = "doorsensor";
         public string DeviceUniqueID = "doorsens123";
+
+        [SerializeField] private UiManager uiManager;
+        [SerializeField] private CustomMqtt customMqtt;
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+      if (uiManager == null){
+          uiManager = GameObject.FindObjectOfType<UiManager>();
+      }
+      if (customMqtt == null){
+          customMqtt = GameObject.FindObjectOfType<CustomMqtt>();
+      }
         
         // serviceClient = new AppServiceClient(url);  //iniialize
     }
@@ -35,36 +45,42 @@ public class Authoo : MonoBehaviour
     {
         //firstly get facebook token
         functionClient = AzureFunctionClient.Create(Account);
-        // if (string.IsNullOrEmpty(_accessToken)){  //use the real accessToken
-        //     Debug.Log("I used the real access token" + _accessToken);
-        //     StartCoroutine(functionClient.LoginWithFacebook(_accessToken, OnInitializeCompleted));
-        // }
-        // else {  //use the Fake accessToken
-            Debug.Log("I usedthefake access token");
+        if (Application.platform == RuntimePlatform.WindowsEditor) {  //use the Fake accessToken
+            Debug.Log("I used thefake access token");
             StartCoroutine(functionClient.LoginWithFacebook(access_token, OnInitializeCompleted));
-        // }
+        }
+        else if (string.IsNullOrEmpty(_accessToken) || _accessToken == ""){  //use the real accessToken
+            Debug.Log("I used the real access token" + _accessToken);
+            StartCoroutine(functionClient.LoginWithFacebook(_accessToken, OnInitializeCompleted));
+        }
+        else {
+          Debug.LogError("unable to initialize azure function connection, token is empty or invalid");
+        }
         Debug.Log("GET: " + id_token + " url:" + functionClient.Url);
     }
-    public void GetDeviceData()
+    public void GetDeviceData(string telemetryData)
     {
 
         QueryParams queryParams = new QueryParams();
         //add specific device info
-        queryParams.AddParam("partition", deviceType);
-        queryParams.AddParam("row", DeviceUniqueID);
+        queryParams.AddParam("partition", customMqtt.telemetryDevicesDict[telemetryData].PartitionKey); 
+        queryParams.AddParam("row", customMqtt.telemetryDevicesDict[telemetryData].RowKey);
 
 
-        StartCoroutine(azureFunction.Post<string>(SayHelloCompleted, route, queryParams));
+        StartCoroutine(azureFunction.Post<string>(OnTelemetryReceived, route, queryParams));
 
 
     }
 
-    private void SayHelloCompleted(IRestResponse<string> response) {
-    if (response.IsError) {
-      Debug.LogError("Request error: " + response.StatusCode);
-      return;
-    }
-    Debug.Log("Completed: " + response.Content);
+    private void OnTelemetryReceived(IRestResponse<string> response) {
+      if (response.IsError) {
+        Debug.LogError("Request error: " + response.StatusCode);
+        return;
+      }
+      Debug.Log("Telemetry receive Completed content: " + response.Content);
+      Debug.Log("Telemetry receive Completed Data: " + response.Data);
+      //this is what is received when the table is queried
+      TelemetryDataPoint receivedTelemetry = JsonConvert.DeserializeObject<TelemetryDataPoint>(response.Data as string);
     // DisplayName.text = TrimQuotes(response.Content);
   }
 
@@ -73,6 +89,7 @@ public class Authoo : MonoBehaviour
     private void OnInitializeCompleted(IRestResponse<AuthenticatedUser> authUser) {
         if (authUser.IsError) {
         Debug.LogError("Request error: " + authUser.StatusCode);
+        //show error modal window
         return;
         }
         Debug.Log("Completed: " + authUser.Content);
@@ -82,6 +99,17 @@ public class Authoo : MonoBehaviour
 
         //initialize the azurefunction after user is loggen in
         azureFunction = new AzureFunction(FunctionName, functionClient, FunctionCode);
+        //take user to home page
+        if (PlayerPrefs.GetInt(Messsages.NewUser, 1) == 1){ //if its a new user
+          //take the user to discover devices
+          customMqtt.Connect(); //start connection to broker on network
+          uiManager.MovetoFocus(uiManager.ActiveDevices); 
+        }
+        else{ //if its an existing user
+          //take user to home page
+        uiManager.MovetoFocus(uiManager.HomePage);
+
+        }
         
         // DisplayName.text = TrimQuotes(authUser.Content);
     }
