@@ -22,65 +22,36 @@ public class UiManager: MonoBehaviour
     [SerializeField] private Button AddCameraButton;
     #endregion
     #region Outdoor control
-    [SerializeField] private RectTransform doorOpenIcon;
-    [SerializeField] private RectTransform doorClosedIcon;
-    [SerializeField] private RectTransform homeModeIcon;
-    [SerializeField] private RectTransform awayModeIcon;
-    [SerializeField] private RectTransform dayTimeIcon;
-    [SerializeField] private RectTransform sleepTimeIcon;
+    [SerializeField] internal GameObject doorOpenIcon;
+    [SerializeField] internal Vector3 doorOpenIconPos{get;private set;}
+    [SerializeField] internal GameObject doorClosedIcon;
+    [SerializeField] internal Vector3 doorClosedIconPos{get;private set;}
+    [SerializeField] internal GameObject homeModeIcon;
+    [SerializeField] internal Vector3 homeModeIconPos{get;private set;}
+    [SerializeField] internal GameObject awayModeIcon;
+    [SerializeField] internal Vector3 awayModeIconPos{get;private set;}
+    [SerializeField] internal GameObject dayTimeIcon;
+    [SerializeField] internal Vector3 dayTimeIconPos{get;private set;}
+    [SerializeField] internal GameObject sleepTimeIcon;
+    [SerializeField] internal Vector3 sleepTimeIconPos{get;private set;}
     
     #endregion
     
+    private void Start() {
+        //get the starting positins of the icons
+        doorOpenIconPos = doorOpenIcon.transform.position;
+        doorClosedIconPos = doorClosedIcon.transform.position;
+        homeModeIconPos = homeModeIcon.transform.position;
+        awayModeIconPos = awayModeIcon.transform.position;
+        dayTimeIconPos = dayTimeIcon.transform.position;
+        sleepTimeIconPos = sleepTimeIcon.transform.position;
+    }
     public void MovetoFocus(RectTransform page_to_move) //thisis the version set from the editor
     {
         page_to_move.anchoredPosition = Vector2.zero;
         page_to_move.SetAsLastSibling();
     }
 
-    internal void MoveToFocus(string page_to_move)
-    {
-        switch (page_to_move)
-        {
-            case Messsages.PageActiveDevices:
-                ActiveDevices.anchoredPosition = Vector2.zero;
-                ActiveDevices.SetAsLastSibling();
-                break;
-            case Messsages.PageLivingRoomAC:
-                LivingRoomAC.anchoredPosition = Vector2.zero;
-                LivingRoomAC.SetAsLastSibling();
-                break;
-            case Messsages.PageBedRoomLights:
-                BedRoomLights.anchoredPosition = Vector2.zero;
-                BedRoomLights.SetAsLastSibling();
-                break;
-            case Messsages.PageConnectWithFacebook:
-                ConnectWithFacebook.anchoredPosition = Vector2.zero;
-                ConnectWithFacebook.SetAsLastSibling();
-                break;
-            case Messsages.PageDeviceAddedSuccessfully:
-                DeviceAddedSuccessfully.anchoredPosition = Vector2.zero;
-                DeviceAddedSuccessfully.SetAsLastSibling();
-                break;
-            case Messsages.PageGetStartedPage:
-                GetStartedPage.anchoredPosition = Vector2.zero;
-                GetStartedPage.SetAsLastSibling();
-                break;
-            case Messsages.PageHomePage:
-                HomePage.anchoredPosition = Vector2.zero;
-                HomePage.SetAsLastSibling();
-                break;
-            case Messsages.PageOutdoorSecurity:
-                OutdoorSecurity.anchoredPosition = Vector2.zero;
-                OutdoorSecurity.SetAsLastSibling();
-                break;
-            case Messsages.PageMyProfile:
-                MyProfile.anchoredPosition = Vector2.zero;
-                MyProfile.SetAsLastSibling();
-                break;
-            default:
-                break;
-        }
-    }
 
     #region the codes in this region can be better really
     internal void AddDeviceUI(string deviceType)
@@ -107,8 +78,19 @@ public class UiManager: MonoBehaviour
     #endregion
 
     // Update is called once per frame
-    void Update()
+    void SwapIconPositions(GameObject _iconObject)
     {
-        
+        if (_iconObject == doorClosedIcon || _iconObject == doorOpenIcon){
+            doorClosedIcon.transform.position = doorOpenIconPos;
+            doorOpenIcon.transform.position = doorClosedIconPos;
+        }
+        else if (_iconObject == homeModeIcon || _iconObject == awayModeIcon){
+            homeModeIcon.transform.position = awayModeIconPos;
+            awayModeIcon.transform.position = homeModeIconPos;
+        }
+        else if (_iconObject == dayTimeIcon || _iconObject == sleepTimeIcon){
+            dayTimeIcon.transform.position = sleepTimeIconPos;
+            sleepTimeIcon.transform.position = dayTimeIconPos;
+        }
     }
 }

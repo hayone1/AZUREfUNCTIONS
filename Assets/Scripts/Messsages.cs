@@ -33,7 +33,12 @@ public static class Messsages
     public const string motionTelemetry = "mymotionsensor";
     public const string bedRoomLightsTelemetry = "mylightsensor1";
     public const string outdoorLightTelemetry = "mylightsensor2";
+    #endregion
 
+    #region device command internal strings
+    public const string DoorControl = "DoorControl";    //to open and close door
+    public const string PresenceControl = "PresenceControl";    //to switch btw home and away mode
+    public const string ConsciousnessControl = "ConsciousnessControl";  //toggle between daytime and sleepTime mode
 
     #endregion
     
