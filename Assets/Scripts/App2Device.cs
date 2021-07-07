@@ -12,28 +12,35 @@ public class App2Device : MonoBehaviour {
   public string FunctionCode = "";
   private string route = "";
 
-  [Header("Sample Values")]
-  public string MethodName = "ControlDevice";
-  public string payload = "5";
+  // [Header("Sample Values")]
+  private string MethodName = "ControlDevice";
+  private string payload = "5";
+  private string deviceName = "lightSensor1";
 
 
   // private AzureFunctionClient client;
   private AzureFunction azureFunction;
-  Authoo Authorizer;
+  // Authoo Authorizer;
+  // string currentMethod; //string that hold the curent device method to be invoked
+  UiManager uiManager;
 
   // Use this for initialization
-  void Start() {
+  internal void Initialize(AzureFunctionClient _functionClient) {
+    //this method is called from Authoo after successful login
     if (string.IsNullOrEmpty(Account)) {
       Debug.LogError("Azure Functions Account name required.");
       return;
     }
-    if (Authorizer == null){
-      GameObject.FindObjectOfType<Authoo>();  //get reference
+    // if (Authorizer == null){
+    //   Authorizer = GameObject.FindObjectOfType<Authoo>();  //get reference
+    // }
+    if (uiManager == null){
+      uiManager = GameObject.FindObjectOfType<UiManager>();  //get reference
+
     }
 
-
     // client = AzureFunctionClient.Create(Account);
-    azureFunction = new AzureFunction(FunctionName, Authorizer.functionClient, FunctionCode);
+    azureFunction = new AzureFunction(FunctionName, _functionClient, FunctionCode);
   }
 
   public void TappedGet() {
@@ -45,11 +52,18 @@ public class App2Device : MonoBehaviour {
     StartCoroutine(azureFunction.Get<string>(CommandCompleted, route, queryParams));
   }
 
-  public void InvokeCommandToCloud(string _methodName) {  //tapped post method
+  public void InvokeCommandToCloud(UiSlideControl _slideControl) {  //tapped post method
+  // will be called from ui controller
     QueryParams queryParams = new QueryParams();
-    queryParams.AddParam("name", MethodName); //add arguement
+    MethodName = _slideControl.methodName;
+    payload = _slideControl.methodPayload;
+    deviceName = _slideControl.deviceName;
+    queryParams.AddParam("MethodName", MethodName); //add arguement
+    queryParams.AddParam("Payload", payload); //add arguement
+    queryParams.AddParam("deviceName", deviceName); //add arguement
 
     Debug.Log("POST: " + MethodName + " url:" + azureFunction.ApiUrl());
+    //alongside invoking device methd, it also swaps the UI
     StartCoroutine(azureFunction.Post<string>(CommandCompleted, route, queryParams));
   }
 
@@ -60,6 +74,7 @@ public class App2Device : MonoBehaviour {
     if (response.IsError) {
       Debug.LogError("Request error: " + response.StatusCode);
       //simple put iconsback to original mode, dont show error
+      // uiManager.SwapIconPositions();
       return;
     }
     Debug.Log("Completed: " + response.Content);

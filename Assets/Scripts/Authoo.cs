@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using RaspberryDevices;
 public class Authoo : MonoBehaviour
 {
+  //used for logging in and requesting device telemetry
       public string id_token = "482385619494176";
   // public string access_token = "GGQVlZASXk5T052a3gxYzZAfTWpmTm82XzdHVi1LZAmJkTDZAxZAXFXWHk1OWdyX1ZAWd2lfbG1uQUhDTk1xdEExZAUVrUF9vU0JyeVc3dVc3dDcyZAVpYUnhSX0xHck9rUEFCMnJ4clJBcEZAxaktxdUtJZA3pXSEQ0MXlxLXhfQk9hcG5jR0dDUQZDZD";
   public string access_token = "EAAEfUTvYrMcBAGJiEcmCxgFo3WSxA7EKv6Mw5v7IHpOIuA9Ij8rhVpw0D93Ws5QtKRWAhCiRbgza9cxMOsOZAHQn0KuTz2shCwFLeTEO8BRqRUK4z0rZB1h75H8x2RNlFJ7pKZC2irvTrR0DUjDKH4DCx0h1ZCTFrZBeG6cAo9lSVbjjhqu56GjDT82QZA0JW5WXaZAHFw8RWKWUawhdglw";
@@ -28,6 +29,7 @@ public class Authoo : MonoBehaviour
 
         [SerializeField] private UiManager uiManager;
         [SerializeField] private CustomMqtt customMqtt;
+        [SerializeField] private App2Device app2Device;
     // Start is called before the first frame update
     void Start()
     { 
@@ -36,6 +38,9 @@ public class Authoo : MonoBehaviour
       }
       if (customMqtt == null){
           customMqtt = GameObject.FindObjectOfType<CustomMqtt>();
+      }
+      if (app2Device == null){
+          app2Device = GameObject.FindObjectOfType<App2Device>();
       }
         
         // serviceClient = new AppServiceClient(url);  //iniialize
@@ -99,6 +104,7 @@ public class Authoo : MonoBehaviour
 
         //initialize the azurefunction after user is loggen in
         azureFunction = new AzureFunction(FunctionName, functionClient, FunctionCode);
+        app2Device.Initialize(functionClient);
         //take user to home page
         if (PlayerPrefs.GetInt(Messsages.NewUser, 1) == 1){ //if its a new user
           //take the user to discover devices

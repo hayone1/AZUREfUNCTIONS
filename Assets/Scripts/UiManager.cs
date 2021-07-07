@@ -78,7 +78,7 @@ public class UiManager: MonoBehaviour
     #endregion
 
     // Update is called once per frame
-    void SwapIconPositions(GameObject _iconObject)
+    internal void SwapIconPositions(GameObject _iconObject)
     {
         if (_iconObject == doorClosedIcon || _iconObject == doorOpenIcon){
             doorClosedIcon.transform.position = doorOpenIconPos;
