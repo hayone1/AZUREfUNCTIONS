@@ -124,14 +124,14 @@ public class UiManager: MonoBehaviour
     }
     #endregion
 
-    void UpdateTemperatureUI(string _newTemperature) => temperatureDisplay.text = _newTemperature;
-    void UpdateHumidityUI(string _newTemperature) => humidityDisplay.text = _newTemperature;
-    void UpdateMotionStateUI(bool _activeState) => motionSensorButton.SetUI(_activeState);
-    void UpdatePresenceUI(bool _activeState) => atHomeSlideButton.SetUI(_activeState);
-    void UpdateSleepStateSensorUI(bool _activeState) => dayTimeSlideButton.SetUI(_activeState);
-    void UpdateDoorStateSensorUI(bool _activeState) => doorUnlockedButton.SetUI(_activeState);
-    void UpdateRoomLightStateUI(bool _activeState) => toggleRoomLightButton.SetUI(_activeState);
-    void UpdateOutsideLightStateUI(bool _activeState) => toggleOutSideLightButton.SetUI(_activeState);
+    internal void UpdateTemperatureUI(double _newTemperature) => temperatureDisplay.text = _newTemperature.ToString();
+    internal void UpdateHumidityUI(double _newHumidity) => humidityDisplay.text = _newHumidity.ToString();
+    internal void UpdateMotionStateUI(bool _activeState) => motionSensorButton.SetUI(_activeState);
+    internal void UpdatePresenceUI(bool _activeState) => atHomeSlideButton.SetUI(_activeState);
+    internal void UpdateSleepStateSensorUI(bool _activeState) => dayTimeSlideButton.SetUI(_activeState);
+    internal void UpdateDoorStateSensorUI(bool _activeState) => doorUnlockedButton.SetUI(_activeState);
+    internal void UpdateRoomLightStateUI(bool _activeState) => toggleRoomLightButton.SetUI(_activeState);
+    internal void UpdateOutsideLightStateUI(bool _activeState) => toggleOutSideLightButton.SetUI(_activeState);
         
 
     void OnContactDelta(Vector2 _contactPosition)

@@ -5,6 +5,7 @@ using Facebook.Unity;
 
 [RequireComponent(typeof(Authoo))]
 [RequireComponent(typeof(App2Device))]
+[RequireComponent(typeof(UiManager))]
 public class MainManager : MonoBehaviour
 {
     
@@ -15,9 +16,11 @@ public class MainManager : MonoBehaviour
 
     [SerializeField] private Authoo functionAuthorizer;
     [SerializeField] private App2Device app2Device;
+    [SerializeField] private UiManager uiManager;
     internal AccessToken aToken = null; //to cache the access tokens
-    internal Dictionary<string, TelemetryDataPoint<object>> telemetryDevicesDict = new Dictionary<string, TelemetryDataPoint<object>>();
+    internal Dictionary<string, TelemetryDataPoint<dynamic>> telemetryDevicesDict = new Dictionary<string, TelemetryDataPoint<dynamic>>();
     public float telemetryRequestInterval = 4f;
+
     void Awake ()
     {
         DontDestroyOnLoad(this.gameObject); //peserve acrossscenes
@@ -26,6 +29,9 @@ public class MainManager : MonoBehaviour
         }
         if (app2Device == null){
             app2Device = GameObject.FindObjectOfType<App2Device>();
+        }
+        if (uiManager == null){
+            uiManager = GameObject.FindObjectOfType<UiManager>();
         }
 
         
@@ -49,22 +55,31 @@ public class MainManager : MonoBehaviour
                     functionAuthorizer.GetSetDeviceData(_telemetryData.Value.deviceId);
                 }
                 //then alter on screen telemetry here
+                uiManager.UpdateTemperatureUI(telemetryDevicesDict[Messsages.mytemperaturesensor].property2);
+                uiManager.UpdateHumidityUI(telemetryDevicesDict[Messsages.myhumiditysensor].property2);
+                uiManager.UpdateMotionStateUI(telemetryDevicesDict[Messsages.mymotionsensor].property2);
+                // bool presence = telemetryDevicesDict[Messsages.mymotionsensor].Misc == Messsages.homeMode;
+                uiManager.UpdatePresenceUI(telemetryDevicesDict[Messsages.mymotionsensor].Misc == Messsages.homeMode);
+                uiManager.UpdateSleepStateSensorUI(telemetryDevicesDict[Messsages.myrpi].Misc == Messsages.awakeMode);
+                uiManager.UpdateDoorStateSensorUI(telemetryDevicesDict[Messsages.mydoorcontroller].property2);
+                uiManager.UpdateRoomLightStateUI(telemetryDevicesDict[Messsages.mylightsensor1].property2);
+                uiManager.UpdateOutsideLightStateUI(telemetryDevicesDict[Messsages.mylightsensor2].property2);
             }
             yield return new WaitForSeconds(telemetryRequestInterval);
         }
     }
 
-    private void Update() { //main update logic of the app
-        if (functionAuthorizer.currentAuthUser != null && telemetryDevicesDict.Count != 0){
-            //firstly request for device telemetry
-            foreach (var _telemetryData in telemetryDevicesDict)
-            {
-                //request for device data, the dictionary is also updated within functionAuthorizer and not here
-                functionAuthorizer.GetSetDeviceData(_telemetryData.Value.deviceId);
-            }
-            //then alter on screen telemetry here
-        }
-    }
+    // private void Update() { //main update logic of the app
+    //     if (functionAuthorizer.currentAuthUser != null && telemetryDevicesDict.Count != 0){
+    //         //firstly request for device telemetry
+    //         foreach (var _telemetryData in telemetryDevicesDict)
+    //         {
+    //             //request for device data, the dictionary is also updated within functionAuthorizer and not here
+    //             functionAuthorizer.GetSetDeviceData(_telemetryData.Value.deviceId);
+    //         }
+    //         //then alter on screen telemetry here
+    //     }
+    // }
 
     //this is where are concern ourselves with when user reaches the login page
     public void FBlogin()   //called from facebook login scene button 

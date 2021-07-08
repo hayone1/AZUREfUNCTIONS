@@ -40,7 +40,7 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
         if (PlayerPrefs.GetInt(Messsages.NewUser, 1) == 0){ //if its not a new user
             //get the existing data of devices from file
             string _storedDevicesInfoString = PlayerPrefs.GetString(Messsages.devicesInfoString);
-            mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<Dictionary<string, TelemetryData>>(_storedDevicesInfoString);
+            mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<dynamic>(_storedDevicesInfoString);
             // the main thing needed from this class here really is the stored Devicesinfo
             //if its a new user, the Uicontroller automatically directs user to get started Page
 
@@ -127,7 +127,7 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
         if (msg.Contains("Etag"))
         {  //if the message received is the telemetry devices dictionary information class
         try{
-            mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<Dictionary<string, TelemetryData>>(msg);
+            mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<dynamic>(msg);
             //now I've gotten the dictionary
         }
         catch (Exception e){

@@ -10,9 +10,9 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public class InputElement : GroupElement
     {
-        protected readonly Dictionary<string, TelemetryData> InputJson;
+        protected readonly Dictionary<string, object> InputJson;
 
-        public InputElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
+        public InputElement(Dictionary<string, object> json, Element parent) : base(json, parent)
         {
             InputJson = json.GetDic("input");
         }

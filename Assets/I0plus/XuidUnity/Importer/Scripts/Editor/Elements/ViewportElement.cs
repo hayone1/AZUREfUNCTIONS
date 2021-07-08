@@ -13,11 +13,11 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public sealed class ViewportElement : GroupElement
     {
-        private readonly Dictionary<string, TelemetryData> _contentJson;
-        private readonly Dictionary<string, TelemetryData> _scrollRectJson;
+        private readonly Dictionary<string, object> _contentJson;
+        private readonly Dictionary<string, object> _scrollRectJson;
         private Element _parentElement;
 
-        public ViewportElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent, true)
+        public ViewportElement(Dictionary<string, object> json, Element parent) : base(json, parent, true)
         {
             _scrollRectJson = json.GetDic("scroll_rect");
             _contentJson = json.GetDic("content");

@@ -9,10 +9,14 @@ using DG.Tweening;
 public class UiToggleControl : Selectable, IUIControl
 {
     #region for toggle buttons
+    public string _deviceID;   //the device ID associated with the control, there should be a more flexible way to do this
+
     public string _methodName;   //thhe method to be invoked by this selectable
     public string _methodPayload = "1";   //the method arguement just use one for the sake of passing arguement
     public string _deviceName = "RaspberryPi";   //the device(controller) on which the method is invoked
     public string methodName{get{return _methodName;} set{_methodName = value;}}   //thhe method to be invoked by this selectable
+    public string deviceID{get{return _deviceID;} set{_deviceID = value;}}   //thhe method to be invoked by this selectable
+
     public string methodPayload{get; set;} = "1";    //the method arguement just use one for the sake of passing arguement
     public string deviceName{get; set;} = "RaspberryPi";   //the device(controller) on which the method is invoked
     [SerializeField] UiManager uiManager;

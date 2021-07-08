@@ -10,9 +10,9 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public sealed class TextElement : Element
     {
-        private readonly Dictionary<string, TelemetryData> _textJson;
+        private readonly Dictionary<string, object> _textJson;
 
-        public TextElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
+        public TextElement(Dictionary<string, object> json, Element parent) : base(json, parent)
         {
             _textJson = json.GetDic("text");
         }

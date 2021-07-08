@@ -8,7 +8,7 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public sealed class RectElement : Element
     {
-        public RectElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
+        public RectElement(Dictionary<string, object> json, Element parent) : base(json, parent)
         {
         }
 

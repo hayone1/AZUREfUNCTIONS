@@ -11,9 +11,9 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public sealed class ScrollbarElement : GroupElement
     {
-        private readonly Dictionary<string, TelemetryData> _scrollbarJson;
+        private readonly Dictionary<string, object> _scrollbarJson;
 
-        public ScrollbarElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
+        public ScrollbarElement(Dictionary<string, object> json, Element parent) : base(json, parent)
         {
             _scrollbarJson = json.GetDic("scrollbar");
         }

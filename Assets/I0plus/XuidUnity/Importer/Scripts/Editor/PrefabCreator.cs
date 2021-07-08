@@ -34,7 +34,7 @@ namespace I0plus.XduiUnity.Importer.Editor
         }
 
         public void Create(ref GameObject targetObject, RenderContext renderContext,
-            Dictionary<string, TelemetryData> rootJson)
+            Dictionary<string, object> rootJson)
         {
             if (EditorApplication.isPlaying) EditorApplication.isPlaying = false;
 
@@ -126,7 +126,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             foreach (var method in methods) method.Invoke(null, new object[] {go});
         }
 
-        public void Validation(Dictionary<string, TelemetryData> info)
+        public void Validation(Dictionary<string, object> info)
         {
             var version = info.Get("version");
             if (!Versions.Contains(version))

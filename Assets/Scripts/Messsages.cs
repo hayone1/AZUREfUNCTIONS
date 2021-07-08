@@ -41,6 +41,21 @@ public static class Messsages
     public const string ConsciousnessControl = "ConsciousnessControl";  //toggle between daytime and sleepTime mode
     public const string UserDetails = "UserDetails";  //toggle between daytime and sleepTime mode
     public const string TelemetryFunctions = "TelemetryFunctions";  //toggle between daytime and sleepTime mode
+    #endregion
+    #region hardcoded deviceIDs, there should generally be a way to store this from the telemetry classes
+    public const string myrpi = "myrpi";  //toggle between daytime and sleepTime mode
+    public const string myard1 = "myard1";  //toggle between daytime and sleepTime mode
+    public const string myard2 = "myard2";  //toggle between daytime and sleepTime mode
+    public const string mytemperaturesensor = "mytemperaturesensor";  //toggle between daytime and sleepTime mode
+    public const string myhumiditysensor = "myhumiditysensor";  //toggle between daytime and sleepTime mode
+    public const string mydoorcontroller = "mydoorcontroller";  //toggle between daytime and sleepTime mode
+    public const string mymotionsensor = "mymotionsensor";  //toggle between daytime and sleepTime mode
+    public const string mylightsensor1 = "mylightsensor1";  //toggle between daytime and sleepTime mode
+    public const string mylightsensor2 = "mylightsensor2";  //toggle between daytime and sleepTime mode
+    public const string awayMode = "awayMode";
+    public const string homeMode = "homeMode";
+    public const string sleepMode = "sleepMode";
+    public const string awakeMode = "awakeMode";
 
     #endregion
     

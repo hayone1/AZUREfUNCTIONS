@@ -13,18 +13,18 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public class GroupElement : Element
     {
-        protected readonly Dictionary<string, TelemetryData> CanvasGroup;
+        protected readonly Dictionary<string, object> CanvasGroup;
         protected readonly List<object> ComponentsJson;
-        protected readonly Dictionary<string, TelemetryData> ContentSizeFitterJson;
+        protected readonly Dictionary<string, object> ContentSizeFitterJson;
 
         protected readonly List<Element> Elements;
         protected readonly string FillColorJson;
-        protected readonly Dictionary<string, TelemetryData> LayoutGroupJson;
-        protected readonly Dictionary<string, TelemetryData> MaskJson;
-        protected readonly Dictionary<string, TelemetryData> ScrollRectJson;
+        protected readonly Dictionary<string, object> LayoutGroupJson;
+        protected readonly Dictionary<string, object> MaskJson;
+        protected readonly Dictionary<string, object> ScrollRectJson;
         protected bool? RectMask2D;
 
-        public GroupElement(Dictionary<string, TelemetryData> json, Element parent, bool resetStretch = false) : base(json,
+        public GroupElement(Dictionary<string, object> json, Element parent, bool resetStretch = false) : base(json,
             parent)
         {
             Elements = new List<Element>();
@@ -32,7 +32,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             if (jsonElements != null)
                 foreach (var jsonElement in jsonElements)
                 {
-                    var elem = ElementFactory.Generate(jsonElement as Dictionary<string, TelemetryData>, this);
+                    var elem = ElementFactory.Generate(jsonElement as Dictionary<string, object>, this);
                     if (elem != null)
                         Elements.Add(elem);
                 }

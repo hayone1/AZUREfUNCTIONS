@@ -208,9 +208,9 @@ namespace MiniJSON
                 }
             }
 
-            private Dictionary<string, TelemetryData> ParseObject()
+            private Dictionary<string, object> ParseObject()
             {
-                var table = new Dictionary<string, TelemetryData>();
+                var table = new Dictionary<string, object>();
 
                 // ditch opening brace
                 json.Read();

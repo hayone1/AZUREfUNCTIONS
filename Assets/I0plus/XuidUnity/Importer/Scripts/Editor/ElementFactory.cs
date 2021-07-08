@@ -10,8 +10,8 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public static class ElementFactory
     {
-        private static readonly Dictionary<string, Func<Dictionary<string, TelemetryData>, Element, Element>> Generator =
-            new Dictionary<string, Func<Dictionary<string, TelemetryData>, Element, Element>>
+        private static readonly Dictionary<string, Func<Dictionary<string, object>, Element, Element>> Generator =
+            new Dictionary<string, Func<Dictionary<string, object>, Element, Element>>
             {
                 {"Image", (d, p) => new ImageElement(d, p)},
                 {"Mask", (d, p) => new MaskElement(d, p)},
@@ -31,7 +31,7 @@ namespace I0plus.XduiUnity.Importer.Editor
                 {"Instance", (d, p) => new InstanceElement(d, p)}
             };
 
-        public static Element Generate(Dictionary<string, TelemetryData> json, Element parent)
+        public static Element Generate(Dictionary<string, object> json, Element parent)
         {
             var type = json.Get("type");
             if (type == null || !Generator.ContainsKey(type))

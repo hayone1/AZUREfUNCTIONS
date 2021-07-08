@@ -10,9 +10,9 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public sealed class SliderElement : GroupElement
     {
-        private readonly Dictionary<string, TelemetryData> _sliderJson;
+        private readonly Dictionary<string, object> _sliderJson;
 
-        public SliderElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
+        public SliderElement(Dictionary<string, object> json, Element parent) : base(json, parent)
         {
             _sliderJson = json.GetDic("slider");
         }

@@ -11,9 +11,9 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public class ButtonElement : GroupElement
     {
-        protected readonly Dictionary<string, TelemetryData> ButtonJson;
+        protected readonly Dictionary<string, object> ButtonJson;
 
-        public ButtonElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
+        public ButtonElement(Dictionary<string, object> json, Element parent) : base(json, parent)
         {
             ButtonJson = json.GetDic("button");
         }

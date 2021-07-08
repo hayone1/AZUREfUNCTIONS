@@ -87,7 +87,7 @@ public class Authoo : MonoBehaviour
       Debug.Log("Telemetry receive Completed content: " + response.Content);
       Debug.Log("Telemetry receive Completed Data: " + response.Data);
       //this is what is received when the table is queried
-      TelemetryDataPoint<object> receivedTelemetry = JsonConvert.DeserializeObject<TelemetryDataPoint<object>>(response.Data as string);
+      TelemetryDataPoint<dynamic> receivedTelemetry = JsonConvert.DeserializeObject<dynamic>(response.Data as string);
       
       //very crucial code
       customMqtt.mainManager.telemetryDevicesDict[receivedTelemetry.deviceId] = receivedTelemetry;

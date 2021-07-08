@@ -10,9 +10,9 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public sealed class ToggleElement : GroupElement
     {
-        private readonly Dictionary<string, TelemetryData> _toggleJson;
+        private readonly Dictionary<string, object> _toggleJson;
 
-        public ToggleElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
+        public ToggleElement(Dictionary<string, object> json, Element parent) : base(json, parent)
         {
             _toggleJson = json.GetDic("toggle");
         }
