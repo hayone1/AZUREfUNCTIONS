@@ -11,9 +11,9 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public sealed class TextMeshProElement : Element
     {
-        private readonly Dictionary<string, object> _textJson;
+        private readonly Dictionary<string, TelemetryData> _textJson;
 
-        public TextMeshProElement(Dictionary<string, object> json, Element parent) : base(json, parent)
+        public TextMeshProElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
         {
             _textJson = json.GetDic("text");
         }

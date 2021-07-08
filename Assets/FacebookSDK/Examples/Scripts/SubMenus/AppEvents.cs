@@ -32,7 +32,7 @@ namespace Facebook.Unity.Example
                 FB.LogAppEvent(
                     AppEventName.UnlockedAchievement,
                     null,
-                    new Dictionary<string, object>()
+                    new Dictionary<string, TelemetryData>()
                     {
                         { AppEventParameterName.Description, "Clicked 'Log AppEvent' button" }
                     });

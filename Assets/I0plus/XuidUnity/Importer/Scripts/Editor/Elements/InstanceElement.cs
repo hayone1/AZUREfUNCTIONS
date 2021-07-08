@@ -7,9 +7,9 @@ namespace I0plus.XduiUnity.Importer.Editor
     public class InstanceElement : Element
     {
         private readonly string master;
-        private Dictionary<string, object> instanceRootJson;
+        private Dictionary<string, TelemetryData> instanceRootJson;
 
-        public InstanceElement(Dictionary<string, object> json, Element parent) : base(json, parent)
+        public InstanceElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
         {
             master = json.Get("master");
             instanceRootJson = json;

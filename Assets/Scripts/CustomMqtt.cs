@@ -14,44 +14,36 @@ using System.Linq;
 using Newtonsoft.Json;
 using System.Text;
 using System.Net;
-using RaspberryDevices;
 using UnityEngine.UI;
 
 public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
 {
     // Start is called before the first frame update
-    MainManager mainManager;    //the app main manager
+    internal MainManager mainManager;    //the app main manager
     private List<string> eventMessages = new List<string>();
     private bool updateUI = false;
     public string GetDeviceIDTopic = "Rpi/DeviceID";    //to get the device ID, device is the publisher
     public string IDRequestControlTopic = "Rpi/Request/Control"; //to request that device gives over control to phone 
-    internal Dictionary<string, TelemetryDataPoint> telemetryDevicesDict = new Dictionary<string, TelemetryDataPoint>();
+    // internal Dictionary<string, TelemetryData> mainManager.telemetryDevicesDict = new Dictionary<string, TelemetryData>();
 
     [SerializeField] private UiManager uiManager;   //set in editor
 
+    protected override void Awake() {
+        base.Awake();
+        if (mainManager == null){
+            mainManager = GameObject.FindObjectOfType<MainManager>();
+        }
+    }
 
-    //a public broker address fiel exists in base cass 
-    //the topic where the rpi device ID is sent
-    // public string _brokerAddress
-    // {
-    //     get {return brokerAddress;}
-    //     set {brokerAddress = value;}
-    // }
-    // public string _brokerPort
-    // {
-    //     get {return brokerAddress;}
-    //     set {brokerAddress = value;}
-    // }
-    // public bool _isEncrypted
-    // {
-    //     get {return isEncrypted;}
-    //     set {isEncrypted = value;}
-    // }
-    protected override void Start()
+    protected override void Start() //this is where new user back-end code really starts
     {
-        if (PlayerPrefs.HasKey(Messsages.NewUser) && PlayerPrefs.GetInt(Messsages.NewUser, 1) == 0){
+        if (PlayerPrefs.GetInt(Messsages.NewUser, 1) == 0){ //if its not a new user
             //get the existing data of devices from file
-            telemetryDevicesDict = JsonConvert.DeserializeObject<Dictionary<string, TelemetryDataPoint>>((PlayerPrefs.GetString(Messsages.devicesInfoString)) as string);
+            string _storedDevicesInfoString = PlayerPrefs.GetString(Messsages.devicesInfoString);
+            mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<Dictionary<string, TelemetryData>>(_storedDevicesInfoString);
+            // the main thing needed from this class here really is the stored Devicesinfo
+            //if its a new user, the Uicontroller automatically directs user to get started Page
+
         }
     }
     public void SetBroker(string _brokerAddress = null, string _brokerPort = null)
@@ -88,19 +80,21 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
 
 
     }
-    public void RequestDeviceControl()  //called from ui
+    public void RequestDeviceControl() 
+     //called from ui in device discovery page, hmm... but shouldnt this indicate the device discovered? Oh well
     //request control of the device by sending my client_ID
     //this page wont appear until after user is loggen in
     {
         if (Application.platform == RuntimePlatform.WindowsEditor){
-            string testID = "myTestID";
+            string testID = "ID:myTestID";
             client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes(testID), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             Debug.Log("client ID sent to device: " + testID);
         }
         else if (mainManager.aToken != null){
-            client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes(mainManager.aToken.UserId), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes("ID:"+mainManager.aToken.UserId), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             Debug.Log("client ID sent to device: " + mainManager.aToken.UserId);
-            //after this the device sends the (connectionestablished)telemetry data points for each device
+            //after this the device sends the (connectionestablished)telemetry data points dictionary for each device
+            // and DecodeMessage looks for Etag in the received telemetry to confirm receiving telemetry
         }
         else{
             Debug.LogError("Facebook token not yet assigned, please sign in");
@@ -110,7 +104,7 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
         //the device will thud proceed to send the phone the edited classes injected with client id
     }
 
-    protected override void SubscribeTopics()
+    protected override void SubscribeTopics()   //automatically done when connected
     {
         //subscribe to topics is called from base.OnConnected afte phone conects to broker
         client.Subscribe(new string[] { GetDeviceIDTopic }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
@@ -131,29 +125,29 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
         string msg = System.Text.Encoding.UTF8.GetString(message);
         Debug.Log("Received: " + msg);
         if (msg.Contains("Etag"))
-        {  //if the message received is the telemetry devices information class
-            var telemetryDevice = JsonConvert.DeserializeObject<TelemetryDataPoint>(msg);
-            if (telemetryDevicesDict.ContainsKey(telemetryDevice.deviceId))
-            {
-                telemetryDevicesDict[telemetryDevice.deviceId] = telemetryDevice;
-            }
-            else
-            {
-                telemetryDevicesDict.Add(telemetryDevice.deviceId, telemetryDevice);
-            }
+        {  //if the message received is the telemetry devices dictionary information class
+        try{
+            mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<Dictionary<string, TelemetryData>>(msg);
+            //now I've gotten the dictionary
+        }
+        catch (Exception e){
+            Debug.LogError("wrong deserialization occured: " + e.Message);
+        }
 
             //save info on devices
-            string json = JsonConvert.SerializeObject(telemetryDevicesDict, Formatting.Indented);
+            // string json = JsonConvert.SerializeObject(mainManager.telemetryDevicesDict, Formatting.Indented);
             //hmmm very smart way to store the device info rather than using things like writeallfiles
-            PlayerPrefs.SetString(Messsages.devicesInfoString, json);
+            PlayerPrefs.SetString(Messsages.devicesInfoString, msg);
+            //when the client receives the messages with QOS1, the device is notified
+            //then sends ControlAccessGranted string which this devices is listening for and will respond to in this if-else sectino
         }
-        else if (msg.Contains("deviceType:"))
+        else if (msg.Contains("deviceType:"))   //initial broadcast by device
         { //if it is just the device ID
           //visually show device found based on device ID
             //allow user click the device image and bring up dialog of adding device(prsent continuous)
             if (msg.Contains(Messsages.RpiDeviceFound)){    //if it is a raspberry device that is found
-                uiManager.AddDeviceUI(Messsages.RpiDeviceFound);    //show the ui
-                //the next step is for the user to click on the found device to callRequestDeviceControl();
+                uiManager.AddDeviceUI(Messsages.RpiDeviceFound);    //show the ui in the discover devices
+                //control falls the UI for the user to click on the found device to call RequestDeviceControl() here;
             }
             else if (msg.Contains(Messsages.CameraDeviceFound)){
                 uiManager.AddDeviceUI(Messsages.CameraDeviceFound);    //show the ui
@@ -163,13 +157,16 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
         }
         else if (msg.Contains("ControlAccessGranted")){
             //show that connection is successful this should happen after completely receiving edited device telemetry 
-            if (telemetryDevicesDict != null){
+            if (mainManager.telemetryDevicesDict != null){  //that is we authenticated without error
                 uiManager.RemoveDeviceUI();
                 uiManager.MovetoFocus(uiManager.DeviceAddedSuccessfully);  //indicate to user a successful set-up of device
-                PlayerPrefs.SetInt(Messsages.NewUser, 0);   //user is no longer new
+
+                PlayerPrefs.SetInt(Messsages.NewUser, 0);   //user is no longer new important pience of code
+
                 //after this point, device store info on its devices and begins to send telemetry to cloud
                 //take user to main menu after delay
                 StartCoroutine(GenericExecuteAfterDelay<RectTransform>(uiManager.MovetoFocus, uiManager.generalUiDelay, uiManager.HomePage));
+                //at this point the logic merges to the main app logic again and client program can start requesting telemetry
                 // Invoke(uiManager.MoveToFocus(Messsages.PageHomePage), uiManager.generalUiDelay);//take user to home page
             }
             else{
@@ -191,6 +188,7 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
     protected override void OnConnectionFailed(string errorMessage)
     {
         base.OnConnectionFailed(errorMessage);
+
         // Debug.Log("CONNECTION FAILED! " + errorMessage);
     }
     protected override void OnDisconnected()

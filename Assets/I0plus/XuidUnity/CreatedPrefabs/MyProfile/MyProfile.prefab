@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 6963450120511020722}
   - component: {fileID: 6440915689660151224}
   m_Layer: 5
-  m_Name: tiara
+  m_Name: PlaceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,12 +123,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6500668005889019074}
-  m_RootOrder: 22
+  m_Father: {fileID: 3339351698381363216}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31333333, y: 0.23152709}
   m_AnchorMax: {x: 0.31333333, y: 0.23152709}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -43.153225, y: 42.94028}
   m_SizeDelta: {x: 351, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772901013028339594
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 2401245137799544153}
   - component: {fileID: 198922871475526265}
   m_Layer: 5
-  m_Name: Rectangle 436
+  m_Name: EmailField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -502,7 +502,9 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8406413633995191383}
+  - {fileID: 1041219234857526446}
   m_Father: {fileID: 6500668005889019074}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -884,6 +886,99 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2570751548613603045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1041219234857526446}
+  - component: {fileID: 7547002135634824320}
+  - component: {fileID: 8250523543912168518}
+  - component: {fileID: 4567850106283580632}
+  m_Layer: 5
+  m_Name: ActualText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1041219234857526446
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570751548613603045}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3339351698381363216}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.31333333, y: 0.23152709}
+  m_AnchorMax: {x: 0.31333333, y: 0.23152709}
+  m_AnchoredPosition: {x: -43.153225, y: 42.94028}
+  m_SizeDelta: {x: 351, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7547002135634824320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570751548613603045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd08cd1c8f2e47c8a1490f437a277230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guid: fcbb3f42-609d-4cbd-827a-be66683ac702
+--- !u!222 &8250523543912168518
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570751548613603045}
+  m_CullTransparentMesh: 1
+--- !u!114 &4567850106283580632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570751548613603045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e9c1f60d0edd418448231e39f2250e10, type: 3}
+    m_FontSize: 42
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 42
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: tiara.rig@xyz.com
 --- !u!1 &2667429145937826482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1607,7 @@ RectTransform:
   - {fileID: 6375628982089161257}
   - {fileID: 775821803220407593}
   m_Father: {fileID: 6500668005889019074}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.50133336, y: 0.094827585}
   m_AnchorMax: {x: 0.50133336, y: 0.094827585}
@@ -1686,7 +1781,7 @@ GameObject:
   - component: {fileID: 7841126839607223061}
   - component: {fileID: 3457785732726860866}
   m_Layer: 5
-  m_Name: Page11 _ My profile _ edit
+  m_Name: MyProfile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1725,7 +1820,6 @@ RectTransform:
   - {fileID: 1492812249959369636}
   - {fileID: 2726735360236391410}
   - {fileID: 3339351698381363216}
-  - {fileID: 8406413633995191383}
   - {fileID: 4114785265817507531}
   - {fileID: 6976744932521993542}
   - {fileID: 1199777087778191725}
@@ -1820,7 +1914,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6500668005889019074}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.20012315}
   m_AnchorMax: {x: 0.5, y: 0.20012315}
@@ -2140,7 +2234,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6500668005889019074}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.66533333, y: 0.11268473}
   m_AnchorMax: {x: 0.66533333, y: 0.11268473}
@@ -2495,7 +2589,7 @@ RectTransform:
   m_Children:
   - {fileID: 3050833975044497980}
   m_Father: {fileID: 6500668005889019074}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.728, y: 0.113336645}
   m_AnchorMax: {x: 0.728, y: 0.113336645}

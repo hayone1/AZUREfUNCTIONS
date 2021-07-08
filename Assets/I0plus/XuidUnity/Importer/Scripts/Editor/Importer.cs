@@ -380,32 +380,32 @@ namespace I0plus.XduiUnity.Importer.Editor
             // Item1: prefab name dependensyチェック用
             // Item2: file path
             // Item3: json data
-            var layoutJsons = new List<Tuple<string, string, Dictionary<string, object>>>();
+            var layoutJsons = new List<Tuple<string, string, Dictionary<string, TelemetryData>>>();
             foreach (var layoutFilePath in importLayoutFilePaths)
             {
                 var prefabName = GetPrefabName(layoutFilePath);
                 // Load JSON
                 var jsonText = File.ReadAllText(layoutFilePath);
-                var json = Json.Deserialize(jsonText) as Dictionary<string, object>;
+                var json = Json.Deserialize(jsonText) as Dictionary<string, TelemetryData>;
                 layoutJsons.Add(
-                    new Tuple<string, string, Dictionary<string, object>>(prefabName, layoutFilePath, json));
+                    new Tuple<string, string, Dictionary<string, TelemetryData>>(prefabName, layoutFilePath, json));
             }
 
             // コンバートする順番を決める
             layoutJsons.Sort((a, b) =>
             {
-                List<object> GetDependency(Dictionary<string, object> json)
+                List<object> GetDependency(Dictionary<string, TelemetryData> json)
                 {
                     return json.GetDic("info")?.GetArray("dependency");
                 }
 
-                int GetDependencyCount(Dictionary<string, object> json)
+                int GetDependencyCount(Dictionary<string, TelemetryData> json)
                 {
                     var dr = GetDependency(json);
                     return dr?.Count ?? 0;
                 }
 
-                bool Check(string name, Dictionary<string, object> json)
+                bool Check(string name, Dictionary<string, TelemetryData> json)
                 {
                     var nameList = GetDependency(json);
                     if (nameList == null) return false;
@@ -459,7 +459,7 @@ namespace I0plus.XduiUnity.Importer.Editor
 
                     // Load JSON
                     var jsonText = File.ReadAllText(layoutFilePath);
-                    var json = Json.Deserialize(jsonText) as Dictionary<string, object>;
+                    var json = Json.Deserialize(jsonText) as Dictionary<string, TelemetryData>;
                     //var info = json.GetDic("info");
                     //Validation(info);
                     var rootJson = json.GetDic("root");

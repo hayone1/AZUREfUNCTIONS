@@ -8,7 +8,7 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public sealed class MaskElement : ImageElement
     {
-        public MaskElement(Dictionary<string, object> json, Element parent) : base(json, parent)
+        public MaskElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
         {
         }
     }

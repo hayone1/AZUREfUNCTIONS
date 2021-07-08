@@ -210,6 +210,7 @@ namespace M2MqttUnity
         /// </summary>
         protected virtual void Update()
         {
+            //I'm not sure why I shouldn't just process the events as they come rather than queuing them
             ProcessMqttEvents();
         }
 
@@ -249,6 +250,8 @@ namespace M2MqttUnity
 
         private void OnMqttMessageReceived(object sender, MqttMsgPublishEventArgs msg)
         {
+            //method becomes callback to mqttPublishMessageReceived in connect Ienumerator
+            //the messages are processed in update
             frontMessageQueue.Add(msg);
         }
 
@@ -317,7 +320,7 @@ namespace M2MqttUnity
             if (client.IsConnected)
             {
                 client.ConnectionClosed += OnMqttConnectionClosed;
-                // register to message received 
+                // when client is connectrd, register to message received 
                 client.MqttMsgPublishReceived += OnMqttMessageReceived;
                 mqttClientConnected = true;
                 OnConnected();

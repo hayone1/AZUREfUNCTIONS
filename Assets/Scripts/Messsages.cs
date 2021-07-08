@@ -19,7 +19,7 @@ public static class Messsages
     public const string PageMyProfile = "MyProfile";
     #endregion
     public const string NewUser = "NewUser";
-    public const string RpiDeviceFound = "RpiDeviceFound";
+    public const string RpiDeviceFound = "microcomputer";
     public const string CameraDeviceFound = "CameraDeviceFound";
     public const string devicesInfoString = "devicesInfoString";  //key in playerprefs for storage of device info
 
@@ -39,6 +39,8 @@ public static class Messsages
     public const string DoorControl = "DoorControl";    //to open and close door
     public const string PresenceControl = "PresenceControl";    //to switch btw home and away mode
     public const string ConsciousnessControl = "ConsciousnessControl";  //toggle between daytime and sleepTime mode
+    public const string UserDetails = "UserDetails";  //toggle between daytime and sleepTime mode
+    public const string TelemetryFunctions = "TelemetryFunctions";  //toggle between daytime and sleepTime mode
 
     #endregion
     

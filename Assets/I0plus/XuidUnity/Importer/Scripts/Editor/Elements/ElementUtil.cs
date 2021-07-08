@@ -31,7 +31,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             }
         }
 
-        private static TextAnchor? GetChildAlignment(Dictionary<string, object> layoutJson)
+        private static TextAnchor? GetChildAlignment(Dictionary<string, TelemetryData> layoutJson)
         {
             if (!layoutJson.ContainsKey("child_alignment")) return null;
             var childAlignment = layoutJson.Get("child_alignment");
@@ -71,7 +71,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             return null;
         }
 
-        public static SpriteState CreateSpriteState(Dictionary<string, object> spriteStateJson,
+        public static SpriteState CreateSpriteState(Dictionary<string, TelemetryData> spriteStateJson,
             List<Tuple<GameObject, Element>> children, ref Dictionary<GameObject, bool> deleteObjects)
         {
             var spriteState = new SpriteState();
@@ -243,7 +243,7 @@ namespace I0plus.XduiUnity.Importer.Editor
         }
 
         public static void SetupContentSizeFitter(GameObject go,
-            Dictionary<string, object> param)
+            Dictionary<string, TelemetryData> param)
         {
             if (param == null)
             {
@@ -390,7 +390,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             }
         }
 
-        public static void SetupAddComponent(GameObject go, Dictionary<string, object> json)
+        public static void SetupAddComponent(GameObject go, Dictionary<string, TelemetryData> json)
         {
             if (json == null) return;
             var typeName = json.Get("type_name");
@@ -432,7 +432,7 @@ namespace I0plus.XduiUnity.Importer.Editor
              */
 #if ODIN_INSPECTOR
             if (json == null) return;
-            foreach (Dictionary<string, object> componentJson in json)
+            foreach (Dictionary<string, TelemetryData> componentJson in json)
             {
                 var typeName = componentJson.Get("type");
                 if (typeName == null) continue;
@@ -447,7 +447,7 @@ namespace I0plus.XduiUnity.Importer.Editor
                 var component = go.AddComponent(componentType);
 
                 var properties = componentJson.Get<List<object>>("properties");
-                foreach (Dictionary<string, object> property in properties)
+                foreach (Dictionary<string, TelemetryData> property in properties)
                 {
                     SetProperty(componentType, component, property.Get("path"), property.Get<List<object>>("values"));
                 }
@@ -455,7 +455,7 @@ namespace I0plus.XduiUnity.Importer.Editor
 #endif
         }
 
-        public static void SetupLayoutGroupParam(GameObject go, Dictionary<string, object> layoutJson)
+        public static void SetupLayoutGroupParam(GameObject go, Dictionary<string, TelemetryData> layoutJson)
         {
             var method = "";
             if (layoutJson.ContainsKey("method")) method = layoutJson.Get("method");
@@ -541,7 +541,7 @@ namespace I0plus.XduiUnity.Importer.Editor
         }
 
         public static void SetupGridLayoutGroupParam(GameObject go,
-            Dictionary<string, object> layoutJson)
+            Dictionary<string, TelemetryData> layoutJson)
         {
             if (layoutJson == null)
             {
@@ -617,7 +617,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             layoutGroup.startCorner = GridLayoutGroup.Corner.UpperLeft;
         }
 
-        public static void SetupLayoutElement(GameObject go, Dictionary<string, object> layoutElement)
+        public static void SetupLayoutElement(GameObject go, Dictionary<string, TelemetryData> layoutElement)
         {
             if (layoutElement == null) return;
             var componentLayoutElement = GetOrAddComponent<LayoutElement>(go);
@@ -638,7 +638,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             if (ignoreLayout != null) componentLayoutElement.ignoreLayout = ignoreLayout.Value;
         }
 
-        public static void SetupLayoutGroup(GameObject go, Dictionary<string, object> layout)
+        public static void SetupLayoutGroup(GameObject go, Dictionary<string, TelemetryData> layout)
         {
             if (layout == null)
             {
@@ -671,7 +671,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             }
         }
 
-        public static void SetupCanvasGroup(GameObject go, Dictionary<string, object> canvasGroup)
+        public static void SetupCanvasGroup(GameObject go, Dictionary<string, TelemetryData> canvasGroup)
         {
             if (canvasGroup != null) GetOrAddComponent<CanvasGroup>(go);
         }
@@ -689,7 +689,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             component.enabled = param.Value;
         }
 
-        public static void SetupMask(GameObject go, Dictionary<string, object> param)
+        public static void SetupMask(GameObject go, Dictionary<string, TelemetryData> param)
         {
             if (param != null)
             {
@@ -708,7 +708,7 @@ namespace I0plus.XduiUnity.Importer.Editor
         /// <param name="goContent"></param>
         /// <param name="scrollRect"></param>
         public static void SetupScrollRect(GameObject goViewport, GameObject goContent,
-            Dictionary<string, object> scrollRect)
+            Dictionary<string, TelemetryData> scrollRect)
         {
             if (scrollRect == null) return;
 
@@ -728,7 +728,7 @@ namespace I0plus.XduiUnity.Importer.Editor
             //TODO:さがしているところではクラス名をつかってさがしていない
         }
 
-        public static void SetupRectTransform(GameObject root, Dictionary<string, object> rectTransformJson)
+        public static void SetupRectTransform(GameObject root, Dictionary<string, TelemetryData> rectTransformJson)
         {
             var rect = root.GetComponent<RectTransform>();
 

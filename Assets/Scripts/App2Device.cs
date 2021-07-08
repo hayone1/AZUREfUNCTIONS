@@ -4,10 +4,11 @@ using RESTClient;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class App2Device : MonoBehaviour {
   [Header("Azure Functions")]
-  public string Account;
+  public string Account = Messsages.TelemetryFunctions;
   public string FunctionName = "HttpTrigger3";
   public string FunctionCode = "";
   private string route = "";
@@ -23,24 +24,25 @@ public class App2Device : MonoBehaviour {
   // Authoo Authorizer;
   // string currentMethod; //string that hold the curent device method to be invoked
   UiManager uiManager;
+  IUIControl currentControlSelectable;  //for manipulating the ui selectable controls
 
-  // Use this for initialization
+  private void Awake() {
+    if (uiManager == null){
+      uiManager = GameObject.FindObjectOfType<UiManager>();  //get reference
+
+    }
+  }
+
+  // Use this for initialization of HTTP trigger 3
   internal void Initialize(AzureFunctionClient _functionClient) {
     //this method is called from Authoo after successful login
     if (string.IsNullOrEmpty(Account)) {
       Debug.LogError("Azure Functions Account name required.");
       return;
     }
-    // if (Authorizer == null){
-    //   Authorizer = GameObject.FindObjectOfType<Authoo>();  //get reference
-    // }
-    if (uiManager == null){
-      uiManager = GameObject.FindObjectOfType<UiManager>();  //get reference
-
-    }
-
-    // client = AzureFunctionClient.Create(Account);
+    //azure function HTTP trrigger3
     azureFunction = new AzureFunction(FunctionName, _functionClient, FunctionCode);
+    //get back to Authoo for logic continuation
   }
 
   public void TappedGet() {
@@ -52,12 +54,13 @@ public class App2Device : MonoBehaviour {
     StartCoroutine(azureFunction.Get<string>(CommandCompleted, route, queryParams));
   }
 
-  public void InvokeCommandToCloud(UiSlideControl _slideControl) {  //tapped post method
+  public void InvokeCommandToCloud(IUIControl _controlObject) {  //tapped post method
   // will be called from ui controller
+  currentControlSelectable = _controlObject;
+    MethodName = _controlObject.methodName;
+    payload = _controlObject.methodPayload;
+    deviceName = _controlObject.deviceName;
     QueryParams queryParams = new QueryParams();
-    MethodName = _slideControl.methodName;
-    payload = _slideControl.methodPayload;
-    deviceName = _slideControl.deviceName;
     queryParams.AddParam("MethodName", MethodName); //add arguement
     queryParams.AddParam("Payload", payload); //add arguement
     queryParams.AddParam("deviceName", deviceName); //add arguement
@@ -73,11 +76,18 @@ public class App2Device : MonoBehaviour {
   private void CommandCompleted(IRestResponse<string> response) {
     if (response.IsError) {
       Debug.LogError("Request error: " + response.StatusCode);
-      //simple put iconsback to original mode, dont show error
-      // uiManager.SwapIconPositions();
+      uiManager.SwapIconPositions(currentControlSelectable);  //swap back to original position to indicate failure
+      return;
+    }
+    if (response.Content.Contains("400")){
+      Debug.LogError("invalid request: " + response.StatusCode);
+       uiManager.SwapIconPositions(currentControlSelectable);  //swap back to original position to indicate failure
       return;
     }
     Debug.Log("Completed: " + response.Content);
+    if (response.Content.Contains("200")){
+      //we bless God
+    }
     //change ui behaviour to indicate success here
   }
 

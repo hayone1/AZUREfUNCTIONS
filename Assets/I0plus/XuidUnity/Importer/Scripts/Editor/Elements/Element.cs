@@ -12,17 +12,17 @@ namespace I0plus.XduiUnity.Importer.Editor
     public abstract class Element
     {
         protected readonly string Layer;
-        protected readonly Dictionary<string, object> LayoutElementJson;
+        protected readonly Dictionary<string, TelemetryData> LayoutElementJson;
         protected readonly List<object> ParsedNames;
 
-        protected readonly Dictionary<string, object> RectTransformJson;
+        protected readonly Dictionary<string, TelemetryData> RectTransformJson;
         protected bool? Active;
         protected string Guid;
 
         protected string name;
         protected Element Parent;
 
-        protected Element(Dictionary<string, object> json, Element parent)
+        protected Element(Dictionary<string, TelemetryData> json, Element parent)
         {
             Parent = parent;
             Guid = json.Get("guid");

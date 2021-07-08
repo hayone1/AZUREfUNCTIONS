@@ -10,10 +10,10 @@ namespace I0plus.XduiUnity.Importer.Editor
     /// </summary>
     public class ImageElement : Element
     {
-        public readonly Dictionary<string, object> ComponentJson; // be parent component
-        protected readonly Dictionary<string, object> ImageJson;
+        public readonly Dictionary<string, TelemetryData> ComponentJson; // be parent component
+        protected readonly Dictionary<string, TelemetryData> ImageJson;
 
-        public ImageElement(Dictionary<string, object> json, Element parent) : base(json, parent)
+        public ImageElement(Dictionary<string, TelemetryData> json, Element parent) : base(json, parent)
         {
             ComponentJson = json.GetDic("component");
             ImageJson = json.GetDic("image");

@@ -399,12 +399,12 @@ namespace I0plus.XduiUnity.Importer.Editor
         public static string SliceSprite(string outputPath, string sourceImagePath)
         {
             // オプションJSONの読み込み
-            Dictionary<string, object> json = null;
+            Dictionary<string, TelemetryData> json = null;
             var imageJsonPath = sourceImagePath + ".json";
             if (File.Exists(imageJsonPath))
             {
                 var text = File.ReadAllText(imageJsonPath);
-                json = Json.Deserialize(text) as Dictionary<string, object>;
+                json = Json.Deserialize(text) as Dictionary<string, TelemetryData>;
             }
 
             // PNGを読み込み、同じサイズのTextureを作成する
