@@ -49,6 +49,7 @@ public class MainManager : MonoBehaviour
 
             if (functionAuthorizer.currentAuthUser != null && telemetryDevicesDict.Count != 0){
                 //firstly request for device telemetry
+                Debug.Log("Fetching Telemetry");
                 foreach (var _telemetryData in telemetryDevicesDict)
                 {
                     //request for device data, the dictionary is also updated within functionAuthorizer and not here
@@ -59,9 +60,10 @@ public class MainManager : MonoBehaviour
                 uiManager.UpdateHumidityUI(telemetryDevicesDict[Messsages.myhumiditysensor].property2);
                 uiManager.UpdateMotionStateUI(telemetryDevicesDict[Messsages.mymotionsensor].property2);
                 // bool presence = telemetryDevicesDict[Messsages.mymotionsensor].Misc == Messsages.homeMode;
-                uiManager.UpdatePresenceUI(telemetryDevicesDict[Messsages.mymotionsensor].Misc == Messsages.homeMode);
-                uiManager.UpdateSleepStateSensorUI(telemetryDevicesDict[Messsages.myrpi].Misc == Messsages.awakeMode);
+                uiManager.UpdatePresenceUI(telemetryDevicesDict[Messsages.mymotionsensor].Misc.ToString().Contains(Messsages.homeMode));
+                uiManager.UpdateSleepStateSensorUI(telemetryDevicesDict[Messsages.myrpi].Misc.ToString().Contains(Messsages.awakeMode));
                 uiManager.UpdateDoorStateSensorUI(telemetryDevicesDict[Messsages.mydoorcontroller].property2);
+                uiManager.UpdateDoorStateSensorUI2(telemetryDevicesDict[Messsages.mydoorcontroller].property2);
                 uiManager.UpdateRoomLightStateUI(telemetryDevicesDict[Messsages.mylightsensor1].property2);
                 uiManager.UpdateOutsideLightStateUI(telemetryDevicesDict[Messsages.mylightsensor2].property2);
             }

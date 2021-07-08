@@ -371,6 +371,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 152652919}
+  _deviceID: 
   _methodName: ToggleLight
   _methodPayload: mylightsensor1
   _deviceName: RaspberryPi
@@ -478,6 +479,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 158251442}
+  _deviceID: 
   _methodName: ToggleSleepMode
   _methodPayload: 1
   _deviceName: RaspberryPi
@@ -1410,7 +1412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2709b8700d65e46bc14cefee36582a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FunctionAuthorizer: {fileID: 425444542}
+  functionAuthorizer: {fileID: 0}
+  app2Device: {fileID: 0}
+  uiManager: {fileID: 0}
+  telemetryRequestInterval: 4
 --- !u!114 &425444541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1436,12 +1441,15 @@ MonoBehaviour:
   MyProfile: {fileID: 1841485407}
   AddRpiButton: {fileID: 297987159}
   AddCameraButton: {fileID: 425192943}
-  doorOpenIcon: {fileID: 0}
-  doorClosedIcon: {fileID: 0}
-  homeModeIcon: {fileID: 0}
-  awayModeIcon: {fileID: 0}
-  dayTimeIcon: {fileID: 0}
-  sleepTimeIcon: {fileID: 0}
+  temperatureDisplay: {fileID: 1521206693}
+  humidityDisplay: {fileID: 1740834893}
+  motionSensorButton: {fileID: 1622634405}
+  atHomeSlideButton: {fileID: 1536468176}
+  dayTimeSlideButton: {fileID: 916625139}
+  lockDoorSlideButton: {fileID: 1162106686}
+  doorUnlockedButton: {fileID: 1090786621}
+  toggleRoomLightButton: {fileID: 152652918}
+  toggleOutSideLightButton: {fileID: 974241115}
   ActuateAction:
     m_Name: Actuate
     m_Type: 0
@@ -2043,6 +2051,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 614858953}
+  _deviceID: 
   _methodName: TogglePresenceMode
   _methodPayload: 1
   _deviceName: RaspberryPi
@@ -2799,6 +2808,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 916625140}
+  _deviceID: 
   _methodName: ToggleSleepMode
   _methodPayload: 1
   _deviceName: RaspberryPi
@@ -3011,6 +3021,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 974241116}
+  _deviceID: 
   _methodName: ToggleLight
   _methodPayload: mylightsensor2
   _deviceName: RaspberryPi
@@ -3216,6 +3227,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1090786622}
+  _deviceID: 
   _methodName: UnlockDoor
   _methodPayload: 1
   _deviceName: RaspberryPi
@@ -3466,6 +3478,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1162106687}
+  _deviceID: 
   _methodName: UnlockDoor
   _methodPayload: 0
   _deviceName: RaspberryPi
@@ -4873,6 +4886,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3080756177598373688, guid: 8a5c2bb54ec7a924498681a0c8fe6597, type: 3}
+      propertyPath: m_Name
+      value: TemperatureDisplay
+      objectReference: {fileID: 0}
     - target: {fileID: 3274702847141871597, guid: 8a5c2bb54ec7a924498681a0c8fe6597, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 534
@@ -5254,6 +5271,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6441978780242482228, guid: 8a5c2bb54ec7a924498681a0c8fe6597, type: 3}
   m_PrefabInstance: {fileID: 1521206679}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1521206693 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8785656723729197752, guid: 8a5c2bb54ec7a924498681a0c8fe6597, type: 3}
+  m_PrefabInstance: {fileID: 1521206679}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1521206694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1854317105621685545, guid: 8a5c2bb54ec7a924498681a0c8fe6597, type: 3}
@@ -5650,6 +5678,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1536468173}
+  _deviceID: 
   _methodName: TogglePresenceMode
   _methodPayload: 1
   _deviceName: RaspberryPi
@@ -5829,7 +5858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5383817518873765153, guid: 31d2e91a19e25ed4cac2972eca31f4f9, type: 3}
       propertyPath: m_Name
-      value: ToggleButton
+      value: ToggleMotionSensor
       objectReference: {fileID: 0}
     - target: {fileID: 5464548726312441576, guid: 31d2e91a19e25ed4cac2972eca31f4f9, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6407,6 +6436,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1622634402}
+  _deviceID: 
   _methodName: UnlockDoor
   _methodPayload: 1
   _deviceName: RaspberryPi
@@ -6459,6 +6489,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1622634397}
+  _deviceID: 
   _methodName: ToggleMotionSensor
   _methodPayload: 1
   _deviceName: RaspberryPi
@@ -6532,7 +6563,7 @@ GameObject:
   - component: {fileID: 1740834893}
   - component: {fileID: 1740834892}
   m_Layer: 5
-  m_Name: "20\xB0C (1)"
+  m_Name: HumidityDIsplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

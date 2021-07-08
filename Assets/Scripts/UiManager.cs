@@ -25,30 +25,32 @@ public class UiManager: MonoBehaviour
     [SerializeField] private Button AddCameraButton;
     #endregion
     #region Outdoor control
-    [SerializeField] internal GameObject doorOpenIcon;
-    [SerializeField] internal Vector3 doorOpenIconPos{get;private set;}
-    [SerializeField] internal GameObject doorClosedIcon;
-    [SerializeField] internal Vector3 doorClosedIconPos{get;private set;}
-    [SerializeField] internal GameObject homeModeIcon;
-    [SerializeField] internal Vector3 homeModeIconPos{get;private set;}
-    [SerializeField] internal GameObject awayModeIcon;
-    [SerializeField] internal Vector3 awayModeIconPos{get;private set;}
-    [SerializeField] internal GameObject dayTimeIcon;
-    [SerializeField] internal Vector3 dayTimeIconPos{get;private set;}
-    [SerializeField] internal GameObject sleepTimeIcon;
-    [SerializeField] internal Vector3 sleepTimeIconPos{get;private set;}
+    // [SerializeField] internal GameObject doorOpenIcon;
+    // [SerializeField] internal Vector3 doorOpenIconPos{get;private set;}
+    // [SerializeField] internal GameObject doorClosedIcon;
+    // [SerializeField] internal Vector3 doorClosedIconPos{get;private set;}
+    // [SerializeField] internal GameObject homeModeIcon;
+    // [SerializeField] internal Vector3 homeModeIconPos{get;private set;}
+    // [SerializeField] internal GameObject awayModeIcon;
+    // [SerializeField] internal Vector3 awayModeIconPos{get;private set;}
+    // [SerializeField] internal GameObject dayTimeIcon;
+    // [SerializeField] internal Vector3 dayTimeIconPos{get;private set;}
+    // [SerializeField] internal GameObject sleepTimeIcon;
+    // [SerializeField] internal Vector3 sleepTimeIconPos{get;private set;}
     #endregion
 
     #region telemetry display ui
     [SerializeField] internal Text temperatureDisplay;
     [SerializeField] internal Text humidityDisplay;
-    [SerializeField] internal IUIControl motionSensorButton;
+    [SerializeField] internal UiToggleControl motionSensorButton;
     //for theslide guinternal ys, they automatically refernce their twin
-    [SerializeField] internal IUIControl atHomeSlideButton;
-    [SerializeField] internal IUIControl dayTimeSlideButton;
-    [SerializeField] internal IUIControl doorUnlockedButton;
-    [SerializeField] internal IUIControl toggleRoomLightButton;
-    [SerializeField] internal IUIControl toggleOutSideLightButton;
+    [SerializeField] internal UiSlideControl atHomeSlideButton;
+    [SerializeField] internal UiSlideControl dayTimeSlideButton;
+    [SerializeField] internal UiSlideControl lockDoorSlideButton;
+    // [SerializeField] internal UiButtonControl doorUnlockedButton;
+    [SerializeField] internal UiButtonControl doorUnlockedButton;
+    [SerializeField] internal UiToggleControl toggleRoomLightButton;
+    [SerializeField] internal UiToggleControl toggleOutSideLightButton;
     #endregion
 
     #region Ui input fields
@@ -59,12 +61,12 @@ public class UiManager: MonoBehaviour
     
     private void Start() {  //this is the place to start reading control from
         //get the starting positins of the icons
-        doorOpenIconPos = doorOpenIcon.transform.position;
-        doorClosedIconPos = doorClosedIcon.transform.position;
-        homeModeIconPos = homeModeIcon.transform.position;
-        awayModeIconPos = awayModeIcon.transform.position;
-        dayTimeIconPos = dayTimeIcon.transform.position;
-        sleepTimeIconPos = sleepTimeIcon.transform.position;
+        // doorOpenIconPos = doorOpenIcon.transform.position;
+        // doorClosedIconPos = doorClosedIcon.transform.position;
+        // homeModeIconPos = homeModeIcon.transform.position;
+        // awayModeIconPos = awayModeIcon.transform.position;
+        // dayTimeIconPos = dayTimeIcon.transform.position;
+        // sleepTimeIconPos = sleepTimeIcon.transform.position;
 
         //generally this should also be disabled from the editor
         AddRpiButton.interactable = false;
@@ -130,6 +132,7 @@ public class UiManager: MonoBehaviour
     internal void UpdatePresenceUI(bool _activeState) => atHomeSlideButton.SetUI(_activeState);
     internal void UpdateSleepStateSensorUI(bool _activeState) => dayTimeSlideButton.SetUI(_activeState);
     internal void UpdateDoorStateSensorUI(bool _activeState) => doorUnlockedButton.SetUI(_activeState);
+    internal void UpdateDoorStateSensorUI2(bool _activeState) => lockDoorSlideButton.SetUI(_activeState);
     internal void UpdateRoomLightStateUI(bool _activeState) => toggleRoomLightButton.SetUI(_activeState);
     internal void UpdateOutsideLightStateUI(bool _activeState) => toggleOutSideLightButton.SetUI(_activeState);
         
