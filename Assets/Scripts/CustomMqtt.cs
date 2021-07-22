@@ -40,7 +40,8 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
         if (PlayerPrefs.GetInt(Messsages.NewUser, 1) == 0){ //if its not a new user
             //get the existing data of devices from file
             string _storedDevicesInfoString = PlayerPrefs.GetString(Messsages.devicesInfoString);
-            mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<dynamic>(_storedDevicesInfoString);
+            mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<Dictionary<string, TelemetryDataPoint<dynamic>>>(_storedDevicesInfoString);
+            Debug.Log("stored dict looks partition like: " + mainManager.telemetryDevicesDict[Messsages.myard1].RowKey);
             // the main thing needed from this class here really is the stored Devicesinfo
             //if its a new user, the Uicontroller automatically directs user to get started Page
 
@@ -86,12 +87,16 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
     //this page wont appear until after user is loggen in
     {
         if (Application.platform == RuntimePlatform.WindowsEditor){
-            string testID = "ID:myTestID";
+            //send user ID and phone number
+            string testID = $"ID:{mainManager.profileDetailsManager.UserName};{mainManager.profileDetailsManager.PhoneNumber}";
             client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes(testID), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             Debug.Log("client ID sent to device: " + testID);
         }
         else if (mainManager.aToken != null){
-            client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes("ID:"+mainManager.aToken.UserId), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            //send user ID(gotten from facebook) and phone number the rpi knows how to interpret this
+            //the user is must be the unique one gotten from the authorization token to ensure random acounts cannot access the device
+            string _ID = $"ID:{mainManager.aToken.UserId};{mainManager.profileDetailsManager.PhoneNumber}";
+            client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes(_ID), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             Debug.Log("client ID sent to device: " + mainManager.aToken.UserId);
             //after this the device sends the (connectionestablished)telemetry data points dictionary for each device
             // and DecodeMessage looks for Etag in the received telemetry to confirm receiving telemetry
@@ -127,7 +132,9 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
         if (msg.Contains("Etag"))
         {  //if the message received is the telemetry devices dictionary information class
         try{
-            mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<dynamic>(msg);
+            Dictionary<string, object> ok = JsonConvert.DeserializeObject<Dictionary<string, object>>(msg);
+            Debug.Log("the object dictionary deserialized");
+            mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<Dictionary<string, TelemetryDataPoint<dynamic>>>(msg);
             //now I've gotten the dictionary
         }
         catch (Exception e){

@@ -1,3 +1,4 @@
+using System;
 using Azure.Functions;
 using Azure.AppServices;
 using RESTClient;
@@ -43,19 +44,20 @@ public class Authoo : MonoBehaviour
       if (app2Device == null){
           app2Device = GameObject.FindObjectOfType<App2Device>();
       }
-        
+      
+      functionClient = AzureFunctionClient.Create(Account);
         // serviceClient = new AppServiceClient(url);  //iniialize
     }
 
     public void Initialize(string _accessToken = null)  //after user logs in, authorize with azure functions
     {
         //firstly get facebook token
-        functionClient = AzureFunctionClient.Create(Account);
-        if (Application.platform == RuntimePlatform.WindowsEditor) {  //use the Fake accessToken
-            Debug.Log("I used thefake access token"); //which needs to be renewed from the graph api site for testing
-            StartCoroutine(functionClient.LoginWithFacebook(access_token, OnInitializeCompleted));
-        }
-        else if (!string.IsNullOrEmpty(_accessToken) || _accessToken != ""){  //use the real accessToken
+        // functionClient = AzureFunctionClient.Create(Account);
+        // if (Application.platform == RuntimePlatform.WindowsEditor) {  //use the Fake accessToken
+        //     Debug.Log("I used thefake access token"); //which needs to be renewed from the graph api site for testing
+        //     StartCoroutine(functionClient.LoginWithFacebook(access_token, OnInitializeCompleted));
+        // }
+        if (!string.IsNullOrEmpty(_accessToken) || _accessToken != ""){  //use the real accessToken
             Debug.Log("I used the real access token" + _accessToken);
             StartCoroutine(functionClient.LoginWithFacebook(_accessToken, OnInitializeCompleted));
         }
@@ -69,10 +71,13 @@ public class Authoo : MonoBehaviour
 
         QueryParams queryParams = new QueryParams();
         //add specific device info
-        var _telemetry = (TelemetryData)customMqtt.mainManager.telemetryDevicesDict[deviceID];
-        queryParams.AddParam("partition", _telemetry.PartitionKey); 
-        queryParams.AddParam("row", _telemetry.RowKey);
-
+        TelemetryDataPoint<dynamic> _telemetry = customMqtt.mainManager.telemetryDevicesDict[deviceID];
+        queryParams.AddParam("partition", customMqtt.mainManager.telemetryDevicesDict[deviceID].PartitionKey); 
+        queryParams.AddParam("row", customMqtt.mainManager.telemetryDevicesDict[deviceID].RowKey);
+        // queryParams.AddParam("partition", "doorsensor"); 
+        // queryParams.AddParam("row", "doorsens123");
+        // Debug.Log($" receivedID is {deviceID} \n stored ard1 dict looks row like: {customMqtt.mainManager.telemetryDevicesDict[Messsages.myard1].RowKey}\n but app is showing {customMqtt.mainManager.telemetryDevicesDict[deviceID].RowKey}");
+        Debug.Log($"query params are {queryParams.ToString()}");
 
         StartCoroutine(azureFunction.Post<string>(OnTelemetryReceived, route, queryParams));
 
@@ -87,10 +92,19 @@ public class Authoo : MonoBehaviour
       Debug.Log("Telemetry receive Completed content: " + response.Content);
       Debug.Log("Telemetry receive Completed Data: " + response.Data);
       //this is what is received when the table is queried
-      TelemetryDataPoint<dynamic> receivedTelemetry = JsonConvert.DeserializeObject<dynamic>(response.Data as string);
+      try{
+        
+        // TelemetryDataPoint<dynamic> receivedTelemetry = new TelemetryDataPoint<dynamic>();
+        var jsonResult = JsonConvert.DeserializeObject(response.Content).ToString();
+        TelemetryDataPoint<dynamic> receivedTelemetry = JsonConvert.DeserializeObject<TelemetryDataPoint<dynamic>>(jsonResult);
+        // var receivedTelemetry = JsonConvert.DeserializeObject<TelemetryDataPoint<dynamic>>(response.Content);
+        customMqtt.mainManager.telemetryDevicesDict[receivedTelemetry.deviceId] = receivedTelemetry;
+      }
+      catch (Exception e){
+        Debug.LogWarning("unexpected message received " + e.Message);
+      }
       
       //very crucial code
-      customMqtt.mainManager.telemetryDevicesDict[receivedTelemetry.deviceId] = receivedTelemetry;
 
       //update the devices info in Ui
     // DisplayName.text = TrimQuotes(response.Content);

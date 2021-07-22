@@ -8,9 +8,9 @@ using Newtonsoft.Json;
 public class ProfileDetails : MonoBehaviour
 {
     //user profile submission takes user to login page
-    [SerializeField] private InputField UserName;
-    [SerializeField] private InputField PhoneNumber;
-    [SerializeField] private InputField Email;
+    [SerializeField] internal InputField UserName;
+    [SerializeField] internal InputField PhoneNumber;
+    [SerializeField] internal InputField Email;
     [SerializeField] private Button saveProfileButton;
     [SerializeField] private Text NameDisplay;
 

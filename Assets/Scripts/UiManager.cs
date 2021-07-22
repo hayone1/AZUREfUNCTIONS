@@ -126,7 +126,7 @@ public class UiManager: MonoBehaviour
     }
     #endregion
 
-    internal void UpdateTemperatureUI(double _newTemperature) => temperatureDisplay.text = _newTemperature.ToString();
+    internal void UpdateTemperatureUI(double _newTemperature) => temperatureDisplay.text = _newTemperature.ToString() + "°C";
     internal void UpdateHumidityUI(double _newHumidity) => humidityDisplay.text = _newHumidity.ToString();
     internal void UpdateMotionStateUI(bool _activeState) => motionSensorButton.SetUI(_activeState);
     internal void UpdatePresenceUI(bool _activeState) => atHomeSlideButton.SetUI(_activeState);

@@ -6,6 +6,7 @@ using Facebook.Unity;
 [RequireComponent(typeof(Authoo))]
 [RequireComponent(typeof(App2Device))]
 [RequireComponent(typeof(UiManager))]
+[RequireComponent(typeof(ProfileDetails))]
 public class MainManager : MonoBehaviour
 {
     
@@ -17,6 +18,7 @@ public class MainManager : MonoBehaviour
     [SerializeField] private Authoo functionAuthorizer;
     [SerializeField] private App2Device app2Device;
     [SerializeField] private UiManager uiManager;
+    [SerializeField] internal ProfileDetails profileDetailsManager;
     internal AccessToken aToken = null; //to cache the access tokens
     internal Dictionary<string, TelemetryDataPoint<dynamic>> telemetryDevicesDict = new Dictionary<string, TelemetryDataPoint<dynamic>>();
     public float telemetryRequestInterval = 4f;
@@ -32,6 +34,9 @@ public class MainManager : MonoBehaviour
         }
         if (uiManager == null){
             uiManager = GameObject.FindObjectOfType<UiManager>();
+        }
+        if (profileDetailsManager == null){
+            profileDetailsManager = GameObject.FindObjectOfType<ProfileDetails>();
         }
 
         
@@ -60,10 +65,10 @@ public class MainManager : MonoBehaviour
                 uiManager.UpdateHumidityUI(telemetryDevicesDict[Messsages.myhumiditysensor].property2);
                 uiManager.UpdateMotionStateUI(telemetryDevicesDict[Messsages.mymotionsensor].property2);
                 // bool presence = telemetryDevicesDict[Messsages.mymotionsensor].Misc == Messsages.homeMode;
-                uiManager.UpdatePresenceUI(telemetryDevicesDict[Messsages.mymotionsensor].Misc.ToString().Contains(Messsages.homeMode));
-                uiManager.UpdateSleepStateSensorUI(telemetryDevicesDict[Messsages.myrpi].Misc.ToString().Contains(Messsages.awakeMode));
-                uiManager.UpdateDoorStateSensorUI(telemetryDevicesDict[Messsages.mydoorcontroller].property2);
-                uiManager.UpdateDoorStateSensorUI2(telemetryDevicesDict[Messsages.mydoorcontroller].property2);
+                uiManager.UpdatePresenceUI(telemetryDevicesDict[Messsages.mymotionsensor].Misc == Messsages.homeMode);
+                uiManager.UpdateSleepStateSensorUI(telemetryDevicesDict[Messsages.myrpi].Misc == Messsages.awakeMode);
+                uiManager.UpdateDoorStateSensorUI(telemetryDevicesDict[Messsages.mydoorcontroller].property2 > 0);
+                uiManager.UpdateDoorStateSensorUI2(telemetryDevicesDict[Messsages.mydoorcontroller].property2 > 0);
                 uiManager.UpdateRoomLightStateUI(telemetryDevicesDict[Messsages.mylightsensor1].property2);
                 uiManager.UpdateOutsideLightStateUI(telemetryDevicesDict[Messsages.mylightsensor2].property2);
             }

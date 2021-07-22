@@ -44,6 +44,7 @@ public class App2Device : MonoBehaviour {
     azureFunction = new AzureFunction(FunctionName, _functionClient, FunctionCode);
     //get back to Authoo for logic continuation
   }
+  
 
   public void TappedGet() {
     QueryParams queryParams = new QueryParams();

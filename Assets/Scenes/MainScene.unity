@@ -266,7 +266,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: name@xyz.com
+  m_Text: +234
 --- !u!222 &117295985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -371,7 +371,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 152652919}
-  _deviceID: 
+  _deviceID: mylightsensor1
   _methodName: ToggleLight
   _methodPayload: mylightsensor1
   _deviceName: RaspberryPi
@@ -1334,8 +1334,8 @@ GameObject:
   - component: {fileID: 425444540}
   - component: {fileID: 425444541}
   - component: {fileID: 425444542}
-  - component: {fileID: 425444543}
   - component: {fileID: 425444544}
+  - component: {fileID: 425444543}
   - component: {fileID: 425444545}
   m_Layer: 0
   m_Name: EventSystem
@@ -1412,9 +1412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2709b8700d65e46bc14cefee36582a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  functionAuthorizer: {fileID: 0}
-  app2Device: {fileID: 0}
-  uiManager: {fileID: 0}
+  functionAuthorizer: {fileID: 425444542}
+  app2Device: {fileID: 425444544}
+  uiManager: {fileID: 425444541}
+  profileDetailsManager: {fileID: 0}
   telemetryRequestInterval: 4
 --- !u!114 &425444541
 MonoBehaviour:
@@ -1471,17 +1472,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id_token: 482385619494176
-  access_token: EAAEfUTvYrMcBAGJiEcmCxgFo3WSxA7EKv6Mw5v7IHpOIuA9Ij8rhVpw0D93Ws5QtKRWAhCiRbgza9cxMOsOZAHQn0KuTz2shCwFLeTEO8BRqRUK4z0rZB1h75H8x2RNlFJ7pKZC2irvTrR0DUjDKH4DCx0h1ZCTFrZBeG6cAo9lSVbjjhqu56GjDT82QZA0JW5WXaZAHFw8RWKWUawhdglw
+  access_token: EAAEfUTvYrMcBAC1WD56FftPUw8LyWyRxPwQ3QwNq8kKpyvNzSKHge7ZCDXHPmuVLvZBZCANte9gIkFM6377tNaKZA7UPQZC7vUUL4M76pxkS7745kZAbNkHGMp9Y7ZCE6erUqzZAHeqymhp1K8MPGn6k7vaCsTqpm7bZAk5T5XF7ZCf4eVkI5mghs69ocRPJkzfY2DKIX7SDUTZBx2YkvJwbPEqJFVNUvmZAWlZCDSxlIHbM7eKNB3bKWUiLo
   Account: TelemetryFunctions
   FunctionName: HttpTrigger2
-  FunctionCode: 
-  url: https://telemetryfunctions.azurewebsites.net/.auth/login/facebook
-  route: /.auth/login/facebook
-  deviceType: doorsensor
-  DeviceUniqueID: doorsens123
+  FunctionCode: '{"partition": "doorcontroller", "row": "doorcontrol123myTestID"}'
+  url: https://telemetryfunctions.azurewebsites.net/api/HttpTrigger2
+  route: 
+  deviceType: doorcontroller
+  DeviceUniqueID: doorcontrol123myTestID
   uiManager: {fileID: 425444541}
   customMqtt: {fileID: 425444543}
-  app2Device: {fileID: 0}
+  app2Device: {fileID: 425444544}
 --- !u!114 &425444543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,7 +1495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edabf5202407de943afb89d8a625972d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokerAddress: localhost
+  brokerAddress: 192.168.8.100
   brokerPort: 1883
   isEncrypted: 0
   connectionDelay: 500
@@ -1519,7 +1520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Account: TelemetryFunctions
   FunctionName: HttpTrigger3
-  FunctionCode: 
+  FunctionCode: '{"MethodName": "ToggleLight", "payload": "mylightsensor1"}'
 --- !u!114 &425444545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2209,7 +2210,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterLimit: 12
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -2219,7 +2220,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: +23412345678
+  m_Text: +234
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -3021,7 +3022,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 974241116}
-  _deviceID: 
+  _deviceID: mylightsensor2
   _methodName: ToggleLight
   _methodPayload: mylightsensor2
   _deviceName: RaspberryPi
@@ -4289,7 +4290,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: +23412345678
+  m_Text: +234
 --- !u!222 &1373924344
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6489,7 +6490,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1622634397}
-  _deviceID: 
+  _deviceID: mymotionsensor
   _methodName: ToggleMotionSensor
   _methodPayload: 1
   _deviceName: RaspberryPi
