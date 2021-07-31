@@ -4,6 +4,7 @@
 using Azure.AppServices;
 using RESTClient;
 using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 using System;
 
@@ -113,7 +114,7 @@ namespace Azure.Functions {
       if (!string.IsNullOrEmpty(key)) {
         request.AddQueryParam(PARAM_CODE, key, true);
       }
-      yield return request.Request.Send();
+      yield return request.Request.SendWebRequest();
       if (typeof(T) == typeof(string)) {
         request.GetText(callback);
       } else {
@@ -130,7 +131,7 @@ namespace Azure.Functions {
       if (body != null) {
         request.AddBody(body);
       }
-      yield return request.Request.Send();
+      yield return request.Request.SendWebRequest();
       if (typeof(T) == typeof(string)) {
         request.GetText(callback);
       } else {
@@ -147,7 +148,7 @@ namespace Azure.Functions {
       if (!string.IsNullOrEmpty(key)) {
         request.AddQueryParam(PARAM_CODE, key, true);
       }
-      yield return request.Request.Send();
+      yield return request.Request.SendWebRequest();
       request.ParseJsonArray<T>(callback);
     }
 
@@ -159,7 +160,7 @@ namespace Azure.Functions {
       if (body != null) {
         request.AddBody(body);
       }
-      yield return request.Request.Send();
+      yield return request.Request.SendWebRequest();
       request.ParseJsonArray<T>(callback);
     }
 

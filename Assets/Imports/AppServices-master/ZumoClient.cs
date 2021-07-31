@@ -11,6 +11,9 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using System.Net;
 using UnityEngine.Assertions;
+using System.Threading;
+using Cysharp.Threading.Tasks;
+using UnityEngine.Networking;
 
 namespace Azure.AppServices {
   public abstract class ZumoClient : RestClient, IZumoClient {
@@ -38,7 +41,7 @@ namespace Azure.AppServices {
       string url = AppServiceAuthenticationProviderUrl(AuthenticationProvider.Twitter);
       var request = new ZumoRequest(url, Method.POST, false);
       request.AddBodyAccessTokenSecret(accessToken, accessTokenSecret);
-      yield return request.Request.Send();
+      yield return request.Request.SendWebRequest();
       LoggedIn(request, callback);
     }
 
@@ -49,7 +52,17 @@ namespace Azure.AppServices {
       string url = AppServiceAuthenticationProviderUrl(AuthenticationProvider.Google);
       var request = new ZumoRequest(url, Method.POST, false);
       request.AddBodyAccessTokenId(accessToken, idToken);
-      yield return request.Request.Send();
+      yield return request.Request.SendWebRequest();
+      LoggedIn(request, callback);
+    }
+    //playing around with unitask
+    public async UniTaskVoid LoginWithGoogleAsync(string accessToken, string idToken, Action<IRestResponse<AuthenticatedUser>> callback = null) {
+      string url = AppServiceAuthenticationProviderUrl(AuthenticationProvider.Google);
+      var request = new ZumoRequest(url, Method.POST, false);
+      request.AddBodyAccessTokenId(accessToken, idToken);
+      var timeoutController = new TimeoutController(); // setup to field for reuse.
+      await request.Request.SendWebRequest();
+      
       LoggedIn(request, callback);
     }
 
@@ -73,7 +86,7 @@ namespace Azure.AppServices {
       string url = AppServiceAuthenticationProviderUrl(authenticationProvider);
       var request = new ZumoRequest(url, Method.POST, false);
       request.AddBodyAccessToken(accessToken);
-      yield return request.Request.Send();
+      yield return request.Request.SendWebRequest();
       LoggedIn(request, callback);
     }
 
@@ -84,7 +97,7 @@ namespace Azure.AppServices {
       }
       string url = string.Format("{0}/.auth/logout", Url);
       var request = new ZumoRequest(url, Method.POST, false, User);
-      yield return request.Request.Send();
+      yield return request.Request.SendWebRequest();
       if (callback == null) {
         yield break;
       }

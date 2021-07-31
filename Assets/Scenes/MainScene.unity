@@ -1416,7 +1416,7 @@ MonoBehaviour:
   app2Device: {fileID: 425444544}
   uiManager: {fileID: 425444541}
   profileDetailsManager: {fileID: 0}
-  telemetryRequestInterval: 4
+  telemetryRequestInterval: 100
 --- !u!114 &425444541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,7 +1495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edabf5202407de943afb89d8a625972d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokerAddress: 192.168.8.100
+  brokerAddress: raspberrypi.local
+  brokerAddress1: 192.168.8.150
   brokerPort: 1883
   isEncrypted: 0
   connectionDelay: 500
@@ -2210,7 +2211,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 12
+  m_CharacterLimit: 14
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -6901,6 +6902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaveProfileButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4259540479480653755, guid: 46509eb5b8fb8214493142ec7c8eae09, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4347670347186590519, guid: 46509eb5b8fb8214493142ec7c8eae09, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7013,9 +7018,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6606740646965543991, guid: 46509eb5b8fb8214493142ec7c8eae09, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7212555736298014360, guid: 46509eb5b8fb8214493142ec7c8eae09, type: 3}
       propertyPath: m_Text
       value: Save Profile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212555736298014360, guid: 46509eb5b8fb8214493142ec7c8eae09, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8253220688135405260, guid: 46509eb5b8fb8214493142ec7c8eae09, type: 3}
       propertyPath: m_Name

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Cysharp.Threading.Tasks;
 using M2MqttUnity;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Exceptions;
@@ -22,8 +23,8 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
     internal MainManager mainManager;    //the app main manager
     private List<string> eventMessages = new List<string>();
     private bool updateUI = false;
-    public string GetDeviceIDTopic = "Rpi/DeviceID";    //to get the device ID, device is the publisher
-    public string IDRequestControlTopic = "Rpi/Request/Control"; //to request that device gives over control to phone 
+    public string GetDeviceIDTopic = "device/startup/broadcast";    //to get the device ID, device is the publisher
+    public string IDRequestControlTopic = "Rpi/Request/AuthControl"; //to request that device gives over control to phone 
     // internal Dictionary<string, TelemetryData> mainManager.telemetryDevicesDict = new Dictionary<string, TelemetryData>();
 
     [SerializeField] private UiManager uiManager;   //set in editor
@@ -88,14 +89,14 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
     {
         if (Application.platform == RuntimePlatform.WindowsEditor){
             //send user ID and phone number
-            string testID = $"ID:{mainManager.profileDetailsManager.UserName};{mainManager.profileDetailsManager.PhoneNumber}";
+            string testID = $"ID:{mainManager.profileDetailsManager.UserName.text};{mainManager.profileDetailsManager.PhoneNumber.text}";
             client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes(testID), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             Debug.Log("client ID sent to device: " + testID);
         }
         else if (mainManager.aToken != null){
             //send user ID(gotten from facebook) and phone number the rpi knows how to interpret this
             //the user is must be the unique one gotten from the authorization token to ensure random acounts cannot access the device
-            string _ID = $"ID:{mainManager.aToken.UserId};{mainManager.profileDetailsManager.PhoneNumber}";
+            string _ID = $"ID:{mainManager.aToken.UserId};{mainManager.profileDetailsManager.PhoneNumber.text}";
             client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes(_ID), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             Debug.Log("client ID sent to device: " + mainManager.aToken.UserId);
             //after this the device sends the (connectionestablished)telemetry data points dictionary for each device
@@ -132,7 +133,7 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
         if (msg.Contains("Etag"))
         {  //if the message received is the telemetry devices dictionary information class
         try{
-            Dictionary<string, object> ok = JsonConvert.DeserializeObject<Dictionary<string, object>>(msg);
+            // Dictionary<string, object> ok = JsonConvert.DeserializeObject<Dictionary<string, object>>(msg);
             Debug.Log("the object dictionary deserialized");
             mainManager.telemetryDevicesDict = JsonConvert.DeserializeObject<Dictionary<string, TelemetryDataPoint<dynamic>>>(msg);
             //now I've gotten the dictionary
@@ -171,8 +172,9 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
                 PlayerPrefs.SetInt(Messsages.NewUser, 0);   //user is no longer new important pience of code
 
                 //after this point, device store info on its devices and begins to send telemetry to cloud
-                //take user to main menu after delay
-                StartCoroutine(GenericExecuteAfterDelay<RectTransform>(uiManager.MovetoFocus, uiManager.generalUiDelay, uiManager.HomePage));
+                //take user to main menu after delay...no return value s needed for fire and forget{.Forget()}
+                // StartCoroutine(GenericExecuteAfterDelay<RectTransform>(uiManager.MovetoFocus, uiManager.generalUiDelay, uiManager.HomePage));
+                GenericExecuteAfterDelay<RectTransform>(uiManager.MovetoFocus, uiManager.generalUiDelay, uiManager.HomePage).Forget();
                 //at this point the logic merges to the main app logic again and client program can start requesting telemetry
                 // Invoke(uiManager.MoveToFocus(Messsages.PageHomePage), uiManager.generalUiDelay);//take user to home page
             }
@@ -210,8 +212,10 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
         //indicate this in ui
 
     }
-    private IEnumerator GenericExecuteAfterDelay<T>(Action<T> rev, float delay, T arg){
-        yield return new WaitForSeconds(delay);
+    private async UniTaskVoid GenericExecuteAfterDelay<T>(Action<T> rev, float delay, T arg){
+        //fire and forget
+        // yield return new WaitForSeconds(delay);
+        await UniTask.Delay(TimeSpan.FromSeconds(delay));
         rev(arg);
     }
     // void Start()

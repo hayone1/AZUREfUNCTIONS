@@ -1,7 +1,9 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Facebook.Unity;
+using Cysharp.Threading.Tasks;
 
 [RequireComponent(typeof(Authoo))]
 [RequireComponent(typeof(App2Device))]
@@ -48,10 +50,11 @@ public class MainManager : MonoBehaviour
         //     FB.ActivateApp();
         // }
     }
-    IEnumerator Start() {   //main update logic of the app used in start to allow non blocking waits
+    // IEnumerator Start() {   //main update logic of the app used in start to allow non blocking waits
+    async UniTaskVoid Start() {   //main update logic of the app used in start to allow non blocking waits
     //this method will be called along side other updates so do not fear
         while (true){
-
+            //only runs if device is authorized with Azure Function
             if (functionAuthorizer.currentAuthUser != null && telemetryDevicesDict.Count != 0){
                 //firstly request for device telemetry
                 Debug.Log("Fetching Telemetry");
@@ -72,7 +75,8 @@ public class MainManager : MonoBehaviour
                 uiManager.UpdateRoomLightStateUI(telemetryDevicesDict[Messsages.mylightsensor1].property2);
                 uiManager.UpdateOutsideLightStateUI(telemetryDevicesDict[Messsages.mylightsensor2].property2);
             }
-            yield return new WaitForSeconds(telemetryRequestInterval);
+            // yield return new WaitForSeconds(telemetryRequestInterval);
+            await UniTask.Delay(TimeSpan.FromSeconds(telemetryRequestInterval));
         }
     }
 
