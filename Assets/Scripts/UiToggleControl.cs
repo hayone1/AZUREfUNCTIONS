@@ -17,8 +17,8 @@ public class UiToggleControl : Selectable, IUIControl
     public string methodName{get{return _methodName;} set{_methodName = value;}}   //thhe method to be invoked by this selectable
     public string deviceID{get{return _deviceID;} set{_deviceID = value;}}   //thhe method to be invoked by this selectable
 
-    public string methodPayload{get; set;} = "1";    //the method arguement just use one for the sake of passing arguement
-    public string deviceName{get; set;} = "RaspberryPi";   //the device(controller) on which the method is invoked
+    public string methodPayload => _methodPayload;    //the method arguement just use one for the sake of passing arguement
+    public string deviceName => _deviceName;   //the device(controller) on which the method is invoked
     [SerializeField] UiManager uiManager;
     [SerializeField] private Text indicatorText;
     [SerializeField] private Image indicator;  //for icons with indicators
@@ -48,17 +48,21 @@ public class UiToggleControl : Selectable, IUIControl
     }
     public void ToggleUI()  //toggle to on of off state
     {
-        if (Mathf.Approximately(indicator.rectTransform.position.x, indicatorPos1.position.x)){
-            indicator.rectTransform.DOAnchorPosX(indicatorPos2.position.x, uiManager.generalUiDelay/4)
+        
+        if (Mathf.Approximately(indicator.rectTransform.anchoredPosition.x, indicatorPos1.anchoredPosition.x)){
+            indicator.rectTransform.DOAnchorPosX(indicatorPos2.anchoredPosition.x, uiManager.generalUiDelay/4)
             .OnComplete(() => indicator.color = indicatorOnColor);
+            // indicator.rectTransform.position = indicatorPos2.position;
             indicatorText.text = "ON";
+            Debug.Log("UI toggle button toggled to" + indicatorPos1.position.x);
 
 
         }
         else{
-            indicator.rectTransform.DOAnchorPosX(indicatorPos1.position.x, uiManager.generalUiDelay/4)
+            indicator.rectTransform.DOAnchorPosX(indicatorPos1.anchoredPosition.x, uiManager.generalUiDelay/4)
             .OnComplete(() => indicator.color = Color.white);   //move back to original pos
             indicatorText.text = "OFF";
+            Debug.Log("UI toggle button toggled to" + indicatorPos2.position.x);
         }
     }
     public void SetUI(bool _toggleState)
@@ -66,14 +70,16 @@ public class UiToggleControl : Selectable, IUIControl
         switch (_toggleState)
         {
             case true:
-                indicator.rectTransform.DOAnchorPosX(indicatorPos2.position.x, uiManager.generalUiDelay/4)
+                indicator.rectTransform.DOAnchorPosX(indicatorPos2.anchoredPosition.x, uiManager.generalUiDelay/4)
                 .OnComplete(() => indicator.color = indicatorOnColor);
                 indicatorText.text = "ON";
+                Debug.Log("from case: UI toggle button toggled to" + indicatorPos2.anchoredPosition.x);
                 break;
             case false:
-                indicator.rectTransform.DOAnchorPosX(indicatorPos1.position.x, uiManager.generalUiDelay/4)
+                indicator.rectTransform.DOAnchorPosX(indicatorPos1.anchoredPosition.x, uiManager.generalUiDelay/4)
                 .OnComplete(() => indicator.color = Color.white);   //move back to original pos
                 indicatorText.text = "OFF";
+                Debug.Log("from case: UI toggle button toggled to" + indicatorPos1.anchoredPosition.x);
                 break;
         }
     }

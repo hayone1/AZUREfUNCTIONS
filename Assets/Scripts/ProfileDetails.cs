@@ -13,6 +13,7 @@ public class ProfileDetails : MonoBehaviour
     [SerializeField] internal InputField Email;
     [SerializeField] private Button saveProfileButton;
     [SerializeField] private Text NameDisplay;
+    [SerializeField] private Text NameDisplayMain;
 
     (string userName, string phoneNumber, string email) UserDetails = ("test", "test", "test");
     // private Dictionary<string, string>
@@ -51,6 +52,7 @@ public class ProfileDetails : MonoBehaviour
     private void ChangeDisplayedName(string currentName)
     {
         NameDisplay.text = currentName;
+        NameDisplayMain.text = currentName;
     }
 
     

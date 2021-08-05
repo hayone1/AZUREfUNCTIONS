@@ -37,7 +37,7 @@ namespace Azure.AppServices {
       string url = ApiUrl(apiName);
       Debug.Log(httpMethod.ToString() + " custom API Request Url: " + url);
       ZumoRequest request = new ZumoRequest(url, httpMethod, true, User);
-      yield return request.Request.Send();
+      yield return request.Request.SendWebRequest();
       request.ParseJson<T>(callback);
     }
 
@@ -49,7 +49,8 @@ namespace Azure.AppServices {
       Debug.Log(httpMethod.ToString() + " custom API Request Url: " + url);
       ZumoRequest request = new ZumoRequest(url, httpMethod, true, User);
       request.AddBody<B>(body);
-      yield return request.Request.Send();
+      // yield return request.Request.Send();
+      yield return request.Request.SendWebRequest();
       request.ParseJson<T>(callback);
     }
 

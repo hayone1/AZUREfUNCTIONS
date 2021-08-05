@@ -88,15 +88,18 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
     //this page wont appear until after user is loggen in
     {
         if (Application.platform == RuntimePlatform.WindowsEditor){
-            //send user ID and phone number
-            string testID = $"ID:{mainManager.profileDetailsManager.UserName.text};{mainManager.profileDetailsManager.PhoneNumber.text}";
+            //send user email and phone number
+            string testID = $"ID:{mainManager.profileDetailsManager.Email.text};{mainManager.profileDetailsManager.PhoneNumber.text}";
             client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes(testID), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             Debug.Log("client ID sent to device: " + testID);
         }
         else if (mainManager.aToken != null){
             //send user ID(gotten from facebook) and phone number the rpi knows how to interpret this
-            //the user is must be the unique one gotten from the authorization token to ensure random acounts cannot access the device
-            string _ID = $"ID:{mainManager.aToken.UserId};{mainManager.profileDetailsManager.PhoneNumber.text}";
+            //the user id could be the unique one gotten from the authorization token to ensure random acounts cannot access the device
+            // string _ID = $"ID:{mainManager.aToken.UserId};{mainManager.profileDetailsManager.PhoneNumber.text}";
+
+            //user id could also be the user provided email which is what I went with
+            string _ID = $"ID:{mainManager.profileDetailsManager.Email.text};{mainManager.profileDetailsManager.PhoneNumber.text}";
             client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes(_ID), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
             Debug.Log("client ID sent to device: " + mainManager.aToken.UserId);
             //after this the device sends the (connectionestablished)telemetry data points dictionary for each device

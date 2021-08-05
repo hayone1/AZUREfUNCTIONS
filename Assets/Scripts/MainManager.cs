@@ -23,7 +23,7 @@ public class MainManager : MonoBehaviour
     [SerializeField] internal ProfileDetails profileDetailsManager;
     internal AccessToken aToken = null; //to cache the access tokens
     internal Dictionary<string, TelemetryDataPoint<dynamic>> telemetryDevicesDict = new Dictionary<string, TelemetryDataPoint<dynamic>>();
-    public float telemetryRequestInterval = 4f;
+    public float telemetryRequestInterval = 60f; //value set in inspector
 
     void Awake ()
     {

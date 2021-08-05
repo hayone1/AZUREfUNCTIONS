@@ -42,8 +42,8 @@ namespace M2MqttUnity
     {
         [Header("MQTT broker configuration")]
         [Tooltip("IP address or URL of the host running the broker")]
-        public string brokerAddress = "raspberrypi.local";
-        public string brokerAddress1 = "192.168.8.150";
+        public string brokerAddress1 = "raspberrypi.local";
+        public string brokerAddress = "192.168.8.150";
         // public string brokerAddress2 = "192.168.8.100";
         [Tooltip("Port where the broker accepts connections")]
         public int brokerPort = 1883;
@@ -290,10 +290,25 @@ namespace M2MqttUnity
                 }
                 catch (Exception e)
                 {
-                        client = null;
-                        Debug.LogErrorFormat("CONNECTION FAILED! {0}", e.ToString());
-                        OnConnectionFailed(e.Message);
-                        yield break;
+                    Debug.LogWarning($"Error connecting to broker as {brokerAddress}, trying {brokerAddress1}");
+                try{
+                    client = null;
+                    brokerAddress = brokerAddress1;
+                    #if (!UNITY_EDITOR && UNITY_WSA_10_0 && !ENABLE_IL2CPP)
+                    client = new MqttClient(brokerAddress,brokerPort,isEncrypted, isEncrypted ? MqttSslProtocols.SSLv3 : MqttSslProtocols.None);
+                    #else
+                    client = new MqttClient(brokerAddress, brokerPort, isEncrypted, null, null, isEncrypted ? MqttSslProtocols.SSLv3 : MqttSslProtocols.None);
+                    //System.Security.Cryptography.X509Certificates.X509Certificate cert = new System.Security.Cryptography.X509Certificates.X509Certificate();
+                    //client = new MqttClient(brokerAddress, brokerPort, isEncrypted, cert, null, MqttSslProtocols.TLSv1_0, MyRemoteCertificateValidationCallback);
+                    #endif
+                    }
+                    catch (Exception e1){
+                    client = null;
+                    Debug.LogErrorFormat("CONNECTION FAILED! {0}", e1.ToString());
+                    OnConnectionFailed(e.Message);
+                    yield break;
+
+                    }
 
                 }
             }
@@ -315,16 +330,17 @@ namespace M2MqttUnity
             }
             catch (Exception e)
             {
+                Debug.LogWarning($"Error connecting to broker as {brokerAddress}, trying {brokerAddress1}");
                 try{
-                        Debug.LogWarning($"Error connecting to broker as {brokerAddress}, trying {brokerAddress1}");
-                client = null;
-                brokerAddress = brokerAddress1;
-                #if (!UNITY_EDITOR && UNITY_WSA_10_0 && !ENABLE_IL2CPP)
+                    client = null;
+                    brokerAddress = brokerAddress1;
+                    #if (!UNITY_EDITOR && UNITY_WSA_10_0 && !ENABLE_IL2CPP)
                     client = new MqttClient(brokerAddress,brokerPort,isEncrypted, isEncrypted ? MqttSslProtocols.SSLv3 : MqttSslProtocols.None);
                     #else
                     client = new MqttClient(brokerAddress, brokerPort, isEncrypted, null, null, isEncrypted ? MqttSslProtocols.SSLv3 : MqttSslProtocols.None);
                     //System.Security.Cryptography.X509Certificates.X509Certificate cert = new System.Security.Cryptography.X509Certificates.X509Certificate();
                     //client = new MqttClient(brokerAddress, brokerPort, isEncrypted, cert, null, MqttSslProtocols.TLSv1_0, MyRemoteCertificateValidationCallback);
+                    client.Connect(clientId, mqttUserName, mqttPassword);
                     #endif
                     }
                     catch (Exception e1){

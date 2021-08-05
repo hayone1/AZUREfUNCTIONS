@@ -65,6 +65,7 @@ public class App2Device : MonoBehaviour {
     queryParams.AddParam("MethodName", MethodName); //add arguement
     queryParams.AddParam("Payload", payload); //add arguement
     queryParams.AddParam("deviceName", deviceName); //add arguement
+    Debug.Log($"Sent device command; MethodName:{MethodName}; payload:{payload}; deviceName:{deviceName}");
 
     Debug.Log("POST: " + MethodName + " url:" + azureFunction.ApiUrl());
     //alongside invoking device methd, it also swaps the UI

@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
 public class UiManager: MonoBehaviour
 {
-    public float generalUiDelay = 2f;
+    public readonly float generalUiDelay = 2f;
     //the parents of the pages
     [SerializeField] internal RectTransform ConnectWithFacebook;
     [SerializeField] internal RectTransform BedRoomLights;
@@ -55,9 +55,12 @@ public class UiManager: MonoBehaviour
 
     #region Ui input fields
     public InputAction ActuateAction;
+    public InputAction ActuateActionTouch;
     public event EventHandler<Vector2> OnMove;  //this event can easily be passed around
     //the vector2 would be the current position of the pointer
     #endregion
+
+    private Camera mainCamera;
     
     private void Start() {  //this is the place to start reading control from
         //get the starting positins of the icons
@@ -69,6 +72,7 @@ public class UiManager: MonoBehaviour
         // sleepTimeIconPos = sleepTimeIcon.transform.position;
 
         //generally this should also be disabled from the editor
+        mainCamera = Camera.main;
         AddRpiButton.interactable = false;
         AddCameraButton.interactable = false;
         AddRpiButton.transform.localScale = Vector3.zero;
@@ -87,11 +91,28 @@ public class UiManager: MonoBehaviour
         }
 
         ActuateAction.performed += (context) => {
+         
+            if (Mouse.current.IsActuated()){
+                 var windowPoint = Mouse.current.position.ReadValue();
+                //var windowPoint = Input.mousePosition;
+                var worldPoint = mainCamera.ScreenToWorldPoint(windowPoint);
+                
+                //var canvasPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, worldPoint);
+                //Debug.Log($"comparing points windowPoint: {windowPoint}; canvasPoint: {canvasPoint}; worldPoint: {worldPoint}");
+                OnContactDelta(windowPoint);
+                
+            } 
+        };
+        ActuateActionTouch.performed += (context) => {
             if (Touchscreen.current.primaryTouch.isInProgress){
-                OnContactDelta(Touchscreen.current.primaryTouch.position.ReadValue());
+                //read the finger and convert position to world space
+                OnContactDelta(
+                    Touchscreen.current.primaryTouch.position.ReadValue());
+                    // mainCamera.ScreenToWorldPoint(Touchscreen.current.primaryTouch.position.ReadValue()) );
                 }
         };
         ActuateAction.Enable();
+        ActuateActionTouch.Enable();
     }
     public void MovetoFocus(RectTransform page_to_move) //thisis the version set from the editor
     {
