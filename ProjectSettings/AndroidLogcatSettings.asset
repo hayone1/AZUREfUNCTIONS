@@ -3,17 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "026732588F000559",
         "name": "com.Gamax.CloudHome",
-        "processId": 17476,
+        "processId": 20050,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "026732588F000559",
-            "name": "com.Gamax.CloudHome",
-            "processId": 13507,
-            "exited": true
-        },
         {
             "deviceId": "026732588F000559",
             "name": "com.Gamax.CloudHome",
@@ -42,6 +36,12 @@
             "deviceId": "026732588F000559",
             "name": "com.Gamax.CloudHome",
             "processId": 17476,
+            "exited": true
+        },
+        {
+            "deviceId": "026732588F000559",
+            "name": "com.Gamax.CloudHome",
+            "processId": 20050,
             "exited": false
         }
     ],

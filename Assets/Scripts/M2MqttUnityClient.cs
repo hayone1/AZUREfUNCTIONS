@@ -43,7 +43,7 @@ namespace M2MqttUnity
         [Header("MQTT broker configuration")]
         [Tooltip("IP address or URL of the host running the broker")]
         public string brokerAddress1 = "raspberrypi.local";
-        public string brokerAddress = "192.168.8.150";
+        public string brokerAddress = "192.168.8.150";  //use the ip address of the Rpi on the network
         // public string brokerAddress2 = "192.168.8.100";
         [Tooltip("Port where the broker accepts connections")]
         public int brokerPort = 1883;

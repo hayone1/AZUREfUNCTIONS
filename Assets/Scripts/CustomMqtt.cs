@@ -99,9 +99,9 @@ public class CustomMqtt : M2MqttUnity.M2MqttUnityClient
             // string _ID = $"ID:{mainManager.aToken.UserId};{mainManager.profileDetailsManager.PhoneNumber.text}";
 
             //user id could also be the user provided email which is what I went with
-            string _ID = $"ID:{mainManager.profileDetailsManager.Email.text};{mainManager.profileDetailsManager.PhoneNumber.text}";
+            string _ID = $"ID|{mainManager.aToken.UserId}:{mainManager.profileDetailsManager.Email.text};{mainManager.profileDetailsManager.PhoneNumber.text}";
             client.Publish(IDRequestControlTopic, System.Text.Encoding.UTF8.GetBytes(_ID), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
-            Debug.Log("client ID sent to device: " + mainManager.aToken.UserId);
+            Debug.Log("client ID sent to device: " + _ID);
             //after this the device sends the (connectionestablished)telemetry data points dictionary for each device
             // and DecodeMessage looks for Etag in the received telemetry to confirm receiving telemetry
         }

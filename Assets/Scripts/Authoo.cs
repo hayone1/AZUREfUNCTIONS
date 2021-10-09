@@ -10,14 +10,15 @@ public class Authoo : MonoBehaviour
 {
   //used for logging in and requesting device telemetry
   //dont concern yourself with this guy until you get to the login page 
-      public string id_token = "482385619494176";
+      // public string id_token = "482385619494176";
+      public string id_token = "put in your own id_token, it looks like the one commented above";
   // public string access_token = "GGQVlZASXk5T052a3gxYzZAfTWpmTm82XzdHVi1LZAmJkTDZAxZAXFXWHk1OWdyX1ZAWd2lfbG1uQUhDTk1xdEExZAUVrUF9vU0JyeVc3dVc3dDcyZAVpYUnhSX0xHck9rUEFCMnJ4clJBcEZAxaktxdUtJZA3pXSEQ0MXlxLXhfQk9hcG5jR0dDUQZDZD";
-  public string access_token = "EAAEfUTvYrMcBAL1CDLeMakebckOmSt8Efdn8eWPXU5LyloskynCtz9ruEDiYOAt5h3Sj5TVy42ZCTZBHRXcVsZBs6rjyY9cpQHMBKIuF98hiZAqbml1TCe0WI7ZC7tHXi2pPZBfsPsSWMizkmUboQG4NTv78CZBkmjESSulCfEEfqAbPv9yLuIzHmYQf8VoDVZCjENPnCeUN5okcpj5jFrdZA7dx21Cl96AZBLQLChmmIRbMl4kGbd7F8T";
+  public string access_token = "please put in your own generated access token, it looks like the one comented above";
           public string Account = Messsages.TelemetryFunctions;
-        public string FunctionName = "HttpTrigger2";  //couldbe alteredin editor
+        public string FunctionName = "HttpTrigger2";  //the name of your Azure Fuction to be called
         public string FunctionCode = "";
         public string url = "https://telemetryfunctions.azurewebsites.net/.auth/login/facebook";
-         public string route = "/.auth/login/facebook"; //the route 
+         public string route = "/.auth/login/facebook"; //the api route 
         //  private AzureFunctionClient client;
         private AzureFunction azureFunction;
         private AppServiceClient serviceClient;

@@ -15,15 +15,16 @@ public class MainManager : MonoBehaviour
 
     // Awake function from Unity's MonoBehavior
     string FBCallback = "https://telemetryfunctions.azurewebsites.net/.auth/login/facebook/callback";
-    string TestFBToken = "GGQVlZASXk5T052a3gxYzZAfTWpmTm82XzdHVi1LZAmJkTDZAxZAXFXWHk1OWdyX1ZAWd2lfbG1uQUhDTk1xdEExZAUVrUF9vU0JyeVc3dVc3dDcyZAVpYUnhSX0xHck9rUEFCMnJ4clJBcEZAxaktxdUtJZA3pXSEQ0MXlxLXhfQk9hcG5jR0dDUQZDZD";
-
+    // string TestFBToken = "GGQVlZASXk5T052a3gxYzZAfTWpmTm82XzdHVi1LZAmJkTDZAxZAXFXWHk1OWdyX1ZAWd2lfbG1uQUhDTk1xdEExZAUVrUF9vU0JyeVc3dVc3dDcyZAVpYUnhSX0xHck9rUEFCMnJ4clJBcEZAxaktxdUtJZA3pXSEQ0MXlxLXhfQk9hcG5jR0dDUQZDZD";
+    string TestFBToken = "use your own GraphAPI facebook token";
+    //the TestFBToken is gotten for Facebook's graphApi to use test facebook logins because the unity Editor cannot interface with a real login window
     [SerializeField] private Authoo functionAuthorizer;
     [SerializeField] private App2Device app2Device;
     [SerializeField] private UiManager uiManager;
     [SerializeField] internal ProfileDetails profileDetailsManager;
     internal AccessToken aToken = null; //to cache the access tokens
     internal Dictionary<string, TelemetryDataPoint<dynamic>> telemetryDevicesDict = new Dictionary<string, TelemetryDataPoint<dynamic>>();
-    public float telemetryRequestInterval = 60f; //value set in inspector
+    public float telemetryRequestInterval = 20f; //value set in inspector
 
     void Awake ()
     {
