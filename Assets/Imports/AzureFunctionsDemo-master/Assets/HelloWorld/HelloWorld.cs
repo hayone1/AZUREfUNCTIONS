@@ -1,4 +1,4 @@
-﻿using Azure.Functions;
+using Azure.Functions;
 using Azure.AppServices;
 using RESTClient;
 using System.Collections;
@@ -7,14 +7,19 @@ using UnityEngine;
 
 public class HelloWorld : MonoBehaviour {
   [Header("Azure Functions")]
-  public string Account;
+  public string Account = "TelemetryFunctions";
   public string FunctionName = "HttpTrigger2";
   public string FunctionCode = "";
-  private string route = "";
+  public string route = "/.auth/login/facebook"; //the route 
 
   [Header("Sample Values")]
   public string partition = "partitioninTable";
   public string row = "rowinTable";
+  
+  // public string id_token = "482385619494176";
+  public string id_token = "use yout id token, it looks like the comment above";
+  // public string access_token = "GGQVlZASXk5T052a3gxYzZAfTWpmTm82XzdHVi1LZAmJkTDZAxZAXFXWHk1OWdyX1ZAWd2lfbG1uQUhDTk1xdEExZAUVrUF9vU0JyeVc3dVc3dDcyZAVpYUnhSX0xHck9rUEFCMnJ4clJBcEZAxaktxdUtJZA3pXSEQ0MXlxLXhfQk9hcG5jR0dDUQZDZD";
+  public string access_token = "use your own access token, it looks like the comment above";
 
   [Header("Unity objects")]
   public TextMesh DisplayName;
@@ -42,6 +47,10 @@ public class HelloWorld : MonoBehaviour {
     QueryParams queryParams = new QueryParams();
     queryParams.AddParam("partition", partition);
     queryParams.AddParam("row", row);
+    //add authentication tokens
+    queryParams.AddParam("id_token", id_token);
+    queryParams.AddParam("access_token", access_token);
+
 
     Debug.Log("GET: " + partition + " url:" + service.ApiUrl());
     DisplayName.text = "GET";

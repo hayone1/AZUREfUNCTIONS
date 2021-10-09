@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "60bfbae787b1aade3b7a2504999031d96996d7dd"
+    },
     "com.unity.2d.animation": {
       "version": "5.0.3",
       "depth": 0,
@@ -79,6 +86,13 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.device-simulator": {
+      "version": "3.0.1-preview",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -104,6 +118,13 @@
     },
     "com.unity.ide.vscode": {
       "version": "1.2.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -172,6 +193,32 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.unity.vectorgraphics": {
+      "version": "2.0.0-preview.14",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.2d.sprite": "1.0.0",
+        "com.unity.ugui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "dev.kyubuns.akyuiunity": {
+      "version": "https://github.com/kyubuns/AkyuiUnity.git?path=Assets/AkyuiUnity",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f02f36815b3d6461288a093dcc69b552510a080c"
+    },
+    "dev.kyubuns.akyuiunityxd": {
+      "version": "https://github.com/kyubuns/AkyuiUnity.git?path=Assets/AkyuiUnity.Xd",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.vectorgraphics": "2.0.0-preview.14"
+      },
+      "hash": "f02f36815b3d6461288a093dcc69b552510a080c"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

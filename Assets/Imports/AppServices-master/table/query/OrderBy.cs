@@ -4,6 +4,7 @@
 using System;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace Azure.AppServices {
 
@@ -17,7 +18,7 @@ namespace Azure.AppServices {
     private SortDirection? columnSortDirection;
 
     public OrderBy(string column, SortDirection? sortDirection = null) {
-      this.column = WWW.EscapeURL(column);
+      this.column = UnityWebRequest.EscapeURL(column);
       this.columnSortDirection = sortDirection;
     }
 

@@ -4,6 +4,7 @@
 using System;
 using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 /// <summary>
 /// Implemention of Query records operation https://msdn.microsoft.com/en-us/library/azure/jj677199.aspx
@@ -54,7 +55,7 @@ namespace Azure.AppServices {
     public override string ToString() {
       StringBuilder sb = new StringBuilder("?");
       if (!string.IsNullOrEmpty(Filter)) {
-        sb.Append(string.Format("$filter=({0})&", WWW.EscapeURL(Filter)));
+        sb.Append(string.Format("$filter=({0})&", UnityWebRequest.EscapeURL(Filter)));
       }
       if (OrderBy != null && OrderBy.Length > 0) {
         sb.Append(string.Format("$orderby="));
@@ -71,7 +72,7 @@ namespace Azure.AppServices {
         sb.Append(string.Format("$skip={0}&", Skip.ToString()));
       }
       if (!string.IsNullOrEmpty(Select)) {
-        sb.Append(string.Format("$select={0}&", WWW.EscapeURL(Select)));
+        sb.Append(string.Format("$select={0}&", UnityWebRequest.EscapeURL(Select)));
         if (SystemProperties != TableSystemProperty.nil) {
           // NB: setting `__systemproperties` param doesn't appear to do anything so I've added a workaround to append these values onto the 'select' param.
           sb.Remove(sb.Length - 1, 1); // remove trailing '&'
