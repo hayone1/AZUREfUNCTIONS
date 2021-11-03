@@ -1,0 +1,19 @@
+Replace the following with your own details as required, this file is not in itself useful to build anything,
+but contains details important to get twilio SMS up and running
++1 323 312 5501
+Messaging Service SID
+MG25cab51502qdwe2398e0awdw34543fa28531ae6
+Account SID
+AC3bbf23344dsasc3a33e155968hbd5ee
+
+TwilioAccountSid
+messageSender
+TwilioAuthToken
+
+
+      "name": "messageSender",
+      "direction": "out",
+      "type": "twilioSms",
+      "accountSidSetting": "TwilioAccountSid",
+      "authTokenSetting": "TwilioAuthToken",
+      "from": "+13233125501"
