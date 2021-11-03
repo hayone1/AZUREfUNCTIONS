@@ -1,0 +1,3131 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="12.79" multi-file="no" uid="simp7a6f47c6ce2b4c44b3f6e1cbbed5a28c">
+  <meta>
+    <name>SimulatedDevice</name>
+    <authors> </authors>
+    <description />
+  </meta>
+  <counters models="2">
+    <entity-names />
+    <entity-ids>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>9</value>
+      </counter>
+      <counter>
+        <item-type type-id="property" type="Property" />
+        <value>70</value>
+      </counter>
+      <counter>
+        <item-type type-id="containment" type="Containment" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="generalization" type="Generalization" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="relationship" type="Association" />
+        <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="package" type="Package" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="group" type="Group" />
+        <value>65</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlPackageDiagram</type>
+        <value>1</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
+        <value>35</value>
+      </counter>
+    </fields>
+  </counters>
+  <alias-groups />
+  <management uid="md-05cbc9d1126a4a8bbdf99690021d28a1" name="" task-id-sequence="0">
+    <persons>
+      <person id="">
+        <first-name />
+        <last-name />
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-595257144d1c4db1a9e9312b9d0f831b" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <type id="SystemIOperations" tid="" name="SystemIOperations" description="" />
+      <type id="Task&lt;MethodResponse&gt;" tid="" name="Task&lt;MethodResponse&gt;" description="" />
+      <type id="MethodRequest" tid="" name="MethodRequest" description="" />
+      <type id="object" tid="" name="object" description="" />
+      <type id="string" tid="" name="string" description="" />
+      <type id="MqttClient" tid="" name="MqttClient" description="" />
+      <type id="CancellationTokenSource" tid="" name="CancellationTokenSource" description="" />
+      <type id="JsonSerializerSettings" tid="" name="JsonSerializerSettings" description="" />
+      <type id="MqttMsgPublishEventArgs" tid="" name="MqttMsgPublishEventArgs" description="" />
+      <type id="MqttMsgPublishedEventArgs" tid="" name="MqttMsgPublishedEventArgs" description="" />
+      <type id="Dictionary&lt;string, object&gt;" tid="" name="Dictionary&lt;string, object&gt;" description="" />
+      <type id="bool" tid="" name="bool" description="" />
+      <type id="TimeSpan" tid="" name="TimeSpan" description="" />
+      <type id="TelemetryDataPoint&lt;bool&gt;" tid="" name="TelemetryDataPoint&lt;bool&gt;" description="" />
+      <type id="TelemetryDataPoint&lt;double&gt;" tid="" name="TelemetryDataPoint&lt;double&gt;" description="" />
+      <type id="TelemetryDataPoint&lt;string&gt;" tid="" name="TelemetryDataPoint&lt;string&gt;" description="" />
+      <type id="DeviceClient" tid="" name="DeviceClient" description="" />
+      <type id="MqttHandler" tid="" name="MqttHandler" description="" />
+      <type id="DeviceCommands" tid="" name="DeviceCommands" description="" />
+      <type id="Task" tid="" name="Task" description="" />
+      <type id="CancellationToken" tid="" name="CancellationToken" description="" />
+      <type id="SerialDataReceivedEventArgs" tid="" name="SerialDataReceivedEventArgs" description="" />
+      <type id="SerialPort" tid="" name="SerialPort" description="" />
+      <type id="List&lt;SerialPort&gt;" tid="" name="List&lt;SerialPort&gt;" description="" />
+      <type id="SerialDataReceivedEventHandler" tid="" name="SerialDataReceivedEventHandler" description="" />
+      <type id="Action&lt;object, SerialDataReceivedEventArgs&gt;" tid="" name="Action&lt;object, SerialDataReceivedEventArgs&gt;" description="" />
+      <type id="T" tid="" name="T" description="" />
+    </custom-types>
+  </types>
+  <items />
+  <models>
+    <model id="p1d9699deb67c407cb592ed641002ab7b_205328583" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>07/22/2021 13:42:31</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items>
+        <item id="16b4f885ec024867939e1c0a6ec58c04" cid="PKG001" type="package" name="SimulatedDevice" style-class="" creator="" creation-date="07/22/2021 13:43:57" />
+      </abstract-items>
+      <sub-models>
+        <model id="p47524a6b375f4f3eb275b7cbd7b44840_490512386" name="SimulatedDevice" namespace="SimulatedDevice" order-index="2">
+          <meta>
+            <authors>
+              <author> </author>
+            </authors>
+            <description />
+            <creation-date>07/22/2021 13:43:57</creation-date>
+            <change-date>01/01/0001 00:00:00</change-date>
+            <revision-count>0</revision-count>
+            <version />
+          </meta>
+          <abstract-items>
+            <item id="4a0ac332cc40474a964c5794ecbf0cd8" cid="C001" type="class" name="DeviceCommands" style-class="" creator="" creation-date="07/22/2021 13:43:57" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv823b874d535944569ae29485dc9adcfe" name="namespace" type="text" multiple="false" value="SimulatedDevice" />
+              </tagged-values>
+              <owned-items>
+                <owned-item ref="5506bdcf4fb8468e97569f49fddc253d" />
+              </owned-items>
+              <attributes>
+                <attribute id="a5fba8465f2ed4df985131492b88dc745914" cid="PROP001" name="serialOPerations" creation-date="07/22/2021 13:43:57" property-ref="5506bdcf4fb8468e97569f49fddc253d" />
+              </attributes>
+              <operations>
+                <operation id="o5e072726f9c440afbf5cbac8a32f0910914" cid="OP001" name="DeviceCommands" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="pe18d5eef63dc4d0b9671a297646d24f5" name="_serialOperations" type="SystemIOperations" type-id="SystemIOperations" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>the data is the payload, the arguement of the methood
+use a switch statement toknow where to know what exactly to do to device
+ Check the payload is light 1 or light 2{string}
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                </operation>
+                <operation id="odf59da513f5c44e6b9d27ac72ab5b79c914" cid="OP002" name="ToggleLight" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="package">
+                  <parameters>
+                    <parameter id="p0a15ff31a3ae4d80a55cb09f71462c93" name="methodRequest" type="MethodRequest" type-id="MethodRequest" default-value="null" />
+                    <parameter id="pbeb21814269749daa030bb29bdca45dd" name="userContext" type="object" type-id="object" default-value="null" />
+                  </parameters>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>3 means toggle
+ Acknowlege the direct method call with a 200 success message
+toggle indoor light switch here
+ Acknowlege the direct method call with a 200 success message
+ Acknowlege the direct method call with a 400 error message
+string data = Encoding.UTF8.GetString(methodRequest.Data); //the data is the payload, the arguement of the methood
+toggle the presence Mode //if hell
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+            var data = Encoding.UTF8.GetString(methodRequest.Data);                                                        
+                                                                                      
+
+                                                              
+            if (data.Contains(Program.light1.deviceId))
+            {
+                                                 
+                serialOPerations.SendSerial("42", $"{messages.myard1};{Program.light1.deviceId}");                  
+                Program.light1.property2 = !Program.light1.property2;
+
+                                                                               
+                string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine(result);
+                Console.ForegroundColor = ConsoleColor.White;
+                return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+            }
+            else if (data.Contains(Program.light2.deviceId))
+            {
+                                                 
+                serialOPerations.SendSerial("32", $"{messages.myard2};{Program.light2.deviceId}");
+                Program.light2.property2 = !(Program.light2.property2);
+
+                                                                               
+                string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine(result);
+                Console.ForegroundColor = ConsoleColor.White;
+                return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+
+            }
+            else
+            {
+                                                                             
+                string result = "{\"result\":\"Invalid parameter\"}";
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(result);
+                Console.ForegroundColor = ConsoleColor.White;
+                return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 400));
+            }
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="odbc10652c30e4e27a96df791d463313b915" cid="OP003" name="TogglePresenceMode" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="package">
+                  <parameters>
+                    <parameter id="p7edeadf031e14b8a9609cd713b5ba1e0" name="methodRequest" type="MethodRequest" type-id="MethodRequest" default-value="null" />
+                    <parameter id="pb48bd767f41042d486b551042bffa8ce" name="userContext" type="object" type-id="object" default-value="null" />
+                  </parameters>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>string data = Encoding.UTF8.GetString(methodRequest.Data); //the data is the payload, the arguement of the methood
+toggle the motion sensor
+string data = Encoding.UTF8.GetString(methodRequest.Data); //the data is the payload, the arguement of the methood
+toggle the sleep mode, by default, this starts out as Awake on device set-up
+turn off all the lights, extension, check if the front door is closed and close it if it isnt
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                                                                                                
+                                                
+
+            serialOPerations.SendSerial("62", $"{messages.myard1};{Program.motionSensor.Misc}");
+            Program.motionSensor.Misc = Program.motionSensor.Misc == messages.awayMode ? messages.homeMode : messages.awayMode;
+            string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(result);
+            Console.ForegroundColor = ConsoleColor.White;
+            return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="oc00c899c36d044f8a06d299c2aa62b91916" cid="OP004" name="ToggleMotionSensor" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="package">
+                  <parameters>
+                    <parameter id="p6c01ccd97d8c435cb098016a7d2a1b75" name="methodRequest" type="MethodRequest" type-id="MethodRequest" default-value="null" />
+                    <parameter id="pbc23b232bc934358919427e2b257291d" name="userContext" type="object" type-id="object" default-value="null" />
+                  </parameters>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>string data = Encoding.UTF8.GetString(methodRequest.Data); //the data is the payload, the arguement of the methood
+signal the arduino to open/close the door, make the lcd always signify what's going on
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                                                                                                
+                                      
+            serialOPerations.SendSerial("32", $"{messages.myard1};{Program.motionSensor.deviceId}");
+            Program.motionSensor.property2 = !(Program.motionSensor.property2);
+            string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(result);
+            Console.ForegroundColor = ConsoleColor.White;
+            return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="ob1f57cccecc040558cc0cebc43e27f5f916" cid="OP005" name="ToggleSleepMode" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="package">
+                  <parameters>
+                    <parameter id="p5ed9ceb6f1384180922101696cdcef75" name="methodRequest" type="MethodRequest" type-id="MethodRequest" default-value="null" />
+                    <parameter id="p269a7a8894a64d4e8824579dabe79d32" name="userContext" type="object" type-id="object" default-value="null" />
+                  </parameters>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>if door is opened
+close it
+open it
+string data = Encoding.UTF8.GetString(methodRequest.Data); //the data is the payload, the arguement of the methood
+signal the arduino to close the door
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                                                                                                
+                                                                                          
+                                                                                                           
+            if (Program.light1.property2 == true) { ToggleLight1(); }
+            if (Program.light1.property2 == true) { ToggleLight2(); }
+            if (Program.doorSensor.property2 == false) { ToggleDoor(); }
+
+            Program.raspBerryPi.Misc = Program.raspBerryPi.Misc == messages.sleepMode ? messages.awakeMode : messages.sleepMode;
+
+            string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(result);
+            Console.ForegroundColor = ConsoleColor.White;
+            return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o719513772fe143baa9a5bd7252c7cf5a916" cid="OP006" name="ToggleDoor" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="package">
+                  <parameters>
+                    <parameter id="p5032452c538741778696b2e877359b35" name="methodRequest" type="MethodRequest" type-id="MethodRequest" default-value="null" />
+                    <parameter id="p136479b5aeb4432ba60e9e93d22be86c" name="userContext" type="object" type-id="object" default-value="null" />
+                  </parameters>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>toggle indoor light switch here
+2 means toggle
+toggle indoor light switch here
+string data = Encoding.UTF8.GetString(methodRequest.Data); //the data is the payload, the arguement of the methood
+signal the arduino to open/close the door, make the lcd always signify what's going on
+should be zero after
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                                                                                                
+                                                                                                    
+            if (Program.doorSensor.property2 == true || Program.doorController.property2 &gt; 5)                    
+            {
+            serialOPerations.SendSerial("40", $"{messages.myard2};{Program.doorController.deviceId}");            
+            }
+            else
+            {
+                serialOPerations.SendSerial("41", $"{messages.myard2};{Program.doorController.deviceId}");           
+            }
+            Program.doorController.property2 = Program.doorController.property2 == 90 ? 0 : 90;
+
+            string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(result);
+            Console.ForegroundColor = ConsoleColor.White;
+            return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="odc6cc2299a5143c08ac213749479b47b916" cid="OP007" name="ToggleExtension" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="package">
+                  <parameters>
+                    <parameter id="padc14fbb10e640998295e862fc3f307b" name="methodRequest" type="MethodRequest" type-id="MethodRequest" default-value="null" />
+                    <parameter id="pf96a21e7b5874998a35be717a92d3ee6" name="userContext" type="object" type-id="object" default-value="null" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                                                                                                
+                                                  
+            serialOPerations.SendSerial("52", $"{messages.myard1};{Program.extension.deviceId}");
+            Program.extension.property2 = !Program.extension.property2;
+
+            string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(result);
+            Console.ForegroundColor = ConsoleColor.White;
+            return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o93a79c38698e4989b116a2810f97cdbe916" cid="OP008" name="ToggleLight1" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="package">
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                 
+                serialOPerations.SendSerial("42", $"{messages.myard1};{Program.light1.deviceId}");                  
+                Program.light2.property2 = !(Program.light2.property2);
+
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o9d0275a8b2bd4005899f266a2324159b916" cid="OP009" name="ToggleLight2" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="package">
+                  <source-codes>
+                    <source-code language="CSharp">
+                                             
+            serialOPerations.SendSerial("32", $"{messages.myard2};{Program.light2.deviceId}");
+            Program.light2.property2 = !(Program.light2.property2);
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o2f592602ad154a4896e0be8340d93fe3916" cid="OP010" name="WrongDoorCode" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="package">
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                                                                                                
+                                                                                                    
+            serialOPerations.SendSerial("40", $"{messages.myard2};{Program.doorController.deviceId}");
+            Program.doorController.property2 = 0;                         
+
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Force close door");
+            Console.ForegroundColor = ConsoleColor.White;
+        </source-code>
+                  </source-codes>
+                </operation>
+              </operations>
+            </item>
+            <item id="5506bdcf4fb8468e97569f49fddc253d" cid="PROP001" type="property" name="serialOPerations" style-class="" owner="4a0ac332cc40474a964c5794ecbf0cd8" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>commands scheme |a|b|
+|a| : 1-subdevice; 2-devicecommand
+|b| : 0-off; 1-on; 2-toggle
+ard1|a| : 1-mytemperaturesensor; 2-myhumiditysensor; 3-mymotionsensor; 4-mylightsensor1; 5-myAlarm; 6-homeAwayMode
+ard2|b| : 1-mydoorsensor; 2-read mydoorcontroller(servoPos); 3-mylightsensor2 4-respond to passCode or just toggle
+initialize
+use string - "0" to convert int in arduino
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="SystemIOperations" type-id="Class:fc49ab968d5449a59ddecb17a83f3594" />
+              <property />
+            </item>
+            <item id="36fcf384e6b64fd783da9a3ebb60cd8f" cid="C002" type="class" name="messages" style-class="" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="static" />
+              </stereotypes>
+              <tagged-values>
+                <tagged-value id="tve0ca51d34dbe481ab8c60e441ee31e56" name="namespace" type="text" multiple="false" value="SimulatedDevice" />
+              </tagged-values>
+              <stereotype-instances>
+                <stereotype id="36fcf384e6b64fd783da9a3ebb60cd8f_static_c" type="static" ref="" />
+              </stereotype-instances>
+              <owned-items>
+                <owned-item ref="0a5021d85ac849f39b360ef75947d706" />
+                <owned-item ref="bb9eb435c90d4058b2865bda940f2214" />
+                <owned-item ref="57bcae0519b94857a894049cd2b35e7c" />
+                <owned-item ref="50ffde86d70b4a6e9057bed4f33f3bd6" />
+                <owned-item ref="42bf2a11b4bc419898f280d803b367d2" />
+                <owned-item ref="2ef0a9696d8c4fc9b489dd7f57115502" />
+                <owned-item ref="2087ea5d6e5e4e5d803e47e56f08080e" />
+                <owned-item ref="75f6927e69ef48b8a08a4520f234f63f" />
+                <owned-item ref="8457a78b4ba941f6a3147df02e2fbc10" />
+                <owned-item ref="3cdfe8be5a5143a898d94a8cf4257904" />
+                <owned-item ref="9c58deae83e247c4af8eab6dc4dbce66" />
+                <owned-item ref="5d6cd6bf8232452793a61f9090f53d4e" />
+                <owned-item ref="c2d8b0c104714dfd94d523f4184693b6" />
+                <owned-item ref="c5d49b92fef14dbb9cd62fa5d2607706" />
+                <owned-item ref="012d7676ff374331908932c99872d796" />
+                <owned-item ref="c9921d5886d14db1a3881ba434a4144b" />
+                <owned-item ref="3ec260445ec440fba84d09e08d108a88" />
+                <owned-item ref="6f8abe32d06e4fcb9fb8ff4bf78bcee2" />
+                <owned-item ref="e09c96d8990a47c8a4b7a93471b2f1b2" />
+                <owned-item ref="5e01f0b33c9841d48c28d59b17d71fba" />
+                <owned-item ref="01baf2ee1b694bdea2e5e05dfe644ef9" />
+                <owned-item ref="c0676baaa4194221a7d79b691ec09d74" />
+                <owned-item ref="6cbbec4d6c8341f081eccf43edfc54f6" />
+                <owned-item ref="a7a55de8ff184de98f62a6dab309e132" />
+                <owned-item ref="86a00d6db52b41bea604f3ff761ae301" />
+                <owned-item ref="1b98b46cb2324de0ba76d703f92d8d82" />
+                <owned-item ref="e8c3e8732d6848f29d30dae07d778692" />
+              </owned-items>
+              <attributes>
+                <attribute id="abfc3965831484b7eb248b5077ed261ac916" cid="PROP002" name="awayMode" creation-date="07/22/2021 13:43:57" property-ref="0a5021d85ac849f39b360ef75947d706" />
+                <attribute id="a334e264be302489f8f23db6837d1d574916" cid="PROP003" name="homeMode" creation-date="07/22/2021 13:43:57" property-ref="bb9eb435c90d4058b2865bda940f2214" />
+                <attribute id="adb00508a9c1242c4af603cdc198a14ca916" cid="PROP004" name="sleepMode" creation-date="07/22/2021 13:43:57" property-ref="57bcae0519b94857a894049cd2b35e7c" />
+                <attribute id="a0fc16cc235b24b68b9b26607b4473072916" cid="PROP005" name="awakeMode" creation-date="07/22/2021 13:43:57" property-ref="50ffde86d70b4a6e9057bed4f33f3bd6" />
+                <attribute id="a51d362d1783b4d168ed8199805cb331e916" cid="PROP006" name="normalMessage" creation-date="07/22/2021 13:43:57" property-ref="42bf2a11b4bc419898f280d803b367d2" />
+                <attribute id="ab81a7c538cf142508ba2a08f92e4f713916" cid="PROP007" name="warningMessage" creation-date="07/22/2021 13:43:57" property-ref="2ef0a9696d8c4fc9b489dd7f57115502" />
+                <attribute id="ad6d23ae3bba14e6b957fa70f1b359070916" cid="PROP008" name="criticalMessage" creation-date="07/22/2021 13:43:57" property-ref="2087ea5d6e5e4e5d803e47e56f08080e" />
+                <attribute id="a8d8d9c23b13d42d1983f08c7e9193ce0916" cid="PROP009" name="ToggleLight" creation-date="07/22/2021 13:43:57" property-ref="75f6927e69ef48b8a08a4520f234f63f" />
+                <attribute id="a47926275e20649e5ae0f30e7125a5e43916" cid="PROP010" name="UnlockDoor" creation-date="07/22/2021 13:43:57" property-ref="8457a78b4ba941f6a3147df02e2fbc10" />
+                <attribute id="a76ab94707de74306b9afcd930a3311ea916" cid="PROP011" name="TogglePresenceMode" creation-date="07/22/2021 13:43:57" property-ref="3cdfe8be5a5143a898d94a8cf4257904" />
+                <attribute id="aa4e49941cd9d433fa6d1fb7a81a14312916" cid="PROP012" name="ToggleSleepMode" creation-date="07/22/2021 13:43:57" property-ref="9c58deae83e247c4af8eab6dc4dbce66" />
+                <attribute id="aae013b6abd6d40509966028f8f95e2af916" cid="PROP013" name="ToggleMotionSensor" creation-date="07/22/2021 13:43:57" property-ref="5d6cd6bf8232452793a61f9090f53d4e" />
+                <attribute id="a637cc8d1a93a4d15b870b2ca2c5d0c69916" cid="PROP014" name="ToggleExtensionBox" creation-date="07/22/2021 13:43:57" property-ref="c2d8b0c104714dfd94d523f4184693b6" />
+                <attribute id="a5d0f4afb322847ad972e0605f58dab87916" cid="PROP015" name="myrpi" creation-date="07/22/2021 13:43:57" property-ref="c5d49b92fef14dbb9cd62fa5d2607706" />
+                <attribute id="a71e8b2a418394cd798ef3fd311f4677c916" cid="PROP016" name="myard1" creation-date="07/22/2021 13:43:57" property-ref="012d7676ff374331908932c99872d796" />
+                <attribute id="a7aa4e0b0fff142f78db33c137a069438916" cid="PROP017" name="myard2" creation-date="07/22/2021 13:43:57" property-ref="c9921d5886d14db1a3881ba434a4144b" />
+                <attribute id="ae27786e310b140f994b5884f536f5ead916" cid="PROP018" name="mytemperaturesensor" creation-date="07/22/2021 13:43:57" property-ref="3ec260445ec440fba84d09e08d108a88" />
+                <attribute id="ab7833aea7f4240daaa4d8d6872e35685916" cid="PROP019" name="myhumiditysensor" creation-date="07/22/2021 13:43:57" property-ref="6f8abe32d06e4fcb9fb8ff4bf78bcee2" />
+                <attribute id="af6a36b0e4d304b63b430ee66b79c1026916" cid="PROP020" name="mydoorsensor" creation-date="07/22/2021 13:43:57" property-ref="e09c96d8990a47c8a4b7a93471b2f1b2" />
+                <attribute id="a63a4e77a6e1446daa4478c8792dfd293916" cid="PROP021" name="mydoorcontroller" creation-date="07/22/2021 13:43:57" property-ref="5e01f0b33c9841d48c28d59b17d71fba" />
+                <attribute id="a115731b9ae0f43db9e583c28d53085e4917" cid="PROP022" name="mymotionsensor" creation-date="07/22/2021 13:43:57" property-ref="01baf2ee1b694bdea2e5e05dfe644ef9" />
+                <attribute id="ae9e55187a23a4da6b520150b9c6cef65917" cid="PROP023" name="mylightsensor1" creation-date="07/22/2021 13:43:57" property-ref="c0676baaa4194221a7d79b691ec09d74" />
+                <attribute id="a201dd03fd1ef4f47a68c46439d3b85f0917" cid="PROP024" name="mylightsensor2" creation-date="07/22/2021 13:43:57" property-ref="6cbbec4d6c8341f081eccf43edfc54f6" />
+                <attribute id="a8e19120a01eb4ed58cc4b2709549d8b5917" cid="PROP025" name="myextensionbox" creation-date="07/22/2021 13:43:57" property-ref="a7a55de8ff184de98f62a6dab309e132" />
+                <attribute id="a611645c5eb7d443eb7fd04929a3c456d917" cid="PROP026" name="myuserdetails" creation-date="07/22/2021 13:43:57" property-ref="86a00d6db52b41bea604f3ff761ae301" />
+                <attribute id="af82c3f9eaa35487aa607d96b5e3b82e9917" cid="PROP027" name="misc" creation-date="07/22/2021 13:43:57" property-ref="1b98b46cb2324de0ba76d703f92d8d82" />
+                <attribute id="a72ec7cc66221443d8d09a0a420ac63e0917" cid="PROP028" name="property2" creation-date="07/22/2021 13:43:57" property-ref="e8c3e8732d6848f29d30dae07d778692" />
+              </attributes>
+            </item>
+            <item id="0a5021d85ac849f39b360ef75947d706" cid="PROP002" type="property" name="awayMode" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;awayMode&quot;" />
+            </item>
+            <item id="bb9eb435c90d4058b2865bda940f2214" cid="PROP003" type="property" name="homeMode" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;homeMode&quot;" />
+            </item>
+            <item id="57bcae0519b94857a894049cd2b35e7c" cid="PROP004" type="property" name="sleepMode" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;sleepMode&quot;" />
+            </item>
+            <item id="50ffde86d70b4a6e9057bed4f33f3bd6" cid="PROP005" type="property" name="awakeMode" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;awakeMode&quot;" />
+            </item>
+            <item id="42bf2a11b4bc419898f280d803b367d2" cid="PROP006" type="property" name="normalMessage" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;normal&quot;" />
+            </item>
+            <item id="2ef0a9696d8c4fc9b489dd7f57115502" cid="PROP007" type="property" name="warningMessage" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>both warning and critical message is mailed to user
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;warning&quot;" />
+            </item>
+            <item id="2087ea5d6e5e4e5d803e47e56f08080e" cid="PROP008" type="property" name="criticalMessage" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;critical&quot;" />
+            </item>
+            <item id="75f6927e69ef48b8a08a4520f234f63f" cid="PROP009" type="property" name="ToggleLight" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;ToggleLight&quot;" />
+            </item>
+            <item id="8457a78b4ba941f6a3147df02e2fbc10" cid="PROP010" type="property" name="UnlockDoor" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;UnlockDoor&quot;" />
+            </item>
+            <item id="3cdfe8be5a5143a898d94a8cf4257904" cid="PROP011" type="property" name="TogglePresenceMode" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;TogglePresenceMode&quot;" />
+            </item>
+            <item id="9c58deae83e247c4af8eab6dc4dbce66" cid="PROP012" type="property" name="ToggleSleepMode" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;ToggleSleepMode&quot;" />
+            </item>
+            <item id="5d6cd6bf8232452793a61f9090f53d4e" cid="PROP013" type="property" name="ToggleMotionSensor" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;ToggleMotionSensor&quot;" />
+            </item>
+            <item id="c2d8b0c104714dfd94d523f4184693b6" cid="PROP014" type="property" name="ToggleExtensionBox" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;ToggleExtensionBox&quot;" />
+            </item>
+            <item id="c5d49b92fef14dbb9cd62fa5d2607706" cid="PROP015" type="property" name="myrpi" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;myrpi&quot;" />
+            </item>
+            <item id="012d7676ff374331908932c99872d796" cid="PROP016" type="property" name="myard1" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;myard1&quot;" />
+            </item>
+            <item id="c9921d5886d14db1a3881ba434a4144b" cid="PROP017" type="property" name="myard2" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;myard2&quot;" />
+            </item>
+            <item id="3ec260445ec440fba84d09e08d108a88" cid="PROP018" type="property" name="mytemperaturesensor" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>ard1
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;mytemperaturesensor&quot;" />
+            </item>
+            <item id="6f8abe32d06e4fcb9fb8ff4bf78bcee2" cid="PROP019" type="property" name="myhumiditysensor" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>ard1
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;myhumiditysensor&quot;" />
+            </item>
+            <item id="e09c96d8990a47c8a4b7a93471b2f1b2" cid="PROP020" type="property" name="mydoorsensor" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>ard2
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;mydoorsensor&quot;" />
+            </item>
+            <item id="5e01f0b33c9841d48c28d59b17d71fba" cid="PROP021" type="property" name="mydoorcontroller" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>ard2
+ard1
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;mydoorcontroller&quot;" />
+            </item>
+            <item id="01baf2ee1b694bdea2e5e05dfe644ef9" cid="PROP022" type="property" name="mymotionsensor" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>ard1
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;mymotionsensor&quot;" />
+            </item>
+            <item id="c0676baaa4194221a7d79b691ec09d74" cid="PROP023" type="property" name="mylightsensor1" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>ard2
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;mylightsensor1&quot;" />
+            </item>
+            <item id="6cbbec4d6c8341f081eccf43edfc54f6" cid="PROP024" type="property" name="mylightsensor2" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>ard1
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;mylightsensor2&quot;" />
+            </item>
+            <item id="a7a55de8ff184de98f62a6dab309e132" cid="PROP025" type="property" name="myextensionbox" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;myextensionbox&quot;" />
+            </item>
+            <item id="86a00d6db52b41bea604f3ff761ae301" cid="PROP026" type="property" name="myuserdetails" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;myuserdetails&quot;" />
+            </item>
+            <item id="1b98b46cb2324de0ba76d703f92d8d82" cid="PROP027" type="property" name="misc" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;misc&quot;" />
+            </item>
+            <item id="e8c3e8732d6848f29d30dae07d778692" cid="PROP028" type="property" name="property2" style-class="" owner="36fcf384e6b64fd783da9a3ebb60cd8f" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;property2&quot;" />
+            </item>
+            <item id="4347477a1b4944af8f3fb539292f86b5" cid="C003" type="class" name="MqttHandler" style-class="" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <tagged-values>
+                <tagged-value id="tv2b29bbe5d0d9433ebdcbfae6b5845f31" name="namespace" type="text" multiple="false" value="SimulatedDevice" />
+              </tagged-values>
+              <owned-items>
+                <owned-item ref="0984b6984cf040d8bbcb1ce01c716f1f" />
+                <owned-item ref="e6d194d26b4044c99e06f81fe421809e" />
+                <owned-item ref="4fdc07f9ad904ed98be3400f94252b01" />
+                <owned-item ref="34256f0c448241f280e89bf0496ef894" />
+                <owned-item ref="cb56a12e4e8d43d0914c411392071238" />
+                <owned-item ref="615e0feb70d0440382a1f9471659bbfe" />
+                <owned-item ref="3228ecc1b5e040ba872c1151174ba9e6" />
+              </owned-items>
+              <attributes>
+                <attribute id="ac0a75f511413460cb77a525faef98b1b917" cid="PROP029" name="client" creation-date="07/22/2021 13:43:57" property-ref="0984b6984cf040d8bbcb1ce01c716f1f" />
+                <attribute id="ab998711d6a9344678bce92f105095a77917" cid="PROP030" name="subscriptionTopic" creation-date="07/22/2021 13:43:57" property-ref="e6d194d26b4044c99e06f81fe421809e" />
+                <attribute id="a03687ec776f244618cc1f58258f34c6a917" cid="PROP031" name="SendTopic" creation-date="07/22/2021 13:43:57" property-ref="4fdc07f9ad904ed98be3400f94252b01" />
+                <attribute id="a4b20138e68b9409e9b673cb36634c236917" cid="PROP032" name="recievedClientID" creation-date="07/22/2021 13:43:57" property-ref="34256f0c448241f280e89bf0496ef894" />
+                <attribute id="a566cbb281b544d83876efd675dd46cda917" cid="PROP033" name="recievedClientNumber" creation-date="07/22/2021 13:43:57" property-ref="cb56a12e4e8d43d0914c411392071238" />
+                <attribute id="a50942d33f0cc47c392015e895908ac31917" cid="PROP034" name="waitCts" creation-date="07/22/2021 13:43:57" property-ref="615e0feb70d0440382a1f9471659bbfe" />
+                <attribute id="addf6330a800142ab87fc0c24befd84bc917" cid="PROP035" name="jsonSettings" creation-date="07/22/2021 13:43:57" property-ref="3228ecc1b5e040ba872c1151174ba9e6" />
+              </attributes>
+              <operations>
+                <operation id="o2baa2e4a2f7c44c88a4c145468c02189917" cid="OP011" name="Initialize" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="package">
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t> create client instance trying possible raspberry pi IPs
+ register to message received 
+ subscribe to the topic "/home/temperature" with QoS 2
+send device id
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                                      
+            
+            
+            try
+            {
+            client = new MqttClient("raspberrypi");
+            }
+            catch (System.Net.Sockets.SocketException)
+            {
+                Console.WriteLine("couldnt conect to broker via socket raspberrypi");
+                try
+                {
+                    client = new MqttClient("192.168.8.102");
+                }
+                catch (System.Net.Sockets.SocketException)
+                {
+                    Console.WriteLine("couldnt conect to broker via socket 192.168.8.102");
+                    try
+                    {
+                        client = new MqttClient("192.168.8.100");
+                    }
+                    catch(Exception e)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Failed to connect to mqtt broker: " + e.Message);
+                    }
+                }
+            }
+
+                                            
+            client.MqttMsgPublishReceived += client_MqttMsgReceived;
+
+            string clientId = Guid.NewGuid().ToString();
+            client.Connect(clientId);
+
+                                                                    
+            client.Subscribe(new string[] { subscriptionTopic }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE});
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o06ff3976d28b4ad1b177d0cc6195ac13917" cid="OP012" name="BroadcastID" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="package">
+                  <parameters>
+                    <parameter id="pf57a06df46d44ab195aba47c1679c024" name="_deviceType" type="string" type-id="string" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+                            
+            string sendMsg = "deviceType:" + _deviceType;
+            client.Publish(SendTopic, Encoding.UTF8.GetBytes(sendMsg), MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE, false);
+
+            waitCts = new CancellationTokenSource();
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o9ec316b19d0d4ee588c96c488bb313c2917" cid="OP013" name="client_MqttMsgReceived" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="undefined">
+                  <parameters>
+                    <parameter id="pd047e3a7fde44594a027e95d572b140f" name="sender" type="object" type-id="object" />
+                    <parameter id="pb55b23fae481416ea7f4d81920068493" name="e" type="MqttMsgPublishEventArgs" type-id="MqttMsgPublishEventArgs" />
+                  </parameters>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>Id will come in the format of "ID:&lt;userIdWithoutParenthesis&gt;;userPhoneNo
+Console.WriteLine("index start is:" + iDstartIndex);
+Console.WriteLine("index end is:" + numberstartIndex);
+the id lies between the 2 symbols
+the id lies between the 2 symbols
+read the client ID
+read the client phone number
+at the stage, the main program uses this ID to alter the devices "row" info
+call the cancel and allow mainProgram to continue
+then append it to the telemetry data point classesio
+send altered device class info to client
+client will use string.contains to know the kind of message broadcasted on this channel
+it sholud be necessary for client to report back id an invalid Json was sent, but that is currenly out of scope of this project
+renew this while main program waits for it
+cancel is callen on MqttMsgPublished
+I'm not sure what e will contain but at this stage the agreement should be complete
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+            string receivedMsg = Encoding.UTF8.GetString(e.Message);
+            if (receivedMsg.Contains("ID:"))                                                                              
+            {
+                Console.WriteLine("received ID from client" + receivedMsg);
+                var iDstartIndex = receivedMsg.IndexOf(':');
+                                                                      
+                var numberstartIndex = receivedMsg.LastIndexOf(';');
+                                                                        
+                int iDlength = numberstartIndex - iDstartIndex + 1;                                    
+
+                                                   
+                recievedClientID = receivedMsg.Substring(startIndex: iDstartIndex, length: iDlength);                      
+                recievedClientNumber = receivedMsg.Substring(startIndex: numberstartIndex + 1);                                
+
+                                                                                             
+                waitCts.Cancel();                                                      
+                                                                      
+            }
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="oe343fc630b974b7d8a1725e3c99a75a8917" cid="OP014" name="BroadcastDevices" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="package">
+                  <parameters>
+                    <parameter id="p6db39232c23e49179a284417b4168a6c" name="_devicesJson" type="string" type-id="string" />
+                  </parameters>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>to avoid loop sending
+this allows main program to finish agreement logic and start sending telemetry
+ define a directory path to output files
+ starting in the user's folder
+if the devices data has already been stored
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                      
+                                                                                                     
+                                                                                                                                             
+            client.Publish(SendTopic, Encoding.UTF8.GetBytes(_devicesJson), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            waitCts = new CancellationTokenSource();                                                
+                                                  
+            client.MqttMsgPublished += client_MqttMsgPublished;
+
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="oa946059a77ba4a38bad4a0ec4dbf9c52917" cid="OP015" name="client_MqttMsgPublished" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="undefined">
+                  <parameters>
+                    <parameter id="p95f22f2ddfe44738ae43f199017fb066" name="sender" type="object" type-id="object" />
+                    <parameter id="pc17d75ec583346f481ea1aaa4ac5da28" name="e" type="MqttMsgPublishedEventArgs" type-id="MqttMsgPublishedEventArgs" />
+                  </parameters>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>read and return the device data
+the binary reader is indirectly disposed
+signify that directory already exists and device is already authenticated with user
+otherwise return empty string if it doesnt exist
+JsonSerializerSettings _settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto };
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                                                                 
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Client agreement complete");
+            Console.ForegroundColor = ConsoleColor.White;
+            client.Publish(SendTopic, Encoding.UTF8.GetBytes("ControlAccessGranted"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+            client.MqttMsgPublished -= client_MqttMsgPublished;                        
+            waitCts.Cancel();                                                                                   
+
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o6afcc7a2f9d649dfbeed1e628297357b917" cid="OP016" name="CheckExistingUser" creation-date="07/22/2021 13:43:57" type="Dictionary&lt;string, object&gt;" type-id="Dictionary&lt;string, object&gt;" visibility="package">
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                      
+                                            
+            string dir = Combine(
+            GetFolderPath(SpecialFolder.ApplicationData, SpecialFolderOption.None), "ControlFiles");
+            Console.WriteLine("directory is " + dir);
+            string datFile = Combine(dir, "Devices.bin");
+            if (File.Exists(datFile))                                                
+            {
+                using (BinaryReader reader = new BinaryReader(File.Open(datFile, FileMode.Open)))
+                {
+                    var storedDeviceData = reader.ReadString();                                  
+                    return JsonConvert.DeserializeObject&lt;Dictionary&lt;string, object&gt;&gt;(storedDeviceData, jsonSettings);
+                                                              
+                }
+                                                                                                     
+            }
+            return null;                                                    
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o3560d0e84c8a406dadd21d207185e311917" cid="OP017" name="StoreDevicesFiles" creation-date="07/22/2021 13:43:57" type="bool" type-id="bool" visibility="package">
+                  <parameters>
+                    <parameter id="p089b183ebe754f259749eaa46ab93f29" name="_devicesTelemetry" type="Dictionary&lt;string, object&gt;" type-id="Dictionary&lt;string, object&gt;" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+            var dir = Combine(
+            GetFolderPath(SpecialFolder.ApplicationData, SpecialFolderOption.Create), "ControlFiles");
+            CreateDirectory(dir);
+            string datFile = Combine(dir, "Devices.bin");
+                                                                                                                         
+            var _devicesJson = JsonConvert.SerializeObject(_devicesTelemetry, formatting: Formatting.Indented, settings: jsonSettings);
+            using (BinaryWriter writer = new BinaryWriter(File.Open(datFile, FileMode.Create)))
+            {
+                try
+                {
+                writer.Write(_devicesJson);
+                return true;
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine("Exception occured" + e.Message);
+                    return false;
+                }
+            }
+
+        </source-code>
+                  </source-codes>
+                </operation>
+              </operations>
+            </item>
+            <item id="0984b6984cf040d8bbcb1ce01c716f1f" cid="PROP029" type="property" name="client" style-class="" owner="4347477a1b4944af8f3fb539292f86b5" creator="" creation-date="07/22/2021 13:43:57" visibility="undefined">
+              <feature />
+              <structural-feature type="MqttClient" type-id="MqttClient" />
+              <property default-value="new MqttClient(&quot;raspberrypi&quot;)" />
+            </item>
+            <item id="e6d194d26b4044c99e06f81fe421809e" cid="PROP030" type="property" name="subscriptionTopic" style-class="" owner="4347477a1b4944af8f3fb539292f86b5" creator="" creation-date="07/22/2021 13:43:57" visibility="undefined">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;Rpi/Request/AuthControl&quot;" />
+            </item>
+            <item id="4fdc07f9ad904ed98be3400f94252b01" cid="PROP031" type="property" name="SendTopic" style-class="" owner="4347477a1b4944af8f3fb539292f86b5" creator="" creation-date="07/22/2021 13:43:57" visibility="undefined">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="&quot;device/startup/broadcast&quot;" />
+            </item>
+            <item id="34256f0c448241f280e89bf0496ef894" cid="PROP032" type="property" name="recievedClientID" style-class="" owner="4347477a1b4944af8f3fb539292f86b5" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="string.Empty" />
+            </item>
+            <item id="cb56a12e4e8d43d0914c411392071238" cid="PROP033" type="property" name="recievedClientNumber" style-class="" owner="4347477a1b4944af8f3fb539292f86b5" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property default-value="string.Empty" />
+            </item>
+            <item id="615e0feb70d0440382a1f9471659bbfe" cid="PROP034" type="property" name="waitCts" style-class="" owner="4347477a1b4944af8f3fb539292f86b5" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature />
+              <structural-feature type="CancellationTokenSource" type-id="CancellationTokenSource" />
+              <property />
+            </item>
+            <item id="3228ecc1b5e040ba872c1151174ba9e6" cid="PROP035" type="property" name="jsonSettings" style-class="" owner="4347477a1b4944af8f3fb539292f86b5" creator="" creation-date="07/22/2021 13:43:57" visibility="undefined">
+              <feature />
+              <structural-feature type="JsonSerializerSettings" type-id="JsonSerializerSettings" />
+              <property default-value="new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto }" />
+            </item>
+            <item id="5c46ff4b2b5744bd88ed9b89f8f9a683" cid="C004" type="class" name="Program" style-class="" creator="" creation-date="07/22/2021 13:43:57" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tvd1fa8421472842e4bcc431b9117b5b28" name="namespace" type="text" multiple="false" value="SimulatedDevice" />
+              </tagged-values>
+              <owned-items>
+                <owned-item ref="a6d081208112467ab2f645aa8b8a21e0" />
+                <owned-item ref="ec5ce81ed4484b2e880ab76f9c608755" />
+                <owned-item ref="3b6eed5b141c42e6b36ffa8c044de4d7" />
+                <owned-item ref="91da939db4164fc5acd7131b2eac6d3e" />
+                <owned-item ref="1003c4a106c045d68b1daa832d7cc156" />
+                <owned-item ref="7a516c2db4c44a00a3ea0bbc1ddd2ff1" />
+                <owned-item ref="95686bce940e48bc88607e2c9fccc42b" />
+                <owned-item ref="1961f182678342d08bc9eb4a720046d1" />
+                <owned-item ref="d53c81c1794a40a7ab833130f904ed59" />
+                <owned-item ref="8c7e4601ffeb45f69d2251c1282f096e" />
+                <owned-item ref="962fee7a83db429aa1303763fb55568c" />
+                <owned-item ref="1bc59bcdc3c34bcb893bcb5b0b99adee" />
+                <owned-item ref="4e1e855edb69414fb013b9aff5fc8675" />
+                <owned-item ref="232f1f31dd984288a78a276a363adc01" />
+                <owned-item ref="272a1fd3b99c414eb7a6244ca3b00c8a" />
+                <owned-item ref="86a7330d600f41cfa0864f928d3b40e3" />
+                <owned-item ref="186db177064c4bc6bf10e11f06f30eb3" />
+                <owned-item ref="3652869e8b9643708ae0e6d2d98a050b" />
+                <owned-item ref="6890ac6c404247c8bc7bd5264055db33" />
+                <owned-item ref="a23e4348421a4463b781309dfcb859c9" />
+                <owned-item ref="4c7279b2b5854364af1cb623702fcac7" />
+              </owned-items>
+              <attributes>
+                <attribute id="aff851015c6e240a2878906e5ac4b9dbd917" cid="PROP036" name="RpiConnectionString" creation-date="07/22/2021 13:43:57" property-ref="a6d081208112467ab2f645aa8b8a21e0" />
+                <attribute id="a7119c3113a2c4cdc91539ba41a86986e917" cid="PROP037" name="telemetryInterval" creation-date="07/22/2021 13:43:57" property-ref="ec5ce81ed4484b2e880ab76f9c608755" />
+                <attribute id="ae3633f3166af4995996cda8b1a5870bd918" cid="PROP038" name="telemetryDataString" creation-date="07/22/2021 13:43:57" property-ref="3b6eed5b141c42e6b36ffa8c044de4d7" />
+                <attribute id="abb94f66f70f94f3ea3ca6f8121adcd40918" cid="PROP039" name="raspBerryPi" creation-date="07/22/2021 13:43:57" property-ref="91da939db4164fc5acd7131b2eac6d3e" />
+                <attribute id="a6c682236ad8646e998e9da0f796a5299918" cid="PROP040" name="arduino1" creation-date="07/22/2021 13:43:57" property-ref="1003c4a106c045d68b1daa832d7cc156" />
+                <attribute id="a70c40bdfcac74509bd9695d490986033918" cid="PROP041" name="arduino2" creation-date="07/22/2021 13:43:57" property-ref="7a516c2db4c44a00a3ea0bbc1ddd2ff1" />
+                <attribute id="abe133523e80148d586fe79231892a6ee918" cid="PROP042" name="temperatueSensor" creation-date="07/22/2021 13:43:57" property-ref="95686bce940e48bc88607e2c9fccc42b" />
+                <attribute id="aec46a2ed4da945188fdb420b50bab021918" cid="PROP043" name="humiditySensor" creation-date="07/22/2021 13:43:57" property-ref="1961f182678342d08bc9eb4a720046d1" />
+                <attribute id="aafaf77bcdda040608f77979c4ff9f192918" cid="PROP044" name="doorSensor" creation-date="07/22/2021 13:43:57" property-ref="d53c81c1794a40a7ab833130f904ed59" />
+                <attribute id="ad98e0edb737444f199e17ca17a360526918" cid="PROP045" name="doorController" creation-date="07/22/2021 13:43:57" property-ref="8c7e4601ffeb45f69d2251c1282f096e" />
+                <attribute id="a07d9644d4d6c4582864863d455574ed3918" cid="PROP046" name="motionSensor" creation-date="07/22/2021 13:43:57" property-ref="962fee7a83db429aa1303763fb55568c" />
+                <attribute id="a7f1b7c6b24b24457b0788dba3455a776918" cid="PROP047" name="light1" creation-date="07/22/2021 13:43:57" property-ref="1bc59bcdc3c34bcb893bcb5b0b99adee" />
+                <attribute id="a6700c0ff4fc04f1fb6287d93f2ce739b918" cid="PROP048" name="light2" creation-date="07/22/2021 13:43:57" property-ref="4e1e855edb69414fb013b9aff5fc8675" />
+                <attribute id="ada4961a3d9a942d7a3ad045bc4ab3e38918" cid="PROP049" name="extension" creation-date="07/22/2021 13:43:57" property-ref="232f1f31dd984288a78a276a363adc01" />
+                <attribute id="adf97f39b21de473a883185c389585025918" cid="PROP050" name="UserDetails" creation-date="07/22/2021 13:43:57" property-ref="272a1fd3b99c414eb7a6244ca3b00c8a" />
+                <attribute id="a83323b8e99ee4087a1c280bd215d4e6b918" cid="PROP051" name="telemetryDevicesDict" creation-date="07/22/2021 13:43:57" property-ref="86a7330d600f41cfa0864f928d3b40e3" />
+                <attribute id="a7a1804bc5c3849448d9a942fef15256f918" cid="PROP052" name="deviceClient" creation-date="07/22/2021 13:43:57" property-ref="186db177064c4bc6bf10e11f06f30eb3" />
+                <attribute id="aab326cd21c3f488b9f1853acf03cd517918" cid="PROP053" name="cts" creation-date="07/22/2021 13:43:57" property-ref="3652869e8b9643708ae0e6d2d98a050b" />
+                <attribute id="acc8a9940869e413ab0ea01d8c9a7a6f2918" cid="PROP054" name="LocalNetworkHandler" creation-date="07/22/2021 13:43:57" property-ref="6890ac6c404247c8bc7bd5264055db33" />
+                <attribute id="a4e0c4851d52849b1a9dc4ef361e4567c918" cid="PROP055" name="serialOPerations" creation-date="07/22/2021 13:43:57" property-ref="a23e4348421a4463b781309dfcb859c9" />
+                <attribute id="a1fab347b894c40c4a540d1956a2b3131918" cid="PROP056" name="deviceCommands" creation-date="07/22/2021 13:43:57" property-ref="4c7279b2b5854364af1cb623702fcac7" />
+              </attributes>
+              <operations>
+                <operation id="oe2b1e4cddcd647aeb60499157f7f7c15918" cid="OP018" name="Main" creation-date="07/22/2021 13:43:57" type="Task" type-id="Task" visibility="public" static="true">
+                  <stereotypes>
+                    <stereotype>async</stereotype>
+                  </stereotypes>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>wait for device to respond
+if ID was successfully received
+create a temporary dictionary to access the telemetry base class data
+cast the dictionary objects to the telemetryData base class
+concatenate rowkey of the TelemetryData to include the clientID
+                        hopefully all the boxing, unboxing and passing around of telemetry data is done by reference and no copying is happening
+altering the values in tempDeviceDick also alters it in the original telemetryDevicesDict
+ Very important piece of code here to get the user's phone number to the cloud
+                     twilo SMS service depends on this to work
+set this so it can be stored on the azure table storage
+connection string is not broadcasted as client code doent use it, rather it exists in the azure function
+wait infinitely for client to send his own ID, the cancellation is called in LocalNetworkHandler 
+after this point, the device can proceed to send telemetry
+if device is already registered with cleint
+exract the device last stored data from file
+create conection string
+connect to device in hub
+to receive direct commands consider using a switch to select the desired command to invoke
+I dont know if these multiple await would work out
+commands scheme |a|b|
+|a| : 1-select subdevice; 2-devicecommand code
+|b| : 0-off; 1-on; 2-toggle
+ard1|a| : 1-mytemperaturesensor; 2-myhumiditysensor; 3-mymotionsensor; 4-mylightsensor1; 5-myextensionbox
+ard2|b| : 1-mydoorsensor; 2-mydoorcontroller; 3-mylightsensor2
+ReceiveDirectCalls();  //start on a separate thread
+create cancellation token
+set to cancel on key press
+stop serial operations
+perform changes to telemetry data at this point
+UpdateTelemetry();  //populate this
+ok.Dispose();
+ await SendDeviceToCloudMessagesAsync();
+AzureIoTHub.GetConnectionString();
+to update telemetry=
+perfrom actions here
+send telemetry from all the connected devices including rpi
+the telemetry can be occasssionally altered asrec
+ serialize the telemetry data and convert it to JSON.
+this will be of type object
+ Encode the serialized object using UTF-8 so it can be parsed by IoT Hub when
+the dictionary key helps know the correct type cast for the currentTelemetry checking
+if house temperaure reaches 40 degrees celsius
+if house temperaure reaches 40 degrees celsius
+if the motion sensor is triggered and home owner is away(indicated by misc)
+if the contact sensor senses the door open but the house is in sleep mode
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+            Console.WriteLine("Routing Practical: Simulated device\n press Ctrl + C to cancel");
+                                                                         
+                                                                    
+            #region if device has not paired with client yet
+#if DEBUG
+
+            Dictionary&lt;string, object&gt; storedDeviceTelemetry = LocalNetworkHandler.CheckExistingUser();
+            if (storedDeviceTelemetry == null)                                            
+            {
+                LocalNetworkHandler.Initialize();
+                LocalNetworkHandler.BroadcastID(raspBerryPi.PartitionKey);
+                while (!LocalNetworkHandler.waitCts.Token.IsCancellationRequested)
+                {
+                                                                                                                       
+                                             
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine("waiting to recieve client ID");
+                    var cancelled = LocalNetworkHandler.waitCts.Token.WaitHandle.WaitOne(Timeout.InfiniteTimeSpan);                             
+                }
+                if (!string.IsNullOrEmpty(LocalNetworkHandler.recievedClientID))                                     
+                {
+                                                                                           
+                    Dictionary&lt;string, TelemetryData&gt; tempDevicesDict = new Dictionary&lt;string, TelemetryData&gt;();
+                    foreach(var _telemetryData in telemetryDevicesDict)
+                    {
+                                                                                     
+                        tempDevicesDict.Add(_telemetryData.Key, ((TelemetryData)_telemetryData.Value));
+                                                                                                                                                                                                                                           
+                        tempDevicesDict[_telemetryData.Key].RowKey = tempDevicesDict[_telemetryData.Key].RowKey + LocalNetworkHandler.recievedClientID;
+                                                                                                                   
+                    }
+                                                                                                                                                                    
+                    UserDetails.property2 = LocalNetworkHandler.recievedClientNumber;                                                            
+
+                    LocalNetworkHandler.BroadcastDevices(JsonConvert.SerializeObject(telemetryDevicesDict, Formatting.Indented));
+                                                                                                                              
+                    while (!LocalNetworkHandler.waitCts.Token.IsCancellationRequested)
+                    {
+                                                                                                                           
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("waiting to recieve client final auth acknowledgement");
+                        var cancelled = LocalNetworkHandler.waitCts.Token.WaitHandle.WaitOne(Timeout.InfiniteTimeSpan);
+                    }
+                                                                                
+                }
+                else
+                {
+                    Console.Error.WriteLine("Code error occured, client ID invalid");
+                }
+            }
+            else
+            {                                                
+                telemetryDevicesDict = new Dictionary&lt;string, object&gt;();
+                telemetryDevicesDict = storedDeviceTelemetry;
+                                                              
+            }
+#endif
+            #endregion
+                                     
+            deviceClient = DeviceClient.CreateFromConnectionString(RpiConnectionString, TransportType.Mqtt);                              
+                                                                                                        
+
+
+                                                                
+                                   
+                                                            
+                                         
+                                                                                                                       
+                                                                            
+
+            await deviceClient.SetMethodHandlerAsync(messages.ToggleLight, deviceCommands.ToggleLight, null);
+            await deviceClient.SetMethodHandlerAsync(messages.TogglePresenceMode, deviceCommands.TogglePresenceMode, null);
+            await deviceClient.SetMethodHandlerAsync(messages.ToggleSleepMode, deviceCommands.ToggleSleepMode, null);
+            await deviceClient.SetMethodHandlerAsync(messages.UnlockDoor, deviceCommands.ToggleDoor, null);
+            await deviceClient.SetMethodHandlerAsync(messages.ToggleMotionSensor, deviceCommands.ToggleMotionSensor, null);
+            await deviceClient.SetMethodHandlerAsync(messages.ToggleExtensionBox, deviceCommands.ToggleExtension, null);
+            Console.WriteLine("back to main thread");
+                                                                 
+
+
+            cts = new CancellationTokenSource();                               
+                                        
+            Console.CancelKeyPress += (sender, eventArgs) =&gt;
+            {
+                eventArgs.Cancel = true;
+                serialOPerations.StopSerial();                          
+                cts.Cancel();
+                Console.WriteLine("Exiting...");
+            };
+
+
+
+                                                             
+                                                 
+            await SendDeviceToCloudMessagesAsync(cts.Token);
+            await deviceClient.CloseAsync();
+                           
+
+            deviceClient.Dispose();
+            cts.Dispose();
+
+                                                      
+                                                
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o22d0f454716a4a368dee0c2b6bbf287a919" cid="OP019" name="UpdateTelemetry" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="private" static="true" />
+                <operation id="o3310ee5acea846e2b6e040ed44e64367919" cid="OP020" name="SendDeviceToCloudMessagesAsync" creation-date="07/22/2021 13:43:57" type="Task" type-id="Task" visibility="private" static="true">
+                  <parameters>
+                    <parameter id="p0b801afa263740358d6c09caaf32d5f8" name="input_token" type="CancellationToken" type-id="CancellationToken" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>async</stereotype>
+                  </stereotypes>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>if the contact sensor senses the door open but the servo isnt in an authorized open state
+as in the last known servo state was closed
+also append the message to UserDetails so that Azure functions can detect and send SMS if necessary
+ add message routing rules.
+ Add one property to the message.
+all messages are sent to SERVICEBUSQUEUE for processing by azure function and storge
+                     * and messages some are processed by azure logicApps and functions for appropriate alerts
+ Submit the message to the hub.
+time canellation token of 10 secs
+t_cts.Token.ThrowIfCancellationRequested();
+t_cts.CancelAfter(TimeSpan.FromSeconds(5)); //allow process to fall into catch block on cancellation
+deviceClient.CloseAsync();
+reference the task
+ await _telemetryTask;
+change level value
+send but dont await                    }
+change level value
+send but dont await//its a form of trying again                 }
+ tasks.Add(task); 
+ Print out the message.
+delay before sending next telemetry batch
+ await Task.WhenAll(tasks);  //wait for all telemtry to complete
+arduino will send telemetry using the device ID of the updated device
+and the parameter label of the telemetry it is sending
+like myard1;property2:.... or myard1;misc:....
+put data received logic here
+read the data from after colon(:) and remove any newline
+when a device property is changed, set the device state to connected{property1}
+telemetryDevicesDict[arduino1.deviceId]
+"False" or "True"
+I really dont want to put a final else statement
+respond to possible inputs from this device
+telemetryDevicesDict[arduino1.deviceId]
+"False" or "True"
+I really dont want to put a final else statement
+respond to possible inputs from this device
+telemetryDevicesDict[arduino1.deviceId]
+"False" or "True"
+I really dont want to put a final else statement
+respond to possible inputs from this ard
+telemetryDevicesDict[arduino1.deviceId]
+"False" or "True"
+I really dont want to put a final else statement
+respond to possible inputs from this ard
+"False" or "True"
+true means open
+"False" or "True"
+I really dont want to put a final else statement
+respond to possible inputs from this ard
+telemetryDevicesDict[arduino1.deviceId]
+this is the user's password, the valuse should actually be evaluated from the cloud
+if door is locked
+I really dont want to put a final else statement
+respond to possible inputs from this ard
+telemetryDevicesDict[arduino1.deviceId]
+"False" or "True"
+I really dont want to put a final else statement
+respond to possible inputs from this ard
+telemetryDevicesDict[arduino1.deviceId]
+"False" or "True"
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+
+            while (!input_token.IsCancellationRequested)
+            {
+
+                string infoString = "this is a normal message";
+                string levelValue = "normal";
+
+
+
+                                      
+
+                foreach (KeyValuePair&lt;string, object&gt; telemetrydata in telemetryDevicesDict)
+                {
+                                                                                 
+                                                                       
+                                                                           
+                    var currentTelemery = (telemetrydata.Value);                               
+                    JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto };
+                    telemetryDataString = JsonConvert.SerializeObject(currentTelemery, settings);
+
+
+                                                                                                   
+                    var message = new Message(Encoding.UTF8.GetBytes(telemetryDataString))
+                    {
+                        ContentEncoding = "utf-8",
+                        ContentType = "application/json",
+                    };
+                     #region code to determine the alert level of the telemetry data for routing
+
+                                                                                                           
+                    if (telemetrydata.Key == temperatueSensor.deviceId &amp;&amp; ((TelemetryDataPoint&lt;double&gt;)currentTelemery).property2 &gt; 40)
+                    {
+                                                                        
+                        infoString = "House Temperature is reaching undesirable levels: " + ((TelemetryDataPoint&lt;double&gt;)currentTelemery).property2;
+                        levelValue = messages.warningMessage;
+                    }
+                    if (telemetrydata.Key == humiditySensor.deviceId &amp;&amp; ((TelemetryDataPoint&lt;double&gt;)currentTelemery).property2 &gt; 45)
+                    {
+                                                                        
+                        infoString = "House Humidity is reaching undesirable levels: " + ((TelemetryDataPoint&lt;double&gt;)currentTelemery).property2;
+                        levelValue = messages.warningMessage;
+                    }
+                    if (telemetrydata.Key == motionSensor.deviceId &amp;&amp; ((TelemetryDataPoint&lt;bool&gt;)currentTelemery).property2 == true &amp;&amp; 
+                        ((TelemetryDataPoint&lt;bool&gt;)currentTelemery).Misc == messages.awayMode)
+                    {
+                                                                                                     
+                        infoString = "possible intruder detected inside home, please check immediately";
+                        levelValue = messages.criticalMessage;
+                    }
+                    if (telemetrydata.Key == doorSensor.deviceId &amp;&amp; ((TelemetryDataPoint&lt;bool&gt;)currentTelemery).property2 == false &amp;&amp;
+                        raspBerryPi.Misc == messages.sleepMode)
+                    {
+                                                                                                   
+                        infoString = "The front door has been left open";
+                        levelValue = messages.warningMessage;
+                    }
+                    if (telemetrydata.Key == doorSensor.deviceId &amp;&amp; ((TelemetryDataPoint&lt;bool&gt;)currentTelemery).property2 == false &amp;&amp;
+                        doorController.property2 &lt; 5)
+                    {
+                                                                                                                   
+                                                                     
+                        infoString = "breach detected at house door, please act immediately";
+                        levelValue = messages.criticalMessage;
+                    }
+                    #endregion
+
+
+                    message.Properties.Add("level", levelValue);
+                    message.Properties.Add("info", infoString);
+                                                                                                                         
+                    UserDetails.Misc = $"{levelValue}:{infoString}";    
+                                                 
+                                                       
+                                                                                                                                                                                                                          
+
+                                                     
+                    var t_cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));                                      
+                                                                 
+                                                                                                                          
+                    t_cts.Token.Register(() =&gt;
+                    {
+                                                    
+                        Console.WriteLine("Request cancelled!");
+
+                    });
+                    try
+                    {
+                        await deviceClient.SendEventAsync(message, t_cts.Token);                       
+                        Console.WriteLine("event sent");
+                                                
+                    }
+                    catch (TaskCanceledException)
+                    {
+                        var timedOutDevice = JsonConvert.DeserializeObject&lt;TelemetryDataPoint&lt;object&gt;&gt;(telemetryDataString as string);
+
+                        Console.WriteLine("\nTasks cancelled: timed out. while sending telemetry from \n" + timedOutDevice.deviceId);
+                                            
+                        levelValue = "failure";
+                        message.Properties.Remove("level");
+                        message.Properties.Add("level", levelValue);
+                        await deviceClient.SendEventAsync(message);                                              
+                    }
+                    catch (IotHubCommunicationException)
+                    {
+                        var timedOutDevice = JsonConvert.DeserializeObject&lt;TelemetryDataPoint&lt;object&gt;&gt;(telemetryDataString as string);
+
+                        Console.WriteLine("\ncannot communicate with iotHub. while sending telemetry from \n" + timedOutDevice.deviceId);
+                        Console.WriteLine("trying again");
+                                            
+                        levelValue = "failure";
+                        message.Properties.Remove("level");
+                        message.Properties.Add("level", levelValue);
+                        _ = deviceClient.SendEventAsync(message);                                                                       
+                                                                                           
+                    }
+                    Console.WriteLine($"{infoString} &gt; Sent message: parameter {DateTime.UtcNow} : {telemetryDataString}");
+                                             
+
+                }
+                if (!string.IsNullOrEmpty(telemetryDataString))
+                {
+                LocalNetworkHandler.StoreDevicesFiles(telemetryDevicesDict);
+
+                }
+                await Task.Delay(telemetryInterval);                                            
+
+                                                                                  
+            }
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o16d34838e2804cd685f65f3232791497919" cid="OP021" name="OnSerialReceived" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="private" static="true">
+                  <parameters>
+                    <parameter id="p899577199cd344128effc108eddefad8" name="sender" type="object" type-id="object" />
+                    <parameter id="p6eaa048323da4f5d950cf6bf82bad574" name="e" type="SerialDataReceivedEventArgs" type-id="SerialDataReceivedEventArgs" />
+                  </parameters>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>I really dont want to put a final else statement
+respond to possible inputs from this ard
+telemetryDevicesDict[arduino1.deviceId]
+"False" or "True"
+I really dont want to put a final else statement
+respond to possible inputs from this ard
+telemetryDevicesDict[arduino1.deviceId]
+"False" or "True"
+arduino should not write to this directly
+I really dont want to put a final else statement
+use string - "0" to convert int in arduino
+the data is the payload, the arguement of the methood
+use a switch statement toknow where to know what exactly to do to device
+ Check the payload is light 1 or light 2{string}
+toggle indoor light switch here
+3 means toggle
+ Acknowlege the direct method call with a 200 success message
+toggle indoor light switch here
+ Acknowlege the direct method call with a 200 success message
+ Acknowlege the direct method call with a 400 error message
+the data is the payload, the arguement of the methood
+toggle the presence Mode
+the data is the payload, the arguement of the methood
+toggle the motion sensor
+the data is the payload, the arguement of the methood
+toggle the sleep mode, by default, this starts out as Awake on device set-up
+turn off all the lights and arm the door security system, also check if the front door is closed
+the data is the payload, the arguement of the methood
+signal the arduino to close the door
+the data is the payload, the arguement of the methood
+signal the arduino to close the door
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                                                   
+                                                                    
+                                                            
+                                          
+            SerialPort sp = (SerialPort)sender;
+            string indata = sp.ReadLine();
+
+                                                                      
+                                                                                             
+            char[] trimChars = { '\n', '\0' };
+            var value = indata.Substring(indata.LastIndexOf(":") + 1).Trim(trimChars);
+            if (indata.Contains(arduino1.deviceId))
+            {
+                arduino1.property1 = true;
+                if (indata.Contains(messages.property2)) {
+                                                             
+                    arduino1.property2 = Convert.ToBoolean(value);
+                }
+                else if (indata.Contains(messages.misc))
+                {
+                                       
+                    arduino1.Misc = value;
+                }
+                                                                  
+            }
+            else if (indata.Contains(arduino2.deviceId))
+            {
+                arduino2.property1 = true;
+                                                             
+                if (indata.Contains(messages.property2))
+                {
+                                                             
+                    arduino2.property2 = Convert.ToBoolean(value);
+                }
+                else if (indata.Contains(messages.misc))
+                {
+                                       
+                    arduino2.Misc = value;
+                }
+                                                                  
+            }
+            else if (indata.Contains(temperatueSensor.deviceId))
+            {
+                temperatueSensor.property1 = true;
+                                                             
+                if (indata.Contains(messages.property2))
+                {
+                                                             
+                    temperatueSensor.property2 = Convert.ToDouble(value);
+                }
+                else if (indata.Contains(messages.misc))
+                {
+                                       
+                    temperatueSensor.Misc = value;
+                }
+                                                                  
+            }
+            else if (indata.Contains(humiditySensor.deviceId))
+            {
+                humiditySensor.property1 = true;
+                                                          
+                if (indata.Contains(messages.property2))
+                {
+                                                             
+                    humiditySensor.property2 = Convert.ToDouble(value);
+                }
+                else if (indata.Contains(messages.misc))
+                {
+                                       
+                    humiditySensor.Misc = value;
+                }
+                                                                  
+            }
+            else if (indata.Contains(doorSensor.deviceId))
+            {
+                doorSensor.property1 = true;
+                                                          
+                if (indata.Contains(messages.property2))
+                {
+                                       
+                    doorSensor.property2 = Convert.ToBoolean(value);                     
+                }
+                else if (indata.Contains(messages.misc))
+                {
+                                       
+                    doorSensor.Misc = value;
+                }
+                                                                  
+            }
+            else if (indata.Contains(doorController.deviceId))
+            {
+                doorController.property1 = true;
+                                                          
+                if (indata.Contains(messages.property2))
+                {
+                                                             
+                    doorController.property2 = Convert.ToDouble(value);
+                }
+                else if (indata.Contains(messages.misc))
+                {
+                                                                                                         
+                    doorController.Misc = value;
+                    if (value == "0123" &amp;&amp; doorSensor.property2 == true || doorController.property2 == 0)                    
+                    { _ = deviceCommands.ToggleDoor(); }
+                    else { deviceCommands.WrongDoorCode(); }
+                }
+                                                                  
+            }
+            else if (indata.Contains(motionSensor.deviceId))
+            {
+                motionSensor.property1 = true;
+                                                          
+                if (indata.Contains(messages.property2))
+                {
+                                                             
+                    motionSensor.property2 = Convert.ToBoolean(value);
+                }
+                else if (indata.Contains(messages.misc))
+                {
+                                       
+                    motionSensor.Misc = value;
+                }
+                                                                  
+            }
+            else if (indata.Contains(light1.deviceId))
+            {
+                light1.property1 = true;
+                                                          
+                if (indata.Contains(messages.property2))
+                {
+                                                             
+                    light1.property2 = Convert.ToBoolean(value);
+                }
+                else if (indata.Contains(messages.misc))
+                {
+                                       
+                    light1.Misc = value;
+                }
+                                                                  
+            }
+            else if (indata.Contains(light2.deviceId))
+            {
+                light2.property1 = true;
+                                                          
+                if (indata.Contains(messages.property2))
+                {
+                                                             
+                    light2.property2 = Convert.ToBoolean(value);
+                }
+                else if (indata.Contains(messages.misc))
+                {
+                                       
+                    light2.Misc = value;
+                }
+                                                                  
+            }
+            else if (indata.Contains(motionSensor.deviceId))
+            {
+                motionSensor.property1 = true;
+                                                          
+                if (indata.Contains(messages.property2))
+                {
+                                                             
+                    motionSensor.property2 = Convert.ToBoolean(value);
+                }
+                else if (indata.Contains(messages.misc))
+                {
+                                       
+                    light2.Misc = value;                                               
+                }
+                                                                  
+            }
+
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine("Data Received is:" + indata);
+            Console.ForegroundColor = ConsoleColor.White;
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o82a39fbcd57946ebbcc7be5f191d1441919" cid="OP022" name="ToggleLight" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="private" static="true">
+                  <parameters>
+                    <parameter id="pd99dad5ecd094b2e87fac9d6b65a2fe8" name="methodRequest" type="MethodRequest" type-id="MethodRequest" />
+                    <parameter id="pb2455f7d4bb4463b90b7145bab317a80" name="userContext" type="object" type-id="object" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+            var data = Encoding.UTF8.GetString(methodRequest.Data);                                                        
+                                                                                      
+
+                                                              
+            if (data.Contains(light1.deviceId))
+            {
+                                                 
+                serialOPerations.SendSerial("2", $"{messages.myard1};{light1.deviceId}");                  
+                light1.property2 = !light1.property2;
+
+                                                                               
+                string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine(result);
+                Console.ForegroundColor = ConsoleColor.White;
+                return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+            }
+            else if (data.Contains(light2.deviceId))
+            {
+                                                 
+                serialOPerations.SendSerial("3", $"{messages.myard2};{light2.deviceId}");
+                light2.property2 = !(light2.property2);
+
+                                                                               
+                string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine(result);
+                Console.ForegroundColor = ConsoleColor.White;
+                return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+
+            }
+            else
+            {
+                                                                             
+                string result = "{\"result\":\"Invalid parameter\"}";
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(result);
+                Console.ForegroundColor = ConsoleColor.White;
+                return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 400));
+            }
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="oc4da6d75139145cd89589bfc57cbcd0a920" cid="OP023" name="TogglePresenceMode" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="private" static="true">
+                  <parameters>
+                    <parameter id="p7673d90bff2a416a9be0c230ee3c50cc" name="methodRequest" type="MethodRequest" type-id="MethodRequest" />
+                    <parameter id="p75100181ab3346a2a2717cd20c94bc88" name="userContext" type="object" type-id="object" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+            string data = Encoding.UTF8.GetString(methodRequest.Data);                                                        
+                                      
+            motionSensor.Misc = motionSensor.Misc == messages.awayMode ? messages.homeMode : messages.awayMode;
+            string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(result);
+            Console.ForegroundColor = ConsoleColor.White;
+            return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o8cda14ef029e4019b8086f965e0dd370920" cid="OP024" name="ToggleMotionSensor" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="private" static="true">
+                  <parameters>
+                    <parameter id="pcd55ba25d0794fd68c00e0726ffef678" name="methodRequest" type="MethodRequest" type-id="MethodRequest" />
+                    <parameter id="p5d717f1cad4f47f9a4cf40a1002a6b06" name="userContext" type="object" type-id="object" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+            string data = Encoding.UTF8.GetString(methodRequest.Data);                                                        
+                                      
+            serialOPerations.SendSerial("3", $"{messages.myard2};{motionSensor.deviceId}");
+            motionSensor.property2 = !(motionSensor.property2);
+            string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(result);
+            Console.ForegroundColor = ConsoleColor.White;
+            return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o3ff34dc5894948bd90018149f656b1be920" cid="OP025" name="ToggleSleepMode" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="private" static="true">
+                  <parameters>
+                    <parameter id="p33945f7f860d40d997712e8eed71d826" name="methodRequest" type="MethodRequest" type-id="MethodRequest" />
+                    <parameter id="p36f677f76f894545806899e3f09a91f5" name="userContext" type="object" type-id="object" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+            string data = Encoding.UTF8.GetString(methodRequest.Data);                                                        
+                                                                                          
+                                                                                                              
+            
+            raspBerryPi.Misc = raspBerryPi.Misc == messages.sleepMode ? messages.awakeMode : messages.sleepMode;
+
+            string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(result);
+            Console.ForegroundColor = ConsoleColor.White;
+            return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o43c32902dadc429eba4c9bde309f7c05920" cid="OP026" name="ToggleDoor" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="private" static="true">
+                  <parameters>
+                    <parameter id="pa493134d81f040159b90d62055b86fef" name="methodRequest" type="MethodRequest" type-id="MethodRequest" />
+                    <parameter id="pb5405040052e4531a5abb40854b28dac" name="userContext" type="object" type-id="object" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+            string data = Encoding.UTF8.GetString(methodRequest.Data);                                                        
+                                                  
+            serialOPerations.SendSerial("22", $"{messages.myard2};{doorController.deviceId}");
+            doorController.property2 = doorController.property2 == 90 ? 0 : 90; 
+
+            string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(result);
+            Console.ForegroundColor = ConsoleColor.White;
+            return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="oda0fd2b62db64ff9b5d2cb50b5b7703a920" cid="OP027" name="ToggleExtension" creation-date="07/22/2021 13:43:57" type="Task&lt;MethodResponse&gt;" type-id="Task&lt;MethodResponse&gt;" visibility="private" static="true">
+                  <parameters>
+                    <parameter id="p99661925882043e5aaa7a3b4b4935e73" name="methodRequest" type="MethodRequest" type-id="MethodRequest" />
+                    <parameter id="pdc1d476852f748c39c0c0ca01d34734b" name="userContext" type="object" type-id="object" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+            string data = Encoding.UTF8.GetString(methodRequest.Data);                                                        
+                                                  
+            serialOPerations.SendSerial("52", $"{messages.myard1};{extension.deviceId}");
+            extension.property2 = !extension.property2;
+
+            string result = $"{{\"result\":\"Executed direct method: {methodRequest.Name}\"}}";
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine(result);
+            Console.ForegroundColor = ConsoleColor.White;
+            return Task.FromResult(new MethodResponse(Encoding.UTF8.GetBytes(result), 200));
+        </source-code>
+                  </source-codes>
+                </operation>
+              </operations>
+            </item>
+            <item id="a6d081208112467ab2f645aa8b8a21e0" cid="PROP036" type="property" name="RpiConnectionString" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>private static RaspberryPiUWP
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature static="true" />
+              <structural-feature read-only="true" type="string" type-id="string" />
+              <property default-value="&quot;HostName=FinalYearHub.azure-devices.net;DeviceId=RaspberryPi;SharedAccessKey=rwforzwg0XC7eZpARG0bKD+mjoBkX6ebvEOQ26w2RIA=&quot;" />
+            </item>
+            <item id="ec5ce81ed4484b2e880ab76f9c608755" cid="PROP037" type="property" name="telemetryInterval" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <feature static="true" />
+              <structural-feature type="TimeSpan" type-id="TimeSpan" />
+              <property default-value="TimeSpan.FromSeconds(10)" />
+            </item>
+            <item id="3b6eed5b141c42e6b36ffa8c044de4d7" cid="PROP038" type="property" name="telemetryDataString" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>create devices connected to raspberry pi including raspberry pi
+private static readonly string RpiConnectionString = "HostName=FinalYearHub.azure-devices.net;DeviceId=MyDotnetDevice;SharedAccessKey=c/HyNUWA04EyjH5wdfpOuY4PtlCG+gI3BMuqARb7kww=";
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature static="true" />
+              <structural-feature type="string" type-id="string" />
+              <property />
+            </item>
+            <item id="91da939db4164fc5acd7131b2eac6d3e" cid="PROP039" type="property" name="raspBerryPi" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;bool&gt;" type-id="TelemetryDataPoint&lt;bool&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;bool&gt;(&quot;microcomputer&quot;, &quot;rpi123&quot;, messages.myrpi, &quot;activated&quot;, &quot;connected&quot;, false, s_property2: false, messages.awakeMode)" />
+            </item>
+            <item id="1003c4a106c045d68b1daa832d7cc156" cid="PROP040" type="property" name="arduino1" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;bool&gt;" type-id="TelemetryDataPoint&lt;bool&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;bool&gt;(&quot;microcontroller&quot;, &quot;ard123&quot;, messages.myard1, &quot;connectedassource&quot;, &quot;connectedassink&quot;, false, s_property2: false)" />
+            </item>
+            <item id="7a516c2db4c44a00a3ea0bbc1ddd2ff1" cid="PROP041" type="property" name="arduino2" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;bool&gt;" type-id="TelemetryDataPoint&lt;bool&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;bool&gt;(&quot;microcontroller&quot;, &quot;ard124&quot;, messages.myard2, &quot;connectedassource&quot;, &quot;connectedassink&quot;, false, s_property2: false)" />
+            </item>
+            <item id="95686bce940e48bc88607e2c9fccc42b" cid="PROP042" type="property" name="temperatueSensor" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;double&gt;" type-id="TelemetryDataPoint&lt;double&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;double&gt;(&quot;temperaturesensor&quot;, &quot;tempsens123&quot;, messages.mytemperaturesensor, &quot;connected&quot;, &quot;currenttemperture&quot;, false, s_property2: 0)" />
+            </item>
+            <item id="1961f182678342d08bc9eb4a720046d1" cid="PROP043" type="property" name="humiditySensor" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>this is the contact sensor
+the doorController's misc string also contains the password inputted by user
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;double&gt;" type-id="TelemetryDataPoint&lt;double&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;double&gt;(&quot;humiditysensor&quot;, &quot;humidsens123&quot;, messages.myhumiditysensor, &quot;connected&quot;, &quot;currenthumidity&quot;, false, s_property2: 0)" />
+            </item>
+            <item id="d53c81c1794a40a7ab833130f904ed59" cid="PROP044" type="property" name="doorSensor" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>misc is when user inputs pin
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;bool&gt;" type-id="TelemetryDataPoint&lt;bool&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;bool&gt;(&quot;doorsensor&quot;, &quot;doorsens123&quot;, messages.mydoorsensor, &quot;connected&quot;, &quot;currentdoorstate&quot;, false, s_property2: false)" />
+            </item>
+            <item id="8c7e4601ffeb45f69d2251c1282f096e" cid="PROP045" type="property" name="doorController" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;double&gt;" type-id="TelemetryDataPoint&lt;double&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;double&gt;(&quot;doorcontroller&quot;, messages.mydoorcontroller, &quot;mydoorcontroller&quot;, &quot;connected&quot;, &quot;currentdoorrotation&quot;, false, s_property2: 0, &quot;0000&quot;)" />
+            </item>
+            <item id="962fee7a83db429aa1303763fb55568c" cid="PROP046" type="property" name="motionSensor" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>indoor light
+outdoor light
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;bool&gt;" type-id="TelemetryDataPoint&lt;bool&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;bool&gt;(&quot;motionsensor&quot;, &quot;humidsens123&quot;, messages.mymotionsensor, &quot;connected&quot;, &quot;active&quot;, false, s_property2: false, messages.homeMode)" />
+            </item>
+            <item id="1bc59bcdc3c34bcb893bcb5b0b99adee" cid="PROP047" type="property" name="light1" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>extension box
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;bool&gt;" type-id="TelemetryDataPoint&lt;bool&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;bool&gt;(&quot;lightsensor&quot;, &quot;lightsens123&quot;, messages.mylightsensor1, &quot;connected&quot;, &quot;active&quot;, false, s_property2: false)" />
+            </item>
+            <item id="4e1e855edb69414fb013b9aff5fc8675" cid="PROP048" type="property" name="light2" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;bool&gt;" type-id="TelemetryDataPoint&lt;bool&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;bool&gt;(&quot;lightsensor&quot;, &quot;lightsens124&quot;, messages.mylightsensor2, &quot;connected&quot;, &quot;active&quot;, false, s_property2: false)" />
+            </item>
+            <item id="232f1f31dd984288a78a276a363adc01" cid="PROP049" type="property" name="extension" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>initialized using magic number
+add the devices to list
+private static List&lt;TelemetryDataPoint&gt; telemetryDevices = new List&lt;TelemetryDataPoint&gt;
+        {raspBerryPi, arduino1, arduino2, temperatureSensor, humiditySensor, doorSensor, motionSensor, light1, light2};
+I hope the object casting works lol
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;bool&gt;" type-id="TelemetryDataPoint&lt;bool&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;bool&gt;(&quot;extensionbox&quot;, &quot;extensionbox123&quot;, messages.myextensionbox, &quot;connected&quot;, &quot;active&quot;, false, s_property2: false)" />
+            </item>
+            <item id="272a1fd3b99c414eb7a6244ca3b00c8a" cid="PROP050" type="property" name="UserDetails" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <feature static="true" />
+              <structural-feature type="TelemetryDataPoint&lt;string&gt;" type-id="TelemetryDataPoint&lt;string&gt;" />
+              <property default-value="new TelemetryDataPoint&lt;string&gt;(&quot;UserID&quot;, &quot;userdetails123&quot;, messages.myuserdetails, &quot;connected&quot;, &quot;phoneno&quot;, false, s_property2: &quot;+15005550006&quot;, $&quot;{messages.normalMessage}:this is a normal message&quot;)" />
+            </item>
+            <item id="86a7330d600f41cfa0864f928d3b40e3" cid="PROP051" type="property" name="telemetryDevicesDict" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>to communicate with the arduinos over serial
+methods to handle serial commands from cloud
+work on storing devices file to use on startup and test auth with mqttX
+serialOPerations = new SystemIOperations(OnSerialReceived);
+deviceCommands = new DeviceCommands(serialOPerations);
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature static="true" />
+              <structural-feature type="Dictionary&lt;string, object&gt;" type-id="Dictionary&lt;string, object&gt;" />
+              <property default-value="new Dictionary&lt;string, object&gt;()&#xD;&#xA;        {&#xD;&#xA;                                                 &#xD;&#xA;            { raspBerryPi.deviceId, raspBerryPi},&#xD;&#xA;            { arduino1.deviceId, arduino1},&#xD;&#xA;            { arduino2.deviceId, arduino2 },&#xD;&#xA;            { temperatueSensor.deviceId, temperatueSensor },&#xD;&#xA;            { humiditySensor.deviceId, humiditySensor },&#xD;&#xA;            { doorSensor.deviceId, doorSensor },&#xD;&#xA;            { doorController.deviceId, doorController },&#xD;&#xA;            { motionSensor.deviceId, motionSensor },&#xD;&#xA;            { light1.deviceId, light1 },&#xD;&#xA;            { light2.deviceId, light2 },&#xD;&#xA;            { extension.deviceId, extension },&#xD;&#xA;            { UserDetails.deviceId, UserDetails }&#xD;&#xA;        }" />
+            </item>
+            <item id="186db177064c4bc6bf10e11f06f30eb3" cid="PROP052" type="property" name="deviceClient" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>if device has not been athenticated b4
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature static="true" />
+              <structural-feature type="DeviceClient" type-id="DeviceClient" />
+              <property />
+            </item>
+            <item id="3652869e8b9643708ae0e6d2d98a050b" cid="PROP053" type="property" name="cts" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <feature static="true" />
+              <structural-feature type="CancellationTokenSource" type-id="CancellationTokenSource" />
+              <property />
+            </item>
+            <item id="6890ac6c404247c8bc7bd5264055db33" cid="PROP054" type="property" name="LocalNetworkHandler" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <feature static="true" />
+              <structural-feature type="MqttHandler" type-id="Class:4347477a1b4944af8f3fb539292f86b5" />
+              <property default-value="new MqttHandler()" />
+            </item>
+            <item id="a23e4348421a4463b781309dfcb859c9" cid="PROP055" type="property" name="serialOPerations" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="package">
+              <feature static="true" />
+              <structural-feature type="SystemIOperations" type-id="Class:fc49ab968d5449a59ddecb17a83f3594" />
+              <property default-value="new SystemIOperations(OnSerialReceived)" />
+            </item>
+            <item id="4c7279b2b5854364af1cb623702fcac7" cid="PROP056" type="property" name="deviceCommands" style-class="" owner="5c46ff4b2b5744bd88ed9b89f8f9a683" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>wait infinitely for client to send his own ID, the cancellation is called in LocalNetworkHandler 
+when system received ID
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature static="true" />
+              <structural-feature type="DeviceCommands" type-id="Class:4a0ac332cc40474a964c5794ecbf0cd8" />
+              <property default-value="new DeviceCommands(serialOPerations)" />
+            </item>
+            <item id="fc49ab968d5449a59ddecb17a83f3594" cid="C005" type="class" name="SystemIOperations" style-class="" creator="" creation-date="07/22/2021 13:43:57" visibility="undefined">
+              <tagged-values>
+                <tagged-value id="tv99382a662ee34d668b4deed9e5999d6e" name="namespace" type="text" multiple="false" value="SimulatedDevice" />
+              </tagged-values>
+              <owned-items>
+                <owned-item ref="a4f640de9e914845a804e82da8dd9c1e" />
+                <owned-item ref="b111c335b74c4b55aaf172989e96bc85" />
+                <owned-item ref="8c53990503f747fb814f46879715ee3b" />
+                <owned-item ref="be6497f07aa9477a87a52ecaf2decb92" />
+              </owned-items>
+              <attributes>
+                <attribute id="a24bc1133455f4f82999e97743e46308d920" cid="PROP057" name="ard1Port" creation-date="07/22/2021 13:43:57" property-ref="a4f640de9e914845a804e82da8dd9c1e" />
+                <attribute id="a9efd3c6962ee4e469ba2d196d44422ed920" cid="PROP058" name="ard2Port" creation-date="07/22/2021 13:43:57" property-ref="b111c335b74c4b55aaf172989e96bc85" />
+                <attribute id="a2561450fc4fb4c2cb27f379f2c4993e3920" cid="PROP059" name="ardSerialPorts" creation-date="07/22/2021 13:43:57" property-ref="8c53990503f747fb814f46879715ee3b" />
+                <attribute id="acc10950d85ed4c26bf312d650e0d3186920" cid="PROP060" name="dataReceivedHandler" creation-date="07/22/2021 13:43:57" property-ref="be6497f07aa9477a87a52ecaf2decb92" />
+              </attributes>
+              <operations>
+                <operation id="o11d7e99a407f4a308cc59249b58ae9ca920" cid="OP028" name="SystemIOperations" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p65981d1cb6f347259b1f61e985494dba" name="SerialDataReceivedCallback" type="Action&lt;object, SerialDataReceivedEventArgs&gt;" type-id="Action&lt;object, SerialDataReceivedEventArgs&gt;" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>localSerialDataReceivedCallback = SerialDataReceivedCallback;
+assign delegate to call back
+I cant confirm that the com ports here will work for everybody
+foreach (SerialPort _port in ardSerialPorts)
+{   //initialize port parameters
+    _port.BaudRate = 9600;
+    _port.Parity = Parity.None;
+    _port.StopBits = StopBits.One;
+    _port.DataBits = 8;
+    _port.Handshake = Handshake.None;
+    _port.RtsEnable = true;
+}
+ard1Port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+unsubscribe
+unsubscribe
+cleanup
+I didnt really do anythig with this but left it to the arduino to select the device based on the string sent
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                </operation>
+                <operation id="o28f2c9246c23412dae375921e347dab8920" cid="OP029" name="StartSerial" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="public">
+                  <source-codes>
+                    <source-code language="CSharp">
+                                                                                               
+            foreach(SerialPort _port in ardSerialPorts) {_port.Open(); }
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="oed828744550f47b29e7c3d9fe4f5e2c2920" cid="OP030" name="StopSerial" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="public">
+                  <source-codes>
+                    <source-code language="CSharp">
+            ard1Port.DataReceived -= dataReceivedHandler;                
+            ard2Port.DataReceived -= dataReceivedHandler;                
+            foreach (SerialPort _port in ardSerialPorts)
+            {           
+                _port.Close();
+
+            }
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="o7289ca6e649140668f4b26bd4f9a5d1d920" cid="OP031" name="SendSerial" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p25bede255e0344efade3db514a3b0931" name="message_string" type="string" type-id="string" />
+                    <parameter id="pae902fe275894e349ff2091e0d16d4ac" name="combined_Id" type="string" type-id="string" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+            var device_Id = combined_Id.Substring(combined_Id.LastIndexOf(";") + 1);    
+                                                                                                                          
+            if (combined_Id.Contains(messages.myard1))
+            {
+                ard1Port.WriteLine(message_string);
+            }
+            else if (combined_Id.Contains(messages.myard2))
+            {
+                ard2Port.WriteLine(message_string);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("error in selecting serial device, please check code Method 'SendSerial'");
+            }
+        </source-code>
+                  </source-codes>
+                </operation>
+                <operation id="ofe7fef12e57047ea9470a34e79dbcb2e920" cid="OP032" name="DataReceivedHandler" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="private" static="true">
+                  <parameters>
+                    <parameter id="p5c4b5e3cce8746a28bd18d8c8f8e4535" name="sender" type="object" type-id="object" />
+                    <parameter id="p7ef116ea03c14010afc1910e646a8bc8" name="e" type="SerialDataReceivedEventArgs" type-id="SerialDataReceivedEventArgs" />
+                  </parameters>
+                  <source-codes>
+                    <source-code language="CSharp">
+            SerialPort sp = (SerialPort)sender;
+            string indata = sp.ReadExisting();
+            Console.WriteLine("Data Received:");
+            Console.Write(indata);
+        </source-code>
+                  </source-codes>
+                </operation>
+              </operations>
+            </item>
+            <item id="a4f640de9e914845a804e82da8dd9c1e" cid="PROP057" type="property" name="ard1Port" style-class="" owner="fc49ab968d5449a59ddecb17a83f3594" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>this class handles serial communication with the arduino
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="SerialPort" type-id="SerialPort" />
+              <property />
+            </item>
+            <item id="b111c335b74c4b55aaf172989e96bc85" cid="PROP058" type="property" name="ard2Port" style-class="" owner="fc49ab968d5449a59ddecb17a83f3594" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <feature />
+              <structural-feature type="SerialPort" type-id="SerialPort" />
+              <property />
+            </item>
+            <item id="8c53990503f747fb814f46879715ee3b" cid="PROP059" type="property" name="ardSerialPorts" style-class="" owner="fc49ab968d5449a59ddecb17a83f3594" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>private Action&lt;object, SerialDataReceivedEventArgs&gt; localSerialDataReceivedCallback;
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="List&lt;SerialPort&gt;" type-id="List&lt;SerialPort&gt;" />
+              <property />
+            </item>
+            <item id="be6497f07aa9477a87a52ecaf2decb92" cid="PROP060" type="property" name="dataReceivedHandler" style-class="" owner="fc49ab968d5449a59ddecb17a83f3594" creator="" creation-date="07/22/2021 13:43:57" visibility="private">
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>initialize parameters and add callback to react to serial data received from arduinos
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <feature />
+              <structural-feature type="SerialDataReceivedEventHandler" type-id="SerialDataReceivedEventHandler" />
+              <property />
+            </item>
+            <item id="1244ac09135b40f297342296708bc7e7" cid="C006" type="class" name="OperatingSystem" style-class="" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="static" />
+              </stereotypes>
+              <tagged-values>
+                <tagged-value id="tv369d9fa1645447e49d87e44f6f0cc1b1" name="namespace" type="text" multiple="false" value="SimulatedDevice" />
+              </tagged-values>
+              <stereotype-instances>
+                <stereotype id="1244ac09135b40f297342296708bc7e7_static_c" type="static" ref="" />
+              </stereotype-instances>
+            </item>
+            <item id="c3ccbac364a94375a8bdb025e3b6cb5c" cid="CNT001" type="containment" name="" style-class="" creator="" creation-date="07/22/2021 13:43:57" from="1244ac09135b40f297342296708bc7e7" to="fc49ab968d5449a59ddecb17a83f3594" />
+            <item id="3ac585cb5d654240ac72db02372cc26d" cid="C007" type="class" name="TelemetryData" style-class="" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <tagged-values>
+                <tagged-value id="tvdb22113c1043484fac1e232fd7978ff2" name="namespace" type="text" multiple="false" value="SimulatedDevice" />
+              </tagged-values>
+              <owned-items>
+                <owned-item ref="d205e9c852774c7f9f423985ef784d60" />
+                <owned-item ref="3b8cb754f59e476f8f520ae50f6cd940" />
+                <owned-item ref="4a89d4fc47b2444ba47f6ec1075676f4" />
+                <owned-item ref="5f901dc4e0134d9cadc0e1f6e6ccab7e" />
+                <owned-item ref="f2c7a4800496435786f8787ef16f2e49" />
+                <owned-item ref="b1a24b72b89848d7a965286bc2ab2c4c" />
+                <owned-item ref="ca021fff73024f739068f35b020271e7" />
+                <owned-item ref="4184d0c046424513a7ed0d04ef2e72f8" />
+              </owned-items>
+              <attributes>
+                <attribute id="a7fa0361c7adf4cf2b1af72d6eba00379926" cid="PROP061" name="PartitionKey" creation-date="07/22/2021 13:43:57" property-ref="d205e9c852774c7f9f423985ef784d60" />
+                <attribute id="aca546d8a584040e3968dd38b71e1122c926" cid="PROP062" name="RowKey" creation-date="07/22/2021 13:43:57" property-ref="3b8cb754f59e476f8f520ae50f6cd940" />
+                <attribute id="a3294904cf3304f569dbdeedad4f2782e927" cid="PROP063" name="deviceId" creation-date="07/22/2021 13:43:57" property-ref="4a89d4fc47b2444ba47f6ec1075676f4" />
+                <attribute id="aad0de0909fb94168b56070bfd2a42284927" cid="PROP064" name="propertyLabel1" creation-date="07/22/2021 13:43:57" property-ref="5f901dc4e0134d9cadc0e1f6e6ccab7e" />
+                <attribute id="ab22f1f76727748e280775bc3896b3e4e927" cid="PROP065" name="propertyLabel2" creation-date="07/22/2021 13:43:57" property-ref="f2c7a4800496435786f8787ef16f2e49" />
+                <attribute id="a8001d3908b784e92a356cb3f0bed7df9927" cid="PROP066" name="property1" creation-date="07/22/2021 13:43:57" property-ref="b1a24b72b89848d7a965286bc2ab2c4c" />
+                <attribute id="acda8b4729bf34e5580f39c07458dfccb927" cid="PROP067" name="Etag" creation-date="07/22/2021 13:43:57" property-ref="ca021fff73024f739068f35b020271e7" />
+                <attribute id="a61b9b5f91a534623ac4669618a59b25e927" cid="PROP068" name="Misc" creation-date="07/22/2021 13:43:57" property-ref="4184d0c046424513a7ed0d04ef2e72f8" />
+              </attributes>
+              <operations>
+                <operation id="of64e87a2964d47a2b331083dceaecadd927" cid="OP033" name="TelemetryData" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="p853a7a7ddb244112862890d8fd4f2e1a" name="s_partitionKey" type="string" type-id="string" />
+                    <parameter id="pc882f3533ebf4e548c3763b2ba4aeeea" name="s_rowKey" type="string" type-id="string" />
+                    <parameter id="pf2310b86dccb4b85b845cdf1904fe893" name="s_myDeviceId" type="string" type-id="string" />
+                    <parameter id="p98bef01760214e41b4c7496ee061d731" name="label1" type="string" type-id="string" />
+                    <parameter id="pae476a4b6fec4c01ba546f90b95ad051" name="label2" type="string" type-id="string" />
+                    <parameter id="p758c1912c9fa4aeb9438febf3a49b739" name="s_property1" type="bool" type-id="bool" />
+                    <parameter id="p1231681ac64342fc8389a6218e54f18a" name="s_misc" type="string" type-id="string" default-value="null" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                  <documentation>
+                    <text>
+                      <default>
+                        <style font-name="Verdana" font-size="12">
+                          <text>
+                            <solid-brush color="#FF000000" />
+                          </text>
+                        </style>
+                      </default>
+                      <styles />
+                      <content>
+                        <paragraph>
+                          <style />
+                          <p>
+                            <t>property2 = s_property2;
+let thus be the E_tag
+</t>
+                          </p>
+                        </paragraph>
+                      </content>
+                    </text>
+                  </documentation>
+                </operation>
+              </operations>
+            </item>
+            <item id="d205e9c852774c7f9f423985ef784d60" cid="PROP061" type="property" name="PartitionKey" style-class="" owner="3ac585cb5d654240ac72db02372cc26d" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="property" />
+              </stereotypes>
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>RaspberryPiUWP.cl
+type of device
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <stereotype-instances>
+                <stereotype id="d205e9c852774c7f9f423985ef784d60_property_c" type="property" ref="" />
+              </stereotype-instances>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property />
+            </item>
+            <item id="3b8cb754f59e476f8f520ae50f6cd940" cid="PROP062" type="property" name="RowKey" style-class="" owner="3ac585cb5d654240ac72db02372cc26d" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="property" />
+              </stereotypes>
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>serial number given to device from I2C etc.
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <stereotype-instances>
+                <stereotype id="3b8cb754f59e476f8f520ae50f6cd940_property_c" type="property" ref="" />
+              </stereotype-instances>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property />
+            </item>
+            <item id="4a89d4fc47b2444ba47f6ec1075676f4" cid="PROP063" type="property" name="deviceId" style-class="" owner="3ac585cb5d654240ac72db02372cc26d" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="property" />
+              </stereotypes>
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>name of device
+the label of the properties eg temperature, humidity
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <stereotype-instances>
+                <stereotype id="4a89d4fc47b2444ba47f6ec1075676f4_property_c" type="property" ref="" />
+              </stereotype-instances>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property />
+            </item>
+            <item id="5f901dc4e0134d9cadc0e1f6e6ccab7e" cid="PROP064" type="property" name="propertyLabel1" style-class="" owner="3ac585cb5d654240ac72db02372cc26d" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="property" />
+              </stereotypes>
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>most important parameter here
+corresponds to PartitionKey
+public T property2 { get; set; }   //corresponds to RowKey
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <stereotype-instances>
+                <stereotype id="5f901dc4e0134d9cadc0e1f6e6ccab7e_property_c" type="property" ref="" />
+              </stereotype-instances>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property />
+            </item>
+            <item id="f2c7a4800496435786f8787ef16f2e49" cid="PROP065" type="property" name="propertyLabel2" style-class="" owner="3ac585cb5d654240ac72db02372cc26d" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="property" />
+              </stereotypes>
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>for any redundant data needed
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <stereotype-instances>
+                <stereotype id="f2c7a4800496435786f8787ef16f2e49_property_c" type="property" ref="" />
+              </stereotype-instances>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property />
+            </item>
+            <item id="b1a24b72b89848d7a965286bc2ab2c4c" cid="PROP066" type="property" name="property1" style-class="" owner="3ac585cb5d654240ac72db02372cc26d" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="property" />
+              </stereotypes>
+              <stereotype-instances>
+                <stereotype id="b1a24b72b89848d7a965286bc2ab2c4c_property_c" type="property" ref="" />
+              </stereotype-instances>
+              <feature />
+              <structural-feature type="bool" type-id="bool" />
+              <property />
+            </item>
+            <item id="ca021fff73024f739068f35b020271e7" cid="PROP067" type="property" name="Etag" style-class="" owner="3ac585cb5d654240ac72db02372cc26d" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="property" />
+              </stereotypes>
+              <stereotype-instances>
+                <stereotype id="ca021fff73024f739068f35b020271e7_property_c" type="property" ref="" />
+              </stereotype-instances>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property />
+            </item>
+            <item id="4184d0c046424513a7ed0d04ef2e72f8" cid="PROP068" type="property" name="Misc" style-class="" owner="3ac585cb5d654240ac72db02372cc26d" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="property" />
+              </stereotypes>
+              <stereotype-instances>
+                <stereotype id="4184d0c046424513a7ed0d04ef2e72f8_property_c" type="property" ref="" />
+              </stereotype-instances>
+              <feature />
+              <structural-feature type="string" type-id="string" />
+              <property />
+            </item>
+            <item id="00dc3a5058004058859b43e8e6d1239c" cid="C008" type="class" name="TelemetryDataPoint" style-class="" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <tagged-values>
+                <tagged-value id="tv2d7fb418f59b42769e6badeec5064e94" name="namespace" type="text" multiple="false" value="SimulatedDevice" />
+              </tagged-values>
+              <owned-items>
+                <owned-item ref="7bda06e749a64a4f9203ee98ad9d80ee" />
+              </owned-items>
+              <attributes>
+                <attribute id="a9954f0c764cf4dca8d474eb81c653c47930" cid="PROP069" name="property2" creation-date="07/22/2021 13:43:57" property-ref="7bda06e749a64a4f9203ee98ad9d80ee" />
+              </attributes>
+              <operations>
+                <operation id="o66aed785f26e45b68054d5ff8565fa23930" cid="OP034" name="TelemetryDataPoint" creation-date="07/22/2021 13:43:57" type="" type-id="" visibility="public">
+                  <parameters>
+                    <parameter id="pc70b8b8a4d7045faa9efbe268d421487" name="s_partitionKey" type="string" type-id="string" />
+                    <parameter id="pcf8b91e9d0da4ff384451526dd73f6f6" name="s_rowKey" type="string" type-id="string" />
+                    <parameter id="pe78cfa1e38c9430984ce72b34c8140c4" name="s_myDeviceId" type="string" type-id="string" />
+                    <parameter id="pd371136418d64c91903923ebbf6a08dc" name="label1" type="string" type-id="string" />
+                    <parameter id="pb0301424d7c646ed91d2db5e37a6a0ba" name="label2" type="string" type-id="string" />
+                    <parameter id="p9d18275c855945ccbaa4de79a8fb2a90" name="s_property1" type="bool" type-id="bool" />
+                    <parameter id="p3410899bc4b546799eb392c3e79cde97" name="s_property2" type="T" type-id="T" />
+                    <parameter id="p83f1a6c860234b14a857161878922cbf" name="s_misc" type="string" type-id="string" default-value="null" />
+                  </parameters>
+                  <stereotypes>
+                    <stereotype>create</stereotype>
+                  </stereotypes>
+                </operation>
+              </operations>
+              <template-parameters>
+                <template-parameter id="te66a134003d244f2a99730c3020f33e7928" name="T" kind="" default-value="" />
+              </template-parameters>
+            </item>
+            <item id="7bda06e749a64a4f9203ee98ad9d80ee" cid="PROP069" type="property" name="property2" style-class="" owner="00dc3a5058004058859b43e8e6d1239c" creator="" creation-date="07/22/2021 13:43:57" visibility="public">
+              <stereotypes>
+                <stereotype name="property" />
+              </stereotypes>
+              <documentation>
+                <text>
+                  <default>
+                    <style font-name="Verdana" font-size="12">
+                      <text>
+                        <solid-brush color="#FF000000" />
+                      </text>
+                    </style>
+                  </default>
+                  <styles />
+                  <content>
+                    <paragraph>
+                      <style />
+                      <p>
+                        <t>RaspberryPiUWP.cl
+corresponds to RowKey
+</t>
+                      </p>
+                    </paragraph>
+                  </content>
+                </text>
+              </documentation>
+              <stereotype-instances>
+                <stereotype id="7bda06e749a64a4f9203ee98ad9d80ee_property_c" type="property" ref="" />
+              </stereotype-instances>
+              <feature />
+              <structural-feature type="T" type-id="T" />
+              <property />
+            </item>
+            <item id="80b05594b0874a7f9e9c69846b065cce" cid="GNR001" type="generalization" name="" style-class="" creator="" creation-date="07/22/2021 13:43:57" from="00dc3a5058004058859b43e8e6d1239c" to="3ac585cb5d654240ac72db02372cc26d" />
+            <item id="5fc6ee2cb3e14524a7cb4a095f8c2207" cid="REL001" type="relationship" name="" style-class="" creator="" creation-date="07/22/2021 13:43:57" from="4a0ac332cc40474a964c5794ecbf0cd8" to="fc49ab968d5449a59ddecb17a83f3594" visibility="package">
+              <relation from="4a0ac332cc40474a964c5794ecbf0cd8" to="fc49ab968d5449a59ddecb17a83f3594" derived="false">
+                <start-role id="umlar-d72e9a9c-7a6c-4618-80b6-133aec3f424f" name="" navigability="" association-type="aggregation" visibility="private" />
+                <end-role id="umlar-6095b659-8c39-426e-9aa5-22172faadc14" name="" navigability="" association-type="association" visibility="private" />
+              </relation>
+            </item>
+            <item id="f54af13989ed4397be324f869e5c0577" cid="REL002" type="relationship" name="" style-class="" creator="" creation-date="07/22/2021 13:43:57" from="5c46ff4b2b5744bd88ed9b89f8f9a683" to="fc49ab968d5449a59ddecb17a83f3594" visibility="package">
+              <relation from="5c46ff4b2b5744bd88ed9b89f8f9a683" to="fc49ab968d5449a59ddecb17a83f3594" derived="false">
+                <start-role id="umlar-14ea537d-8d7c-4586-873f-cfc7e26bf5f4" name="" navigability="" association-type="aggregation" visibility="private" />
+                <end-role id="umlar-138e30cc-7a27-41d9-a78c-2695c77e511f" name="" navigability="" association-type="association" visibility="private" />
+              </relation>
+            </item>
+            <item id="c1295034d2e04b15b805b195104f79df" cid="REL003" type="relationship" name="" style-class="" creator="" creation-date="07/22/2021 13:43:57" from="5c46ff4b2b5744bd88ed9b89f8f9a683" to="4347477a1b4944af8f3fb539292f86b5" visibility="package">
+              <relation from="5c46ff4b2b5744bd88ed9b89f8f9a683" to="4347477a1b4944af8f3fb539292f86b5" derived="false">
+                <start-role id="umlar-485c4e06-d37e-43c9-8769-8e210778c2ee" name="" navigability="" association-type="composition" visibility="private" />
+                <end-role id="umlar-9bd325de-0392-4e45-b875-2d581f5113d1" name="" navigability="" association-type="association" visibility="private" />
+              </relation>
+            </item>
+            <item id="6d4ff11acfd14aa0a1e3ab9681a09ae8" cid="REL004" type="relationship" name="" style-class="" creator="" creation-date="07/22/2021 13:43:57" from="5c46ff4b2b5744bd88ed9b89f8f9a683" to="4a0ac332cc40474a964c5794ecbf0cd8" visibility="package">
+              <relation from="5c46ff4b2b5744bd88ed9b89f8f9a683" to="4a0ac332cc40474a964c5794ecbf0cd8" derived="false">
+                <start-role id="umlar-f948a747-7576-4dff-9a77-e7b8ac2eab61" name="" navigability="" association-type="composition" visibility="private" />
+                <end-role id="umlar-67e3eb93-f312-4d9b-aa38-6ed8130bf862" name="" navigability="" association-type="association" visibility="private" />
+              </relation>
+            </item>
+          </abstract-items>
+          <sub-models />
+          <diagram type="uml-class" id="p51cbc3ce4ac04cf0b1bfc0098d6a0b71_526700705" name="SimulatedDevice" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" namespace="SimulatedDevice" view-location="-160,37" zoom="0.5">
+            <style>
+              <background-color index="1" color="#FFFFFFFF" />
+              <background-color index="2" color="#FFFFFFFF" />
+              <background-type type="vertical-linear" />
+            </style>
+            <meta>
+              <authors>
+                <author> </author>
+              </authors>
+              <description />
+              <creation-date>07/22/2021 13:43:57</creation-date>
+              <change-date>07/22/2021 13:43:57</change-date>
+              <revision-count>0</revision-count>
+              <version />
+            </meta>
+            <abstract-items />
+            <layer id="358271340b9947c8875e39d8ab3bd720" name="Default" visible="true" enabled="true" locked="false">
+              <item id="4a0ac332cc40474a964c5794ecbf0cd8" iid="6fde02a0de784cd8beeb547e54862a74" creation-date="07/22/2021 13:43:57" order-index="0" type="entity">
+                <layout ax="998" ay="1204.5" awidth="358" aheight="415" x="998" y="1204.5" width="358" height="415" />
+                <class />
+              </item>
+              <item id="36fcf384e6b64fd783da9a3ebb60cd8f" iid="87819391fbd9478683b4ec4e03092108" creation-date="07/22/2021 13:43:57" order-index="1" type="entity">
+                <layout ax="1830" ay="0" awidth="348" aheight="574" x="1830" y="0" width="348" height="574" />
+                <class />
+              </item>
+              <item id="4347477a1b4944af8f3fb539292f86b5" iid="6eb471a3f8d947299c22523658c5e505" creation-date="07/22/2021 13:43:57" order-index="2" type="entity">
+                <layout ax="452.5" ay="0" awidth="356" aheight="401" x="452.5" y="0" width="356" height="401" />
+                <class />
+              </item>
+              <item id="5c46ff4b2b5744bd88ed9b89f8f9a683" iid="646e39dd3052432ba6cc5dae72b5a91f" creation-date="07/22/2021 13:43:57" order-index="3" type="entity">
+                <layout ax="452" ay="501" awidth="357" aheight="1822" x="452" y="501" width="357" height="1822" />
+                <class />
+              </item>
+              <item id="fc49ab968d5449a59ddecb17a83f3594" iid="851d40f1f93540499b1bccaef2e983ad" creation-date="07/22/2021 13:43:57" order-index="4" type="entity">
+                <layout ax="0" ay="1276.5" awidth="352" aheight="271" x="0" y="1276.5" width="352" height="271" />
+                <class />
+              </item>
+              <item id="1244ac09135b40f297342296708bc7e7" iid="0f1197e136c04492b28de87ff3288ac6" creation-date="07/22/2021 13:43:58" order-index="5" type="entity">
+                <layout ax="106.5" ay="1647.5" awidth="139" aheight="52" x="106.5" y="1647.5" width="139" height="52" />
+                <class />
+              </item>
+              <item id="3ac585cb5d654240ac72db02372cc26d" iid="20307c8336d44c449f0f300cbc07b820" creation-date="07/22/2021 13:43:58" order-index="6" type="entity">
+                <layout ax="1460" ay="0" awidth="342" aheight="252" x="1460" y="0" width="342" height="252" />
+                <class />
+              </item>
+              <item id="00dc3a5058004058859b43e8e6d1239c" iid="3e3506488760494bad8c64626559d0d2" creation-date="07/22/2021 13:43:58" order-index="7" type="entity">
+                <layout ax="1452" ay="352" awidth="358" aheight="146" x="1452" y="352" width="358" height="146" />
+                <class />
+              </item>
+              <item id="c3ccbac364a94375a8bdb025e3b6cb5c" iid="0223c206c347467db383554a388a26f8" creation-date="07/22/2021 13:43:58" order-index="8" type="relation">
+                <layout line-style="perpendicular" lock-to-fields="false" auto-path="" x1="176" y1="1648" x2="176" y2="1548" start-border-pos="0.125" end-border-pos="0.625" name-position="0,20">
+                  <points>
+                    <point x="176" y="1648" />
+                    <point x="176" y="1598" />
+                    <point x="176" y="1598" />
+                    <point x="176" y="1548" />
+                  </points>
+                </layout>
+                <relation from="1244ac09135b40f297342296708bc7e7" from-iid="0f1197e136c04492b28de87ff3288ac6" to="fc49ab968d5449a59ddecb17a83f3594" to-iid="851d40f1f93540499b1bccaef2e983ad" />
+              </item>
+              <item id="80b05594b0874a7f9e9c69846b065cce" iid="d3e1db550bd44641884b8305b6882303" creation-date="07/22/2021 13:43:58" order-index="9" type="relation">
+                <layout line-style="perpendicular" lock-to-fields="false" auto-path="" x1="1630" y1="352" x2="1632" y2="252" start-border-pos="0.1245" end-border-pos="0.6245" name-position="0,20">
+                  <points>
+                    <point x="1630" y="352" />
+                    <point x="1631" y="302" />
+                    <point x="1631" y="302" />
+                    <point x="1632" y="252" />
+                  </points>
+                </layout>
+                <relation from="00dc3a5058004058859b43e8e6d1239c" from-iid="3e3506488760494bad8c64626559d0d2" to="3ac585cb5d654240ac72db02372cc26d" to-iid="20307c8336d44c449f0f300cbc07b820" />
+              </item>
+              <item id="5fc6ee2cb3e14524a7cb4a095f8c2207" iid="81bcbd027a8848ebbd7f93e6635b78c8" creation-date="07/22/2021 13:43:58" order-index="10" type="relation">
+                <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="perpendicular" lock-to-fields="false" auto-path="" x1="998" y1="1353" x2="176" y2="1548" start-border-pos="0.9105" end-border-pos="0.625" name-position="0,20">
+                  <points>
+                    <point x="998" y="1353" />
+                    <point x="912" y="1352" />
+                    <point x="892" y="1352" />
+                    <point x="892" y="1632" />
+                    <point x="1912" y="1632" />
+                    <point x="176" y="1548" />
+                  </points>
+                </layout>
+                <relation from="4a0ac332cc40474a964c5794ecbf0cd8" from-iid="6fde02a0de784cd8beeb547e54862a74" to="fc49ab968d5449a59ddecb17a83f3594" to-iid="851d40f1f93540499b1bccaef2e983ad" />
+              </item>
+              <item id="f54af13989ed4397be324f869e5c0577" iid="11a116b6e7844abc9fa8efae943b3bea" creation-date="07/22/2021 13:43:58" order-index="11" type="relation">
+                <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="perpendicular" lock-to-fields="false" auto-path="" x1="452" y1="1416" x2="352" y2="1411" start-border-pos="0.8745" end-border-pos="0.3745" name-position="0,20">
+                  <points>
+                    <point x="452" y="1416" />
+                    <point x="402" y="1412" />
+                    <point x="402" y="1412" />
+                    <point x="352" y="1411" />
+                  </points>
+                </layout>
+                <relation from="5c46ff4b2b5744bd88ed9b89f8f9a683" from-iid="646e39dd3052432ba6cc5dae72b5a91f" to="fc49ab968d5449a59ddecb17a83f3594" to-iid="851d40f1f93540499b1bccaef2e983ad" />
+              </item>
+              <item id="c1295034d2e04b15b805b195104f79df" iid="acfb4aa14d0c43d9b3005432dcbec055" creation-date="07/22/2021 13:43:58" order-index="12" type="relation">
+                <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="perpendicular" lock-to-fields="false" auto-path="" x1="629" y1="501" x2="631" y2="401" start-border-pos="0.124151260504202" end-border-pos="0.624849719101124" name-position="0,20">
+                  <points>
+                    <point x="629" y="501" />
+                    <point x="630" y="451" />
+                    <point x="630" y="451" />
+                    <point x="631" y="401" />
+                  </points>
+                </layout>
+                <relation from="5c46ff4b2b5744bd88ed9b89f8f9a683" from-iid="646e39dd3052432ba6cc5dae72b5a91f" to="4347477a1b4944af8f3fb539292f86b5" to-iid="6eb471a3f8d947299c22523658c5e505" />
+              </item>
+              <item id="6d4ff11acfd14aa0a1e3ab9681a09ae8" iid="97f944f9bfd24e7e8706e9dbc19140c5" creation-date="07/22/2021 13:43:58" order-index="13" type="relation">
+                <layout start-role-position="25,15" end-role-position="25,-15" start-multiplicity-position="25,-15" end-multiplicity-position="25,15" line-style="perpendicular" lock-to-fields="false" auto-path="" x1="809" y1="1408" x2="998" y2="1413" start-border-pos="0.3745" end-border-pos="0.8745" name-position="0,20">
+                  <points>
+                    <point x="809" y="1408" />
+                    <point x="859" y="1412" />
+                    <point x="859" y="1412" />
+                    <point x="998" y="1413" />
+                  </points>
+                </layout>
+                <relation from="5c46ff4b2b5744bd88ed9b89f8f9a683" from-iid="646e39dd3052432ba6cc5dae72b5a91f" to="4a0ac332cc40474a964c5794ecbf0cd8" to-iid="6fde02a0de784cd8beeb547e54862a74" />
+              </item>
+            </layer>
+          </diagram>
+        </model>
+      </sub-models>
+      <diagram type="uml-package" id="pd59fbef0741640988f2c3fbcba34eeba_260159449" name="Packages" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-field-tags="true" show-empty-compartments="true" show-special-indicators="false" show-rules="true" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-visibility-sign="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-data="true" show-description="false" show-field-description="false" auto-routed-paths="false" default-line-style="default" namespace="">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="vertical-linear" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>07/22/2021 13:43:57</creation-date>
+          <change-date>07/22/2021 13:43:57</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items />
+        <layer id="2c05ca4a43cd42eb8b53be67ca074357" name="Default" visible="true" enabled="true" locked="false">
+          <item id="16b4f885ec024867939e1c0a6ec58c04" iid="23697952ad2e49b5b9a5d1c55a501fea" creation-date="07/22/2021 13:43:57" order-index="0" type="entity">
+            <layout ax="0" ay="0" awidth="156" aheight="56" x="0" y="0" width="156" height="56" />
+            <package name-in-body="false" />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
